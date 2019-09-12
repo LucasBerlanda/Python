@@ -4,12 +4,12 @@
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
     <form action="" method="post">
         {{ form.hidden_tag() }}
-        <h1 class="text-center">Cadastro Usuários</h1>
+        <h2 class="text-center">Cadastro Usuários</h2>
         <div class="col-xs-12 col-sm-5">
             <div class="col-xs-10 col-sm-12">
                 <div class="form-group">
                     {{ form.username.label }}
-                    {{ form.username(class="form-control") }}
+                    {{ form.username(class="form-control", placeholder="Usuário") }}
                     {% for erro in form.username.errors %}
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
@@ -36,7 +36,7 @@
             <div class="col-xs-10 col-sm-12">
                 <div class="form-group">
                     {{ form.password.label }}
-                    {{ form.password(class="form-control") }}
+                    {{ form.password(class="form-control", placeholder="Senha") }}
                     {% for erro in form.password.errors %}
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
@@ -45,7 +45,7 @@
             <div class="col-xs-10 col-sm-12">
                 <div class="form-group">
                     {{ form.password2.label }}
-                    {{ form.password2(class="form-control") }}
+                    {{ form.password2(class="form-control", placeholder="Confirmação de senha") }}
                     {% for erro in form.password2.errors %}
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}

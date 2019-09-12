@@ -9,7 +9,7 @@
             <div class="col-xs-10 col-sm-6">
                 <div class="form-group">
                     {{ form.tipo.label }}
-                    {{ form.tipo(size=32, class="form-control") }}
+                    {{ form.tipo(size=32, class="form-control", placeholder="Tipo/Modelo") }}
                     {% for erro in form.tipo.errors %}
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
@@ -18,7 +18,7 @@
             <div class="col-xs-10 col-sm-3">
                 <div class="form-group">
                     {{ form.mca.label }}
-                    {{ form.mca(size=32, class="form-control") }}
+                    {{ form.mca(size=32, class="form-control", placeholder="Mca") }}
                     {% for erro in form.mca.errors %}
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
@@ -27,7 +27,7 @@
             <div class="col-xs-10 col-sm-3">    
                 <div class="form-group">
                     {{ form.rotacao.label }}
-                    {{ form.rotacao(size=32, class="form-control") }}
+                    {{ form.rotacao(size=32, class="form-control", placeholder="Rotação") }}
                     {% for erro in form.rotacao.errors %}
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}

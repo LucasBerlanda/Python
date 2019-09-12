@@ -3,22 +3,18 @@
 {% block content %}
 
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-    <form action="" method="post">
+    <form action="" method="post" class="form-inline">
         {{ form.hidden_tag() }}
         <div class="col-xs-12">
-            <h1 class="text-center">Busca de Peças por Bomba</h1>
-            <div class="col-xs-10 col-sm-3">
-                <div class="form-group">
-                    {{ form.buscaEquipamentos.label }}
-                    {{ form.buscaEquipamentos(class=" form-control") }}
-                    {% for erro in form.buscaEquipamentos.errors %}
-                    <span style="color: red;">{{ erro }}</span>
-                    {% endfor %}
-                </div>
+            <h3 class="text-center">Busca de Peças por Bomba</h3>
+            <div class="form-group">
+                {{ form.buscaEquipamentos.label }}
+                {{ form.buscaEquipamentos(class=" form-control", placeholder="Buscar") }}
+                {% for erro in form.buscaEquipamentos.errors %}
+                <span style="color: red;">{{ erro }}</span>
+                {% endfor %}
             </div>
-            <div class="col-xs-12">
-                <button type="submit" class="btn btn-success">Buscar</button>
-            </div>
+            <button type="submit" class="btn btn-success">Buscar</button>
         </div>
     </form>
 </div>
@@ -29,16 +25,16 @@
                 <caption>Peças da bomba filtrada</caption> 
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Peça</th>
-                        <th>Descrição</th>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Peça</th>
+                        <th class="text-center">Descrição</th>
                     </tr>
                 </thead>
                 {% if pecas %}
                 <tbody>
                     {% for peca in pecas %}
                     <tr>
-                        <td>{{peca.id}}</td>
+                        <td class="text-center">{{peca.id}}</td>
                         <td>{{peca.nome}}</td>
                         <td>{{peca.descricao}}</td>
                     </tr>
@@ -58,20 +54,20 @@
                 <caption>Bomba(s) Intercambiáveis</caption>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th >Tipo</th>
-                        <th>Mca</th>
-                        <th>Rotação</th>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Tipo</th>
+                        <th class="text-center">Mca</th>
+                        <th class="text-center">Rotação</th>
                     </tr>
                 </thead>
                 {% if tipoBombasCompativeis %}
                 <tbody>
                     {% for bbaComp in tipoBombasCompativeis %}
                     <tr>
-                        <td>{{bbaComp.id}}</td>
+                        <td class="text-center">{{bbaComp.id}}</td>
                         <td>{{bbaComp.tipo}}</td>
-                        <td>{{bbaComp.mca}}</td>
-                        <td>{{bbaComp.rotacao}}</td>
+                        <td class="text-center">{{bbaComp.mca}}</td>
+                        <td class="text-center">{{bbaComp.rotacao}}</td>
                     </tr>
                     {% endfor %}
                 </tbody> 
@@ -84,51 +80,4 @@
         </div>
     </div>
 </div>
-<!-- <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-9">
-    <div class="col-xs-12">
-        <div class="table-responsive col-sm-3">
-            <table class="table table-hover table-bordered table-striped">
-                <tr>
-                    <td>#</td>
-                    <td>Peça</td>
-                    <td>Descrição</td>
-                </tr>
-                {% if pecas %}
-                    {% for peca in pecas %}
-                    <tr>
-                        <td>{{peca.id}}</td>
-                        <td>{{peca.nome}}</td>
-                        <td>{{peca.descricao}}</td>
-                    </tr>
-                    {% endfor %}
-                {% else %}
-            </table>
-            <h6 class="text-center">Nenhum dado encontrado!</h6>
-            {% endif %}
-        </div>  
-        <div class="table-responsive col-sm-3">
-            <table class="table table-hover table-bordered table-striped">
-                <tr>
-                    <td>#</td>
-                    <td >Tipo</td>
-                    <td>Mca</td>
-                    <td>Rotação</td>
-                </tr>
-                {% if tipoBombasCompativeis %}
-                    {% for bbaComp in tipoBombasCompativeis %}
-                    <tr>
-                        <td>{{bbaComp.id}}</td>
-                        <td >{{bbaComp.tipo}}</td>
-                        <td>{{bbaComp.mca}}</td>
-                        <td>{{bbaComp.rotacao}}</td>
-                    </tr>
-                    {% endfor %}
-                {% else %}
-            </table>
-            <h6 class="text-center">Nenhum dado encontrado!</h6>
-            {% endif %}
-        </div>
-    </div>
-</div> -->
-    
 {% endblock %}
