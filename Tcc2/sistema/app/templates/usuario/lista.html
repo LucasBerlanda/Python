@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <h1 class="text-center">Lista Usuários</h1>
+    
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>#</td>
+            <td>Usuario</td>
+            <td>Perfil</td>
+            <td>Setor</td>
+            <td>Opções</td>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.username }}</td>
+            {% for perfil in perfis %}
+                {% if perfil.id == usuario.perfilAcesso_id %}
+                <td>{{ perfil.nomePerfil }}</td>
+                {% endif %}
+            {% endfor %}
+            {% for setor in setores %}
+                {% if setor.id == usuario.setor_id %}    
+                <td>{{ setor.nomeSetor }}</td>
+                {% endif %}
+            {% endfor %}    
+            <td><a href="/excluirUsuario/{{ usuario.id }}">Excluir</a>
+                <a href="/editarUsuario/{{ usuario.id }}">Editar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>    
+{% endblock %}

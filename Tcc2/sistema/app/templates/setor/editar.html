@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edição Setor</h1>
+
+<form action="" method="POST">
+    <div class="col-xs-8">
+        <div class=" form-group">
+            <label>Nome Setor:</label>
+            <input class="form-control" type="text" name="nomeSetor" value="{{ setor.nomeSetor }}">
+        </div>
+        <div class=" form-group">
+            <label>Abreviatura:</label>
+            <input class="form-control" type="text" name="abreviatura" value="{{ setor.abreviatura }}">
+        </div>
+        <div class=" form-group">
+            <label>Descrição:</label>
+            <input class="form-control" type="text" name="descricao" value="{{ setor.descricao }}">
+        </div>
+        <input class="btn btn-success" type="submit" value="Salvar" />
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <h1 class="text-center">Cadastro Usuários</h1>
+        <div class="col-xs-12 col-sm-5">
+            <div class="col-xs-10 col-sm-12">
+                <div class="form-group">
+                    {{ form.username.label }}
+                    {{ form.username(class="form-control") }}
+                    {% for erro in form.username.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div> 
+            <div class="col-xs-10 col-sm-12">
+                <div class="form-group">
+                    {{ form.setor.label }}
+                    {{ form.setor(class="form-control") }}
+                    {% for erro in form.setor.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div> 
+            <div class="col-xs-10 col-sm-12">
+                <div class="form-group">
+                    {{ form.perfilAcesso.label }}
+                    {{ form.perfilAcesso(class="form-control") }}
+                    {% for erro in form.perfilAcesso.errors %}
+                    <span>{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div> 
+            <div class="col-xs-10 col-sm-12">
+                <div class="form-group">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-control") }}
+                    {% for erro in form.password.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div> 
+            <div class="col-xs-10 col-sm-12">
+                <div class="form-group">
+                    {{ form.password2.label }}
+                    {{ form.password2(class="form-control") }}
+                    {% for erro in form.password2.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div> 
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </div>  
+            </div>   
+    </form>
+</div>    
+{% endblock %}

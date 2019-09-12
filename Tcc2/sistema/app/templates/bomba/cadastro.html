@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="col-xs-12">
+            <h1 class="text-center">Cadastro Modelos de Bombas</h1>
+            <div class="col-xs-10 col-sm-6">
+                <div class="form-group">
+                    {{ form.tipo.label }}
+                    {{ form.tipo(size=32, class="form-control") }}
+                    {% for erro in form.tipo.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div> 
+            <div class="col-xs-10 col-sm-3">
+                <div class="form-group">
+                    {{ form.mca.label }}
+                    {{ form.mca(size=32, class="form-control") }}
+                    {% for erro in form.mca.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>    
+            <div class="col-xs-10 col-sm-3">    
+                <div class="form-group">
+                    {{ form.rotacao.label }}
+                    {{ form.rotacao(size=32, class="form-control") }}
+                    {% for erro in form.rotacao.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">    
+                <div class="form-group">
+                    {{ form.rolamentoDianteiro.label }}
+                    {{ form.rolamentoDianteiro(class="form-control")  }}
+                    {% for erro in form.rolamentoDianteiro.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.rolamentoTraseiro.label }}
+                    {{ form.rolamentoTraseiro(class="form-control") }}
+                    {% for erro in form.rolamentoTraseiro.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.retentorDianteiro.label }}
+                    {{ form.retentorDianteiro(class="form-control") }}
+                    {% for erro in form.retentorDianteiro.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.retentorTraseiro.label }}
+                    {{ form.retentorTraseiro(class="form-control") }}
+                    {% for erro in form.retentorTraseiro.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.tampaDianteira.label }}
+                    {{ form.tampaDianteira(class="form-control") }}
+                    {% for erro in form.tampaDianteira.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">       
+                <div class="form-group">
+                    {{ form.tampaTraseira.label }}
+                    {{ form.tampaTraseira(class="form-control") }}
+                    {% for erro in form.tampaTraseira.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.placa.label }}
+                    {{ form.placa(class="form-control") }}
+                    {% for erro in form.placa.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.eixo.label }}
+                    {{ form.eixo(class="form-control") }}
+                    {% for erro in form.eixo.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.rotor.label }}
+                    {{ form.rotor(class="form-control") }}
+                    {% for erro in form.rotor.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4 col-lg-3">     
+                <div class="form-group">
+                    {{ form.bucha.label }}
+                    {{ form.bucha(class="form-control") }}
+                    {% for erro in form.bucha.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-12">    
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>        
+            </div>
+        </div>    
+    </form>
+</div>
+
+{% endblock %}

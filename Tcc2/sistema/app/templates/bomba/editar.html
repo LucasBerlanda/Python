@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-sm-offset-2 col-sm-10">
+    <h1>Editar Modelo de Bomba</h1>
+    <form action="" method="POST">
+        <div class="col-xs-8">
+            <div class=" form-group">
+                <label>Tipo:</label>
+                <input class="form-control" type="text" name="tipo" value="{{ tipoBomba.tipo}}">
+            </div>
+            <div class=" form-group">
+                <label>Mca:</label>
+                <input class="form-control" type="text" name="mca" value="{{ tipoBomba.mca}}">
+            </div>
+            <div class=" form-group">
+                <label>Rotação:</label>
+                <input class="form-control" type="text" name="rotacao" value="{{ tipoBomba.rotacao}}">
+            </div>
+            <input class="btn btn-success" type="submit" value="Salvar" />
+        </div>
+    </form>
+</div>
+
+{% endblock %}

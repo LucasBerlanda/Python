@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+<h1 class="text-center">Lista de Setores</h1>
+    
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>#</td>
+            <td>Setor</td>
+            <td>Abreviatura</td>
+            <td>Descrição</td>
+            <td>Opções</td>
+        </tr>
+        {% for setor in setores %}
+        <tr>
+            <td>{{ setor.id }}</td>
+            <td>{{ setor.nomeSetor }}</td>
+            <td>{{ setor.abreviatura }}</td>
+            <td>{{ setor.descricao }}</td>
+            <td><a href="/editarSetor/{{ setor.id }}">Editar</a>
+                <a href="/excluirSetor/{{ setor.id }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>    
+{% endblock %}

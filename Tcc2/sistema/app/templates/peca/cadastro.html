@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="col-xs-12">  
+            <h1 class="text-center">Cadastro Peça</h1> 
+            <div class="col-xs-10 col-sm-6">
+                <div class="form-group">
+                    {{ form.nome.label }}<br>
+                    {{ form.nome(class="form-control") }}<br>
+                    {% for erro in form.nome.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-6">
+                <div class="form-group">
+                    {{ form.descricao.label }}<br>
+                    {{ form.descricao(class="form-control") }}<br>
+                    {% for erro in form.descricao.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>   
+{% endblock %}

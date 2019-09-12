@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <form action="" method="post">
+        <div class="col-xs-12">
+            <h1 class="text-center">Editar Usuário</h1>
+            <div class="col-xs-10 col-sm-6">
+                <div class="form-group">
+                    <label>Usuário:</label>
+                    <input class="form-control" type="text" name="username" value="{{ usuario.username }}">
+                </div>
+                <div class="form-group">
+                    <label>Setor:</label>
+                    <select class="form-control" name="setor_id" required>
+                        {% for setor in setores %}
+                            {% if setor.id == usuario.setor_id %}
+                                <option selected="selected" value="{{ setor.id}}">{{setor.nomeSetor}}</option>
+                            {% else %}
+                                <option value="{{ setor.id }}">{{ setor.nomeSetor }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div> 
+                <div class="form-group">
+                    <label>Perfil Acesso:</label>
+                    <select class="form-control" name="perfilAcesso_id" required>
+                        {% for perfil in perfisAcesso %}
+                            {% if perfil.id == usuario.perfilAcesso_id %}
+                                <option selected="selected" value="{{ perfil.id }}">{{ perfil.nomePerfil }}</option>
+                            {% else%}
+                                <option value="{{ perfil.id }}">{{ perfil.nomePerfil }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <input class="btn btn-success" type="submit" value="Salvar" />
+            </div>
+        </div>    
+    </form>
+</div>
+
+{% endblock %}

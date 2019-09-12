@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+<h1 class="text-center">Lista de Modelos Bombas</h1>
+    
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>#</td>
+            <td>Tipo</td>
+            <td>Mca</td>
+            <td>Rotacao</td>
+            <td>Opções</td>
+        </tr>
+        {% for tipoBomba in tipoBombas %}
+        <tr>
+            <td>{{ tipoBomba.id }}</td>
+            <td>{{ tipoBomba.tipo }}</td>
+            <td>{{ tipoBomba.mca }}</td>
+            <td>{{ tipoBomba.rotacao }}</td>
+            <td>
+                <a href="/editarTipoBomba/{{ tipoBomba.id }}">Editar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>   
+{% endblock %}
