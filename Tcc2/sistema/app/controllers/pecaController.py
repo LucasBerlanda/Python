@@ -35,10 +35,12 @@ def editarPeca(id):
     if request.method == "POST":
         nome = (request.form.get("nome"))
         descricao = (request.form.get("descricao"))
+        quantidade = (request.form.get("quantidade"))
         
-        if nome and descricao:
+        if nome and descricao and quantidade:
             peca.nome = nome
             peca.descricao = descricao
+            peca.quantidade = quantidade
 
             db.session.commit()
             
