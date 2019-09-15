@@ -2,6 +2,14 @@
 
 {% block content %}
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="{{url_for('cadastroTipoBomba')}}">
+                <i class="fas fa-plus"></i>
+            </a></li>
+            <li class="active">Cadastro / Bombas</li>
+        </ol>
+    </div><!--/.row-->
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <div class="col-xs-12">
@@ -9,7 +17,7 @@
             <div class="col-xs-10 col-sm-6">
                 <div class="form-group">
                     {{ form.tipo.label }}
-                    {{ form.tipo(size=32, class="form-control", placeholder="Tipo/Modelo") }}
+                    {{ form.tipo(size=32, class="form-control ", placeholder="Tipo/Modelo") }}
                     {% for erro in form.tipo.errors %}
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}

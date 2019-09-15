@@ -1,7 +1,11 @@
+from builtins import min
+
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, FloatField, SelectField
-from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
+from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, NumberRange
 from app.models import Usuario, TipoBomba, Peca, Setor
+from wtforms.widgets import html5
+
 
 class LoginForm(FlaskForm):
     username = StringField('Usuário', validators=[DataRequired()])
@@ -40,6 +44,7 @@ class RegistraTipoBombaForm(FlaskForm):
 class RegistraPecaForm(FlaskForm):
     nome = SelectField('Nome Peça:', validators=[DataRequired()], choices=[], coerce=int)
     descricao = StringField('Descrição:', validators=[DataRequired()])
+    quantidade = IntegerField('Quantidade', validators=[NumberRange(min=1, message='Invalid length'), DataRequired()], widget=html5.NumberInput(), default=1 )
     submit = SubmitField('Salvar')
 
 class RegistraSetorForm(FlaskForm):

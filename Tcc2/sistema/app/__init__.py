@@ -16,4 +16,4 @@ login.login_view = 'login'
 # manager = Manager(app)
 # manager.add_command('db', MigrateCommand)
 from app import models
-from app.controllers import loginController, pecaController, setorController, tipoBombaController, usuarioController, verificacaoEquipamentosController
+from app.controllers import loginController, pecaController, setorController, tipoBombaController, usuarioController, buscaEquipamentosController

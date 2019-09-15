@@ -2,14 +2,22 @@
 
 {% block content %}
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-<h1 class="text-center">Lista de Modelos Bombas</h1>
+<div class="row">
+    <ol class="breadcrumb">
+        <li><a href="{{url_for('listaTipoBombas')}}">
+            <i class="fas fa-list"></i>
+        </a></li>
+        <li class="active">Lista / Bombas</li>
+    </ol>
+</div><!--/.row-->
+<h1 class="text-center">Lista de Modelos de Bombas</h1>
     
     <table class="table table-bordered table-hover">
         <tr>
             <td>#</td>
             <td>Tipo</td>
             <td>Mca</td>
-            <td>Rotacao</td>
+            <td>Rotação</td>
             <td>Opções</td>
         </tr>
         {% for tipoBomba in tipoBombas %}

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="94cdb57f-f0b0-4b19-b599-181185045667" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/loginController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/loginController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/verificacaoEquipamentosController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/buscaEquipamentosController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/busca/equipamentos.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/busca/equipamentos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/lista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/lista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/lista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/registrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/registrar.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/cadastro.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="50" column="71" lean-forward="true" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>das</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/base.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/controllers/loginController.py" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/index.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/busca/equipamentos.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/lista.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/lista.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/lista.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/editar.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/editar.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/editar.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/registrar.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/cadastro.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/cadastro.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/__init__.py" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/cadastro.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/forms.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/Python.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/dictionaries/Berlanda.xml" />
+        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
+              <item name="sistema" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
+              <item name="sistema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
+              <item name="sistema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
+              <item name="sistema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
+              <item name="sistema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="peca" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IntelliJ.Portuguese.Brazil.Dictionary-master/portuguese-brazil_without-accents.dic" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Faculdade\Python\Tcc2\sistema\app\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="4" Folder0="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master" Folder1="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master" Folder2="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master" Folder3="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master" CustomDictionaries="4" CustomDictionary0="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master\portuguese-brazil.dic" CustomDictionary1="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master\portuguese-brazil_technical-terms.dic" CustomDictionary2="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master\portuguese-brazil_technical-terms_without-accents.dic" CustomDictionary3="D:\Faculdade\IntelliJ.Portuguese.Brazil.Dictionary-master\portuguese-brazil_without-accents.dic" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="project-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94cdb57f-f0b0-4b19-b599-181185045667" name="Default Changelist" comment="" />
+      <created>1568557655665</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568557655665</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22470239" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49925596" visible="true" weight="0.22749591" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50074404" side_tool="true" weight="0.5040917" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/loginController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/base1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="48" column="33" lean-forward="true" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/busca/equipamentos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/setorController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/editar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/editar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/editar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/pecaController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/registrar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/cadastro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/cadastro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="40" lean-forward="true" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#4;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/buscaEquipamentosController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/usuarioController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="216" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="216" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="24" selection-start-line="24" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/cadastro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="50" column="71" lean-forward="true" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

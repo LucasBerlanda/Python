@@ -3,6 +3,7 @@ from app import app, db
 from app.models import TipoBomba, Peca, Bomba_peca
 from app.forms import RegistraTipoBombaForm
 from flask_login import login_required
+from sqlalchemy import text
 
 @app.route('/cadastroTipoBomba', methods=['GET', 'POST'])
 @login_required
