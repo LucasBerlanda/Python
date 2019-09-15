@@ -13,8 +13,7 @@ def cadastroPeca():
     
     if form.validate_on_submit():
         nomePeca = dict(form.nome.choices).get(form.nome.data)
-        print('Nome', nomePeca)
-        peca = Peca(nome=nomePeca, descricao=form.descricao.data)
+        peca = Peca(nome=nomePeca, descricao=form.descricao.data, quantidade=form.quantidade.data)
         db.session.add(peca)
         db.session.commit()
         flash('Peça Cadastrada com sucesso!')

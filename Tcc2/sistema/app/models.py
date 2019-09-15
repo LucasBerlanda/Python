@@ -26,15 +26,16 @@ class Peca(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(95), nullable=False)
     descricao = db.Column(db.String(40), unique=True, nullable=False)
+    quantidade = db.Column(db.Integer, nullable=False)
     
     bomba_peca = db.relationship('Bomba_peca')
 
     
-    def __init__(self, nome, descricao):
+    def __init__(self, nome, descricao, quantidade):
         
         self.nome = nome
         self.descricao = descricao
-
+        self.quantidade = quantidade
 
 class Bomba_peca(db.Model):
     
@@ -115,11 +116,9 @@ class NomePecas(db.Model):
     def __init__(self, nome):
         
         self.nome = nome
-     
-  
+
+db.create_all()
     
 @login.user_loader
 def load_user(id):
-    return Usuario.query.get(int(id))  
-        
-db.create_all()
+    return Usuario.query.get(int(id))

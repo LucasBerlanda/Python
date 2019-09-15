@@ -44,7 +44,7 @@ class RegistraTipoBombaForm(FlaskForm):
 class RegistraPecaForm(FlaskForm):
     nome = SelectField('Nome Peça:', validators=[DataRequired()], choices=[], coerce=int)
     descricao = StringField('Descrição:', validators=[DataRequired()])
-    quantidade = IntegerField('Quantidade', validators=[NumberRange(min=1, message='Invalid length'), DataRequired()], widget=html5.NumberInput(), default=1 )
+    quantidade = IntegerField('Quantidade', validators=[NumberRange(min=1, message='Número Inválido'), DataRequired()], widget=html5.NumberInput(), default=1 )
     submit = SubmitField('Salvar')
 
 class RegistraSetorForm(FlaskForm):
