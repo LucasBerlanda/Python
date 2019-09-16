@@ -106,44 +106,52 @@
 		<div class="divider"></div>
 		<ul class="nav menu">
 			<li class="active"><a href="{{ url_for('index')}}"><em class="fas fa-tachometer-alt">&nbsp;</em> Dashboard</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-					<em class="fa fa-navicon">&nbsp;</em> Cadastro <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-					</a>
-					<ul class="children collapse" id="sub-item-1">
-						<li><a class="" href="{{ url_for('cadastroTipoBomba')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span>Bombas
-						</a></li>
-						<li><a class="" href="{{ url_for('cadastroPeca')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span> Peças
-						</a></li>
-						<li><a class="" href="{{ url_for('cadastroSetor')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span> Setores
-						</a></li>
-						<li><a class="" href="{{ url_for('cadastroUsuario')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span> Usuários
-						</a></li>
-					</ul>
-				</li>
-				<li class="parent "><a data-toggle="collapse" href="#sub-item-2">
-					<em class="fa fa-navicon">&nbsp;</em> Lista <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
-					</a>
-					<ul class="children collapse" id="sub-item-2">
-						<li><a class="" href="{{ url_for('listaTipoBombas')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span>Modelos de Bombas
-						</a></li>
-						<li><a class="" href="{{ url_for('listaPecas')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span> Peças
-						</a></li>
-						<li><a class="" href="{{ url_for('listaSetores')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span> Setores
-						</a></li>
-						<li><a class="" href="{{ url_for('listaUsuarios')}}">
-							<span class="fa fa-arrow-right">&nbsp;</span> Usuários
-						</a></li>
-					</ul>
-				</li>
 			<li><a href="{{ url_for('equipamentos')}}"><em class="fas fa-cogs">&nbsp;</em> Equipamentos</a></li>
-			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
+			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+				<i class="fas fa-warehouse"></i> Almoxarifado <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-1">
+					<li><a class="" href="{{url_for('entradaEstoque')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span>Entrada Estoque
+					</a></li>
+				</ul>
+			</li>
+			<li class="parent "><a data-toggle="collapse" href="#sub-item-2">
+				<em class="fa fa-navicon">&nbsp;</em> Cadastro <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-2">
+					<li><a class="" href="{{ url_for('cadastroTipoBomba')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span>Bombas
+					</a></li>
+					<li><a class="" href="{{ url_for('cadastroPeca')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Peças
+					</a></li>
+					<li><a class="" href="{{ url_for('cadastroSetor')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Setores
+					</a></li>
+					<li><a class="" href="{{ url_for('cadastroUsuario')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Usuários
+					</a></li>
+				</ul>
+			</li>
+			<li class="parent "><a data-toggle="collapse" href="#sub-item-3">
+				<em class="fa fa-navicon">&nbsp;</em> Lista <span data-toggle="collapse" href="#sub-item-3" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-3">
+					<li><a class="" href="{{ url_for('listaTipoBombas')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span>Modelos de Bombas
+					</a></li>
+					<li><a class="" href="{{ url_for('listaPecas')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Peças
+					</a></li>
+					<li><a class="" href="{{ url_for('listaSetores')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Setores
+					</a></li>
+					<li><a class="" href="{{ url_for('listaUsuarios')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Usuários
+					</a></li>
+				</ul>
+			</li>
 			<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			
