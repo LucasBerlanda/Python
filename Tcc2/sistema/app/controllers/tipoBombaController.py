@@ -43,10 +43,10 @@ def cadastroTipoBomba():
                 db.session.add(bb_peca)
                 db.session.commit()   
                 
-            flash('Bomba cadastrada com sucesso!')
+            flash('Bomba cadastrada com sucesso!', 'info')
             return redirect(url_for('listaTipoBombas'))
         
-        flash("Já possui este tipo/modelo cadastrado!")
+        flash("Já possui este tipo/modelo cadastrado!", 'error')
     
     return render_template('bomba/cadastro.html', form=form)
 
@@ -70,14 +70,18 @@ def editarTipoBomba(id):
         rotacao = (request.form.get("rotacao"))
         
         if tipo and mca and rotacao:
-            tipoBomba.tipo = tipo
-            tipoBomba.mca = mca
-            tipoBomba.rotacao = rotacao
-            
-            db.session.commit()
-            
-            flash('Salvo com sucesso!')
-            return redirect(url_for("listaTipoBombas"))
-        flash('Não foi possível realizar a alteração')
+            bomba = TipoBomba.query.filter_by(tipo=tipo).first()
+
+            if not bomba or bomba is None:
+                tipoBomba.tipo = tipo
+                tipoBomba.mca = mca
+                tipoBomba.rotacao = rotacao
+
+                db.session.commit()
+
+                flash('Salvo com sucesso!', 'info')
+                return redirect(url_for("listaTipoBombas"))
+
+            flash('Já possui uma Bomba com esse Tipo/Modelo', 'error')
 
     return render_template("bomba/editar.html", tipoBomba = tipoBomba)

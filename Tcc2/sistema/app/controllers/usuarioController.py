@@ -51,7 +51,7 @@ def editarUsuario(id):
                 user = Usuario.query.filter_by(username=username).first()
 
                 #verifica se veio usuario ou não do select
-                if user is None:
+                if not user or user is None:
                     usuario.username = username
                     usuario.setor_id = setor_id
                     usuario.perfilAcesso_id = perfilAcesso_id
@@ -79,8 +79,8 @@ def excluirUsuario(id):
         db.session.delete(usuario)
         db.session.commit()
         
-        flash('Usuário excluido com sucesso!')
+        flash('Usuário excluido com sucesso!', 'info')
         return redirect(url_for('listaUsuarios'))
     
-    flash('Não foi possível deletar o usuário!')
+    flash('Não foi possível deletar o usuário!', 'error')
     return redirect(url_for('listaUsuarios'))
