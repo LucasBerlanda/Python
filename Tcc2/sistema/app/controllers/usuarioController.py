@@ -6,7 +6,6 @@ from app.forms import RegistraUsuarioForm
 from flask_login import current_user, login_user, logout_user, login_required
 
 @app.route('/cadastroUsuario', methods=['GET', 'POST'])
-
 def cadastroUsuario():
    
     form = RegistraUsuarioForm()
@@ -14,11 +13,12 @@ def cadastroUsuario():
     form.perfilAcesso.choices = [(perfilAcesso.id, perfilAcesso.nomePerfil) for perfilAcesso in PerfilAcesso.query.all()]
     
     if form.validate_on_submit():
+        print("chegou aqui")
         user = Usuario(username=form.username.data, setor_id=form.setor.data, perfilAcesso_id=form.perfilAcesso.data, password_hash=form.password.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Parabéns, novo usuário registrado!')
+        flash('Parabéns, novo usuário registrado!', 'info')
         return redirect(url_for('index'))
     return render_template('usuario/registrar.html', title='Register', form=form)
 
@@ -44,17 +44,26 @@ def editarUsuario(id):
             username = (request.form.get("username"))
             setor_id = (request.form.get("setor_id"))
             perfilAcesso_id = (request.form.get("perfilAcesso_id"))
-            
+
             if username and setor_id and perfilAcesso_id:
-                usuario.username = username
-                usuario.setor_id = setor_id
-                usuario.perfilAcesso_id = perfilAcesso_id
-                
-                db.session.commit()
-                db.session.close()
-                
-                flash('Salvo com sucesso!')
-                return redirect(url_for("listaUsuarios"))
+
+                #busca usuarios com o mesmo nome
+                user = Usuario.query.filter_by(username=username).first()
+
+                #verifica se veio usuario ou não do select
+                if user is None:
+                    usuario.username = username
+                    usuario.setor_id = setor_id
+                    usuario.perfilAcesso_id = perfilAcesso_id
+
+                    db.session.commit()
+                    db.session.close()
+
+                    flash('Salvo com sucesso!', 'info')
+                    return redirect(url_for("listaUsuarios"))
+
+                flash('Já existe usuário com esse nome!', 'error')
+                #return redirect(url_for("listaUsuarios"))
 
         return render_template("usuario/editar.html", usuario = usuario, perfisAcesso = perfisAcesso, setores = setores)
 

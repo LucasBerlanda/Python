@@ -3,14 +3,14 @@
 {% block content %}
 
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-<div class="row">
-    <ol class="breadcrumb">
-        <li><a href="#">
-            <em class="fa fa-home"></em>
-        </a></li>
-        <li class="active">Busca de Bombas / Peças Intercambiáveis</li>
-    </ol>
-</div><!--/.row-->
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                <em class="fa fa-home"></em>
+            </a></li>
+            <li class="active">Busca de Bombas / Peças Intercambiáveis</li>
+        </ol>
+    </div><!--/.row-->
 
     <form action="" method="post" class="form-inline">
         {{ form.hidden_tag() }}
@@ -31,7 +31,7 @@
     <div class="col-xs-12 col-sm-6 col-lg-6">
         <div class="table-responsive">
             <table class="table table-hover table-bordered table-striped">
-                <caption>Peças da bomba filtrada</caption> 
+                <caption>Peças da bomba filtrada</caption>
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
@@ -54,11 +54,11 @@
                         Nenhum dado encontrado!
                     </td>
                 {% endif %}
-            </table> 
+            </table>
         </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-lg-5">
-        <div class="table-responsive">    
+        <div class="table-responsive">
             <table class="table table-hover table-bordered table-striped">
                 <caption>Bomba(s) Intercambiáveis</caption>
                 <thead>
@@ -79,13 +79,13 @@
                         <td class="text-center">{{bbaComp.rotacao}}</td>
                     </tr>
                     {% endfor %}
-                </tbody> 
+                </tbody>
                 {% else %}
                     <td colspan="4" class="text-center">
                         Nenhum dado encontrado!
                     </td>
                 {% endif %}
-            </table>     
+            </table>
         </div>
     </div>
 </div>

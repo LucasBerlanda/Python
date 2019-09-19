@@ -18,10 +18,8 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = Usuario.query.filter_by(username = form.username.data).first()
-        print(user.username, user.password_hash)
         if user is None or not user.check_password(form.password.data):
-            print('invalido')
-            flash('Usuário ou senha incorretos!')
+            flash('Usuário ou senha incorretos!', 'error')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
