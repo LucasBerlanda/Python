@@ -51,7 +51,7 @@ def editarUsuario(id):
                 user = Usuario.query.filter_by(username=username).first()
 
                 #verifica se veio usuario ou não do select
-                if not user or user is None:
+                if not user or user is None or user.id == id:
                     usuario.username = username
                     usuario.setor_id = setor_id
                     usuario.perfilAcesso_id = perfilAcesso_id
@@ -63,7 +63,6 @@ def editarUsuario(id):
                     return redirect(url_for("listaUsuarios"))
 
                 flash('Já existe usuário com esse nome!', 'error')
-                #return redirect(url_for("listaUsuarios"))
 
         return render_template("usuario/editar.html", usuario = usuario, perfisAcesso = perfisAcesso, setores = setores)
 

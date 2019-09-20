@@ -13,11 +13,16 @@ def cadastroPeca():
     
     if form.validate_on_submit():
         nomePeca = dict(form.nome.choices).get(form.nome.data)
-        peca = Peca(nome=nomePeca, descricao=form.descricao.data, quantidade=form.quantidade.data)
-        db.session.add(peca)
-        db.session.commit()
-        flash('Peça Cadastrada com sucesso!')
-        return redirect(url_for('index'))
+        descricao = form.descricao.data
+        descricaoPecas = Peca.query.filter_by(descricao = descricao).first()
+
+        if not descricaoPecas or descricaoPecas is None:
+            peca = Peca(nome=nomePeca, descricao=descricao, quantidade=form.quantidade.data)
+            db.session.add(peca)
+            db.session.commit()
+            flash('Peça Cadastrada com sucesso!', 'info')
+            return redirect(url_for('index'))
+        flash('Já existe peça cadastrada com essa descrição!', 'error')
     return render_template('peca/cadastro.html', form=form)
     
 @app.route("/listaPecas")
@@ -36,18 +41,21 @@ def editarPeca(id):
         nome = (request.form.get("nome"))
         descricao = (request.form.get("descricao"))
         quantidade = (request.form.get("quantidade"))
-        
-        if nome and descricao and quantidade:
-            peca.nome = nome
-            peca.descricao = descricao
-            peca.quantidade = quantidade
 
-            db.session.commit()
-            
-            flash('Salvo com sucesso!')
-            return redirect(url_for("listaPecas"))
-        
-        flash('Não foi possível realizar a altração!')
+        if nome and descricao and quantidade:
+            descricaoPeca = Peca.query.filter_by(descricao=descricao).first()
+
+            if not descricaoPeca or descricaoPeca is None or descricaoPeca.id == id:
+                peca.nomePeca = nome
+                peca.descricao = descricao
+                peca.quantidade = quantidade
+
+                db.session.commit()
+
+                flash('Salvo com sucesso!', 'info')
+                return redirect(url_for("listaPecas"))
+
+        flash('Já possui peça cadastrada com essa descrição!', 'error')
     return render_template("peca/editar.html", peca = peca)
 
 @app.route("/excluirPeca/<int:id>", methods=['GET', 'POST'])

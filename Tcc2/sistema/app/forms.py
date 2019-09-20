@@ -52,6 +52,11 @@ class RegistraSetorForm(FlaskForm):
     abreviatura = StringField('Abreviatura:', validators=[DataRequired()])
     descricao = StringField('Descrição:', validators=[DataRequired()]) 
     submit = SubmitField('Salvar')
+
+    def validate_setor(self, nomeSetor):
+        setor = Setor.query.filter_by(nomeSetor=nomeSetor.data).first()
+        if setor is not None:
+            return False
     
 class BuscaBombasIntercambiaveis_byTipo(FlaskForm):
     buscaEquipamentos = StringField('Busca:', validators=[DataRequired()])

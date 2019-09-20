@@ -46,7 +46,7 @@ def cadastroTipoBomba():
             flash('Bomba cadastrada com sucesso!', 'info')
             return redirect(url_for('listaTipoBombas'))
         
-        flash("Já possui este tipo/modelo cadastrado!", 'error')
+        flash("Já possui este Tipo/Modelo cadastrado!", 'error')
     
     return render_template('bomba/cadastro.html', form=form)
 
@@ -72,7 +72,7 @@ def editarTipoBomba(id):
         if tipo and mca and rotacao:
             bomba = TipoBomba.query.filter_by(tipo=tipo).first()
 
-            if not bomba or bomba is None:
+            if not bomba or bomba is None or bomba.id == id:
                 tipoBomba.tipo = tipo
                 tipoBomba.mca = mca
                 tipoBomba.rotacao = rotacao
@@ -82,6 +82,6 @@ def editarTipoBomba(id):
                 flash('Salvo com sucesso!', 'info')
                 return redirect(url_for("listaTipoBombas"))
 
-            flash('Já possui uma Bomba com esse Tipo/Modelo', 'error')
+            flash('Já possui este Tipo/Modelo cadastrado!', 'error')
 
     return render_template("bomba/editar.html", tipoBomba = tipoBomba)

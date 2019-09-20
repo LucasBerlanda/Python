@@ -10,11 +10,18 @@ def cadastroSetor():
    
     form = RegistraSetorForm()
     if form.validate_on_submit():
-        setor = Setor(nomeSetor=form.nomeSetor.data, descricao=form.descricao.data, abreviatura=form.abreviatura.data)
-        db.session.add(setor)
-        db.session.commit()
-        flash('Setor Cadastrado com sucesso!')
-        return redirect(url_for('index'))
+        nomeSetor = form.nomeSetor.data
+
+        existeSetor = Setor.query.filter_by(nomeSetor=nomeSetor).first()
+
+        if not existeSetor or excluirSetor is None:
+            setor = Setor(nomeSetor=nomeSetor, descricao=form.descricao.data, abreviatura=form.abreviatura.data)
+            db.session.add(setor)
+            db.session.commit()
+            flash('Setor Cadastrado com sucesso!', 'info')
+            return redirect(url_for('index'))
+
+        flash('Já possui esse setor cadastrado!', 'error')
     return render_template('setor/cadastro.html', form=form)
 
 @app.route("/listaSetores")
@@ -35,17 +42,22 @@ def editarSetor(id):
         nomeSetor = (request.form.get("nomeSetor"))
         abreviatura = (request.form.get("abreviatura"))
         descricao = (request.form.get("descricao"))
-        
+
         if nomeSetor and abreviatura and descricao:
-            setor.nomeSetor = nomeSetor
-            setor.abreviatura = abreviatura
-            setor.descricao = descricao
-            
-            db.session.commit()
-            
-            flash('Salvo com sucesso!')
-            return redirect(url_for("listaSetores"))
-        flash('Não foi possível realizar a alteração')
+
+            existeSetor = Setor.query.filter_by(nomeSetor=nomeSetor).first()
+
+            # verifica se veio usuario ou não do select
+            if not existeSetor or existeSetor is None or existeSetor.id == id:
+                setor.nomeSetor = nomeSetor
+                setor.abreviatura = abreviatura
+                setor.descricao = descricao
+
+                db.session.commit()
+
+                flash('Salvo com sucesso!', 'info')
+                return redirect(url_for("listaSetores"))
+        flash('Já possui esse setor cadastrado!', 'error')
     return render_template("setor/editar.html", setor = setor)
 
 @app.route("/excluirSetor/<int:id>", methods=['GET', 'POST'])
@@ -59,10 +71,10 @@ def excluirSetor(id):
         db.session.delete(setor)
         db.session.commit()
         
-        flash("Setor excluido com sucesso!")
+        flash("Setor excluido com sucesso!", 'info')
         return redirect(url_for('listaSetores'))
     
-    flash("Não é possível excluir pois possui vínculos com usuários!")
+    flash("Não é possível excluir pois possui vínculos com usuários!", 'error')
     return redirect(url_for('listaSetores'))
     
     
