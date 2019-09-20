@@ -27,7 +27,9 @@
             <td>{{ tipoBomba.mca }}</td>
             <td>{{ tipoBomba.rotacao }}</td>
             <td>
-                <a href="/editarTipoBomba/{{ tipoBomba.id }}">Editar</a></td>
+                <a href="/editarTipoBomba/{{ tipoBomba.id }}">Editar</a>
+                <a href="/excluirTipoBomba/{{ tipoBomba.id }}">Excluir</a>
+            </td>
         </tr>
         {% endfor %}
     </table>

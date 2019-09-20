@@ -85,3 +85,25 @@ def editarTipoBomba(id):
             flash('Já possui este Tipo/Modelo cadastrado!', 'error')
 
     return render_template("bomba/editar.html", tipoBomba = tipoBomba)
+
+
+@app.route("/excluirTipoBomba/<int:id>", methods=['GET', 'POST'])
+@login_required
+def excluirTipoBomba(id):
+    bomba = TipoBomba.query.filter_by(id=id).first()
+    bb_peca = Bomba_peca.query.filter_by(tipoBomba_id=id).all()
+
+    if bomba:
+        for p in bb_peca:
+            db.session.delete(p)
+
+        db.session.delete(bomba)
+        db.session.commit()
+        print(p)
+
+
+        flash("Bomba e excluida com sucesso!", 'info')
+        return redirect(url_for('listaTipoBombas'))
+
+    flash("Não é possível excluir!", 'error')
+    return redirect(url_for('listaTipoBombas'))

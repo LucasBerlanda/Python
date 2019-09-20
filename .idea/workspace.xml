@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94cdb57f-f0b0-4b19-b599-181185045667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/pecaController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/pecaController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/setorController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/setorController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/usuarioController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/usuarioController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,18 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/pecaController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="74" column="59" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
+            <state relative-caret-position="213">
+              <caret line="101" column="16" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="16" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -51,10 +35,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="30" selection-start-line="30" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/setorController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+            <state relative-caret-position="144">
+              <caret line="67" column="4" lean-forward="true" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -91,7 +84,6 @@
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/usuario/registrar.html" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/setor/cadastro.html" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/cadastro.html" />
-        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/models.py" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/cadastro.html" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/lista.html" />
@@ -108,9 +100,10 @@
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/forms.py" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/controllers/setorController.py" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/controllers/usuarioController.py" />
-        <option value="$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html" />
         <option value="$PROJECT_DIR$/Tcc2/sistema/app/controllers/pecaController.py" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html" />
+        <option value="$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py" />
       </list>
     </option>
   </component>
@@ -173,7 +166,7 @@
               <item name="sistema" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="peca" type="462c0819:PsiDirectoryNode" />
+              <item name="bomba" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -228,7 +221,7 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19791667" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49925596" visible="true" weight="0.35515547" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49925596" visible="true" weight="0.502455" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50074404" side_tool="true" weight="0.5040917" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="3" />
@@ -266,13 +259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="24" selection-start-line="24" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tcc2/sistema/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -307,26 +293,6 @@
           <caret line="18" column="169" selection-start-line="18" selection-start-column="169" selection-end-line="18" selection-end-column="169" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/buscaEquipamentosController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/almoxarifadoController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -394,16 +360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/loginController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="19" column="73" lean-forward="true" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
@@ -466,16 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="74" column="59" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/peca/editar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
@@ -483,20 +429,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/setorController.py">
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/pecaController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        <state relative-caret-position="654">
+          <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/pecaController.py">
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/loginController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+        <state relative-caret-position="153">
+          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/buscaEquipamentosController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/almoxarifadoController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/templates/bomba/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="30" selection-start-line="30" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/setorController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="67" column="4" lean-forward="true" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/tipoBombaController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="101" column="16" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="16" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
