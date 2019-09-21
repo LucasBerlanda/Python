@@ -99,7 +99,6 @@ def excluirTipoBomba(id):
 
         db.session.delete(bomba)
         db.session.commit()
-        print(p)
 
 
         flash("Bomba e excluida com sucesso!", 'info')

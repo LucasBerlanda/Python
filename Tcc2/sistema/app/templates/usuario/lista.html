@@ -14,19 +14,19 @@
     
     <table class="table table-bordered table-hover">
         <tr>
-            <td>#</td>
-            <td>Usuario</td>
-            <td>Perfil</td>
-            <td>Setor</td>
-            <td>Opções</td>
+            <td class="text-center col-xs-1">#</td>
+            <td class="col-xs-2">Usuario</td>
+            <td class="text-center col-xs-1">Perfil</td>
+            <td class="col-xs-2">Setor</td>
+            <td class="text-center col-xs-1">Opções</td>
         </tr>
         {% for usuario in usuarios %}
         <tr>
-            <td>{{ usuario.id }}</td>
+            <td class="text-center">{{ usuario.id }}</td>
             <td>{{ usuario.username }}</td>
             {% for perfil in perfis %}
                 {% if perfil.id == usuario.perfilAcesso_id %}
-                <td>{{ perfil.nomePerfil }}</td>
+                <td class="text-center">{{ perfil.nomePerfil }}</td>
                 {% endif %}
             {% endfor %}
             {% for setor in setores %}
@@ -34,8 +34,10 @@
                 <td>{{ setor.nomeSetor }}</td>
                 {% endif %}
             {% endfor %}    
-            <td><a href="/excluirUsuario/{{ usuario.id }}">Excluir</a>
-                <a href="/editarUsuario/{{ usuario.id }}">Editar</a></td>
+            <td class="text-center">
+                <a href="/editarUsuario/{{ usuario.id }}"><i class="far fa-edit"></i></a>
+                <a href="/excluirUsuario/{{ usuario.id }}"><i class="excluir far fa-trash-alt"></i></a>
+            </td>
         </tr>
         {% endfor %}
     </table>

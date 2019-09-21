@@ -14,20 +14,22 @@
     
     <table class="table table-bordered table-hover">
         <tr>
-            <td>#</td>
-            <td>Nome</td>
-            <td>Descrição</td>
-            <td>Quantidade</td>
-            <td>Opções</td>
+            <td class="text-center col-xs-1">#</td>
+            <td class="col-xs-2">Nome</td>
+            <td class="col-xs-2">Descrição</td>
+            <td class="text-center col-xs-1">Quantidade</td>
+            <td class="text-center col-xs-1">Opções</td>
         </tr>
         {% for peca in pecas %}
         <tr>
-            <td>{{ peca.id }}</td>
+            <td class="text-center" >{{ peca.id }}</td>
             <td>{{ peca.nome }}</td>
             <td>{{ peca.descricao }}</td>
-            <td>{{ peca.quantidade }}</td>
-            <td><a href="/excluirPeca/{{ peca.id }}">Excluir</a>
-                <a href="/editarPeca/{{ peca.id }}">Editar</a></td>
+            <td class="text-center">{{ peca.quantidade }}</td>
+            <td class="text-center">
+                <a href="/editarPeca/{{ peca.id }}"><i class="far fa-edit"></i></a>
+                <a href="/excluirPeca/{{ peca.id }}"><i class="excluir far fa-trash-alt"></i></a>
+            </td>
         </tr>
         {% endfor %}
     </table>

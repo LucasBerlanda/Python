@@ -14,21 +14,21 @@
     
     <table class="table table-bordered table-hover">
         <tr>
-            <td>#</td>
-            <td>Tipo</td>
-            <td>Mca</td>
-            <td>Rotação</td>
-            <td>Opções</td>
+            <td class="text-center col-xs-1">#</td>
+            <td class="col-xs-2">Tipo</td>
+            <td class="text-center col-xs-1">Mca</td>
+            <td class="text-center col-xs-1">Rotação</td>
+            <td class="text-center col-xs-1">Opções</td>
         </tr>
         {% for tipoBomba in tipoBombas %}
         <tr>
-            <td>{{ tipoBomba.id }}</td>
+            <td class="text-center">{{ tipoBomba.id }}</td>
             <td>{{ tipoBomba.tipo }}</td>
-            <td>{{ tipoBomba.mca }}</td>
-            <td>{{ tipoBomba.rotacao }}</td>
-            <td>
-                <a href="/editarTipoBomba/{{ tipoBomba.id }}">Editar</a>
-                <a href="/excluirTipoBomba/{{ tipoBomba.id }}">Excluir</a>
+            <td class="text-right">{{ tipoBomba.mca }}</td>
+            <td class="text-right">{{ tipoBomba.rotacao }}</td>
+            <td class="text-center">
+                <a href="/editarTipoBomba/{{ tipoBomba.id }}"><i class="far fa-edit"></i></a>
+                <a href="/excluirTipoBomba/{{ tipoBomba.id }}"><em class="excluir far fa-trash-alt"></em></a>
             </td>
         </tr>
         {% endfor %}
