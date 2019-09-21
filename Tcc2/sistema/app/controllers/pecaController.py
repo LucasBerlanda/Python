@@ -9,8 +9,10 @@ from flask_login import login_required
 def cadastroPeca():
     
     form = RegistraPecaForm()
-    form.nome.choices = [(nomePeca.id, nomePeca.nome) for nomePeca in NomePecas.query.all()]
-    
+    lista = [(nomePeca.id, nomePeca.nome) for nomePeca in NomePecas.query.all()]
+    #lista.append((1, "Selecione"))
+    form.nome.choices = lista
+
     if form.validate_on_submit():
         nomePeca = dict(form.nome.choices).get(form.nome.data)
         descricao = form.descricao.data
@@ -61,7 +63,7 @@ def editarPeca(id):
 @app.route("/excluirPeca/<int:id>", methods=['GET', 'POST'])
 @login_required
 def excluirpeca(id):
-    peca= Peca.query.filter_by(id = id).first()
+    peca = Peca.query.filter_by(id = id).first()
     bomba_peca = Bomba_peca.query.filter_by(peca_id = id).first()
     
     if not bomba_peca or bomba_peca is None:
@@ -69,7 +71,7 @@ def excluirpeca(id):
         db.session.delete(peca)
         db.session.commit()
         
-        flash("Peca excluida com sucesso!", 'success')
+        flash("Peca excluida com sucesso!", 'info')
         return redirect(url_for('listaPecas'))
     
     flash("Não é possível excluir pois possui vínculos com bombas!", 'error')

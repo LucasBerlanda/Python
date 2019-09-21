@@ -8,7 +8,6 @@
 	{% else %}
 		<title>Sistema</title>
 	{% endif %}
-
 	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ url_for('static', filename='css/datepicker3.css') }}" rel="stylesheet">
@@ -160,7 +159,7 @@
 		</ul>
 	</div><!--/.sidebar-->
 
-	
+
 	{% with msgError = get_flashed_messages(category_filter=["error"]) %}
 		{% if msgError %}
 			<div class="col-sm-offset-2">
@@ -192,6 +191,7 @@
 	{% block content %}
 	<h3>{{ current_user.login }}</h3>
 	{% endblock %}
+
 
 	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
