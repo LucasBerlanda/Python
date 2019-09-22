@@ -7,4 +7,7 @@ from flask_login import login_required
 @app.route('/entradaEstoque', methods=['GET', 'POST'])
 def entradaEstoque():
 
-        return render_template('almoxarifado/entradaProduto.html')
+        pecas = Peca.query.all()
+        bombas = TipoBomba.query.all()
+
+        return render_template('almoxarifado/entradaProduto.html', pecas = pecas, bombas = bombas)

@@ -16,10 +16,11 @@ def cadastroPeca():
     if form.validate_on_submit():
         nomePeca = dict(form.nome.choices).get(form.nome.data)
         descricao = form.descricao.data
+
         descricaoPecas = Peca.query.filter_by(descricao = descricao).first()
 
         if not descricaoPecas or descricaoPecas is None:
-            peca = Peca(nome=nomePeca, descricao=descricao, quantidade=form.quantidade.data)
+            peca = Peca(nome=nomePeca, descricao=descricao)
             db.session.add(peca)
             db.session.commit()
             flash('Peça Cadastrada com sucesso!', 'info')
@@ -42,15 +43,13 @@ def editarPeca(id):
     if request.method == "POST":
         nome = (request.form.get("nome"))
         descricao = (request.form.get("descricao"))
-        quantidade = (request.form.get("quantidade"))
 
-        if nome and descricao and quantidade:
+        if nome and descricao:
             descricaoPeca = Peca.query.filter_by(descricao=descricao).first()
 
             if not descricaoPeca or descricaoPeca is None or descricaoPeca.id == id:
                 peca.nomePeca = nome
                 peca.descricao = descricao
-                peca.quantidade = quantidade
 
                 db.session.commit()
 

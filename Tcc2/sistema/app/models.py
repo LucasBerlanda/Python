@@ -10,7 +10,9 @@ class TipoBomba(db.Model):
     tipo = db.Column(db.String(10), unique=True, nullable=False)
     mca = db.Column(db.Float)
     rotacao = db.Column(db.Integer)
-    
+    tipoPeca = db.Column(db.Integer, default=1)
+    qtEstoque = db.Column(db.Integer, default=0)
+
     bomba_peca = db.relationship('Bomba_peca')
    
     def __init__(self, tipo, mca, rotacao):
@@ -18,32 +20,33 @@ class TipoBomba(db.Model):
         self.tipo = tipo
         self.mca = mca
         self.rotacao = rotacao
-   
-        
+
+
 class Peca(db.Model):
     __tablename__ = "peca"
     
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(95), nullable=False)
     descricao = db.Column(db.String(40), unique=True, nullable=False)
-    quantidade = db.Column(db.Integer, nullable=False)
-    
+    tipoPeca = db.Column(db.Integer, default=2)
+    qtEstoque = db.Column(db.Integer, default=0)
+
     bomba_peca = db.relationship('Bomba_peca')
 
-    
-    def __init__(self, nome, descricao, quantidade):
+    def __init__(self, nome, descricao):
         
         self.nome = nome
         self.descricao = descricao
-        self.quantidade = quantidade
+
 
 class Bomba_peca(db.Model):
     
     __tablename__ = "bomba_peca"
     
     id = db.Column(db.Integer,primary_key=True, autoincrement=True)
-    tipoBomba_id = db.Column(db.Integer, db.ForeignKey('tipoBomba.id'), nullable=False)
-    peca_id = db.Column(db.Integer, db.ForeignKey('peca.id'), nullable=False) 
+    tipoBomba_id = db.Column(db.Integer
+                             , db.ForeignKey('tipoBomba.id'), nullable=False)
+    peca_id = db.Column(db.Integer, db.ForeignKey('peca.id'), nullable=False)
     
     def __init__(self, tipoBomba_id, peca_id):
         
