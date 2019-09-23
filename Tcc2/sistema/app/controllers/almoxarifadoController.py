@@ -34,6 +34,8 @@ def entradaProduto():
                         db.session.add(estoque)
                         db.session.commit()
 
+                        flash('Inserido com sucesso!', 'info')
+
                 elif modelo == '2':
 
                         peca = Peca.query.filter_by(id=equipamento).first()
@@ -46,11 +48,13 @@ def entradaProduto():
                         db.session.add(estoque)
                         db.session.commit()
 
+                        flash('Inserido com sucesso!', 'info')
+
                 else:
                         flash('Tipo ou modelo do equipamento não existe!', 'error')
                         return redirect(url_for('entradaEstoque'))
 
-                flash('Inserido com sucesso!', 'info')
+
                 return redirect(url_for('entradaEstoque'))
 
 

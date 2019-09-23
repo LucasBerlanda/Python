@@ -1,15 +1,18 @@
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="{{usuario.id}}">
+                <i class="fas fa-pen"></i>
+            </a></li>
+            <li class="active">Edição / Usuário</li>
+        </ol>
+    </div><!--/.row-->
+</div>
 {% extends 'base.html' %}
 
 {% block content %}
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-<div class="row">
-    <ol class="breadcrumb">
-        <li><a href="{{usuario.id}}">
-            <i class="fas fa-pen"></i>
-        </a></li>
-        <li class="active">Edição / Usuário</li>
-    </ol>
-</div><!--/.row-->
+
     <form action="" method="post">
         <div class="col-xs-12">
             <h1 class="text-center">Editar Usuário</h1>

@@ -1,15 +1,17 @@
+<div class="col-sm-offset-2 col-sm-10">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="{{peca.id}}">
+                <i class="fas fa-pen"></i>
+            </a></li>
+            <li class="active">Edição / Peça</li>
+        </ol>
+    </div><!--/.row-->
+</div>
 {% extends 'base.html' %}
 
 {% block content %}
 <div class="col-sm-offset-2 col-sm-10">
-<div class="row">
-    <ol class="breadcrumb">
-        <li><a href="{{peca.id}}">
-            <i class="fas fa-pen"></i>
-        </a></li>
-        <li class="active">Edição / Peça</li>
-    </ol>
-</div><!--/.row-->
     <h1 class="text-center">Editar Peça</h1>
     <form action="" method="POST">
         <div class="col-xs-8">
