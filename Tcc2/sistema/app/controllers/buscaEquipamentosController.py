@@ -1,9 +1,8 @@
-from flask import render_template, url_for, redirect, request, flash, json, jsonify 
+from flask import render_template
 from app import app, db
 from app.models import Peca, TipoBomba, Bomba_peca, Peca
 from app.forms import BuscaBombasIntercambiaveis_byTipo
-from flask_login import login_required
-from sqlalchemy import text, select, and_, join
+
 
 @app.route('/equipamentos', methods=['GET', 'POST'])
 def equipamentos():

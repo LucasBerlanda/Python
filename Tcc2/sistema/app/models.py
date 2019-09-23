@@ -120,8 +120,32 @@ class NomePecas(db.Model):
         
         self.nome = nome
 
+
+
+class EntradaEstoque(db.Model):
+    __tablename__ = "entradaEstoque"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    modelo = db.Column(db.String(25), nullable=False)
+    equipamento = db.Column(db.String(100), nullable=False)
+    estoqueAntigo = db.Column(db.Integer, nullable=False)
+    entrada = db.Column(db.Integer, nullable=False)
+    total = db.Column(db.Integer, nullable=False)
+    dataEntrada = db.Column(db.String(12), nullable=False)
+    observacao = db.Column(db.String(100), nullable=False)
+
+    def __init__(self, modelo, equipamento, estoqueAntigo, entrada, total, dataEntrada, observacao):
+        self.modelo = modelo
+        self.equipamento = equipamento
+        self.estoqueAntigo = estoqueAntigo
+        self.entrada = entrada
+        self.total = total
+        self.dataEntrada = dataEntrada
+        self.observacao = observacao
+
 db.create_all()
-    
+
+
 @login.user_loader
 def load_user(id):
     return Usuario.query.get(int(id))
