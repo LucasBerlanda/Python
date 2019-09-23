@@ -9,7 +9,7 @@ def entradaEstoque():
         pecas = Peca.query.all()
         bombas = TipoBomba.query.all()
 
-        return render_template('almoxarifado/entradaProduto.html', pecas = pecas, bombas = bombas)
+        return render_template('almoxarifado/entradaProduto.html', pecas=pecas, bombas=bombas)
 
 @app.route('/entradaProduto', methods=['GET','POST'])
 def entradaProduto():
@@ -22,34 +22,23 @@ def entradaProduto():
                 total = (request.form.get('total'))
                 data = (request.form.get('data'))
                 observacao = (request.form.get('observacao'))
-                print("modelo", modelo)
-                print(equipamento)
-                print(estoque)
-                print(entrada)
-                print(total)
-                print(data)
-                print(observacao)
-
 
                 if modelo == '1':
-                        print('primeiro if')
-                        bomba = TipoBomba.query.filter_by(id = equipamento).first()
-                        print("bomba", bomba.tipo)
+
+                        bomba = TipoBomba.query.filter_by(id=equipamento).first()
 
                         estoque = EntradaEstoque(modelo=modelo, equipamento=bomba.tipo, estoqueAntigo=estoque,
                                                  entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
-
                         atualizaEstoqueBomba(equipamento, total)
 
                         db.session.add(estoque)
                         db.session.commit()
 
                 elif modelo == '2':
-                        print('segundo if')
-                        peca = Peca.query.filter_by(id=equipamento).first()
-                        print("peca", peca.tipo)
 
-                        estoque = EntradaEstoque(modelo=modelo, equipamento=bomba.tipo, estoqueAntigo=estoque,
+                        peca = Peca.query.filter_by(id=equipamento).first()
+
+                        estoque = EntradaEstoque(modelo=modelo, equipamento=peca.descricao, estoqueAntigo=estoque,
                                                  entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
 
                         atualizaEstoquePeca(equipamento, total)
@@ -58,8 +47,6 @@ def entradaProduto():
                         db.session.commit()
 
                 else:
-                        print('terceiro if')
-
                         flash('Tipo ou modelo do equipamento não existe!', 'error')
                         return redirect(url_for('entradaEstoque'))
 
@@ -78,6 +65,8 @@ def atualizaEstoqueBomba(equipamento, total):
 
 def atualizaEstoquePeca(equipamento, total):
 
-        p = update(Peca).where(Peca.id == equipamento).values(qtEstoque=total)
+        p = Peca.query.filter_by(id=equipamento).first()
+
+        p.qtEstoque = total
 
         db.session.commit()

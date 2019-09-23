@@ -4,9 +4,6 @@
     <list default="true" id="94cdb57f-f0b0-4b19-b599-181185045667" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/almoxarifadoController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/almoxarifadoController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/buscaEquipamentosController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/controllers/buscaEquipamentosController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tcc2/sistema/app/templates/almoxarifado/entradaProduto.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tcc2/sistema/app/templates/almoxarifado/entradaProduto.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/almoxarifadoController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="175">
+              <caret line="40" column="90" selection-start-line="40" selection-start-column="90" selection-end-line="40" selection-end-column="90" />
               <folding>
                 <element signature="e#0#83#0" expanded="true" />
               </folding>
@@ -202,7 +199,7 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28348213" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49925596" visible="true" weight="0.22913256" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49925596" visible="true" weight="0.29459903" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50074404" side_tool="true" weight="0.5040917" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="3" />
@@ -469,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tcc2/sistema/app/controllers/almoxarifadoController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="175">
+          <caret line="40" column="90" selection-start-line="40" selection-start-column="90" selection-end-line="40" selection-end-column="90" />
           <folding>
             <element signature="e#0#83#0" expanded="true" />
           </folding>
