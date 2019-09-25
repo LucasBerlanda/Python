@@ -20,7 +20,7 @@ def cadastroUsuario():
         db.session.commit()
         flash('Parabéns, novo usuário registrado!', 'info')
         return redirect(url_for('index'))
-    return render_template('usuario/registrar.html', title='Register', form=form)
+    return render_template('usuario/registrar.html', title='Register', form=form, icone="fas fa-user-plus", bloco1="Cadastro", bloco2="Usuários")
 
 @app.route("/listaUsuarios")
 @login_required
@@ -31,7 +31,7 @@ def listaUsuarios():
     
     #usuarios = db.session.query(Usuario).from_statement(text("select u.id, u.nomeUsuario, u.login, setor.nome from usuario u join setor s on u.setor_id = s.id join perfilacesso p on u.perfilAcesso_id = p.id")).all()
 
-    return render_template("usuario/lista.html", usuarios = usuarios, perfis=perfis, setores=setores)
+    return render_template("usuario/lista.html", usuarios = usuarios, perfis=perfis, setores=setores, icone="fas fa-list", bloco1="Lista", bloco2="Usuários")
 
 @app.route("/editarUsuario/<int:id>", methods=['GET', 'POST'])
 @login_required
@@ -64,7 +64,7 @@ def editarUsuario(id):
 
                 flash('Já existe usuário com esse nome!', 'error')
 
-        return render_template("usuario/editar.html", usuario = usuario, perfisAcesso = perfisAcesso, setores = setores)
+        return render_template("usuario/editar.html", usuario = usuario, perfisAcesso = perfisAcesso, setores = setores, icone="fas fa-pen", bloco1="Edição", bloco2="Usuário")
 
 
 @app.route("/excluirUsuario/<int:id>", methods=['GET', 'POST'])

@@ -22,7 +22,7 @@ def cadastroSetor():
             return redirect(url_for('index'))
 
         flash('Já possui esse setor cadastrado!', 'error')
-    return render_template('setor/cadastro.html', form=form)
+    return render_template('setor/cadastro.html', form=form, icone="fas fa-plus", bloco1="Cadastro", bloco2="Setor")
 
 @app.route("/listaSetores")
 @login_required
@@ -30,7 +30,7 @@ def listaSetores():
     
     setores = Setor.query.all()
     
-    return render_template("setor/lista.html", setores = setores)
+    return render_template("setor/lista.html", setores = setores, icone="fas fa-list", bloco1="Lista", bloco2="Setores")
 
 
 @app.route("/editarSetor/<int:id>", methods=['GET', 'POST'])
@@ -58,7 +58,7 @@ def editarSetor(id):
                 flash('Salvo com sucesso!', 'info')
                 return redirect(url_for("listaSetores"))
         flash('Já possui esse setor cadastrado!', 'error')
-    return render_template("setor/editar.html", setor = setor)
+    return render_template("setor/editar.html", setor = setor, icone="fas fa-pen", bloco1="Edição", bloco2="Setor")
 
 @app.route("/excluirSetor/<int:id>", methods=['GET', 'POST'])
 @login_required

@@ -9,7 +9,7 @@ def entradaEstoque():
         pecas = Peca.query.all()
         bombas = TipoBomba.query.all()
 
-        return render_template('almoxarifado/entradaProduto.html', pecas=pecas, bombas=bombas)
+        return render_template('almoxarifado/entradaProduto.html', icone="fas fa-warehouse", pecas=pecas, bombas=bombas, bloco1='Almoxarifado', bloco2="Entrada")
 
 @app.route('/entradaProduto', methods=['GET','POST'])
 def entradaProduto():

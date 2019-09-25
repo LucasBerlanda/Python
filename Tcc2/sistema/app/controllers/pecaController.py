@@ -26,13 +26,13 @@ def cadastroPeca():
             flash('Peça Cadastrada com sucesso!', 'info')
             return redirect(url_for('index'))
         flash('Já existe peça cadastrada com essa descrição!', 'error')
-    return render_template('peca/cadastro.html', form=form)
+    return render_template('peca/cadastro.html', form=form, icone="fas fa-plus", bloco1="Cadastro", bloco2="Peça")
     
 @app.route("/listaPecas")
 @login_required
 def listaPecas():
     pecas = Peca.query.all()
-    return render_template("peca/lista.html", pecas = pecas)
+    return render_template("peca/lista.html", pecas = pecas, icone="fas fa-list", bloco1="Lista", bloco2="Peças")
 
 
 @app.route("/editarPeca/<int:id>", methods=['GET', 'POST'])
@@ -57,7 +57,7 @@ def editarPeca(id):
                 return redirect(url_for("listaPecas"))
 
         flash('Já possui peça cadastrada com essa descrição!', 'error')
-    return render_template("peca/editar.html", peca = peca)
+    return render_template("peca/editar.html", peca=peca, icone="fas fa-pen", bloco1="Edição", bloco2="Peça")
 
 @app.route("/excluirPeca/<int:id>", methods=['GET', 'POST'])
 @login_required

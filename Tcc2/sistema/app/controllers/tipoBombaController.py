@@ -48,7 +48,7 @@ def cadastroTipoBomba():
         
         flash("Já possui este Tipo/Modelo cadastrado!", 'error')
     
-    return render_template('bomba/cadastro.html', form=form)
+    return render_template('bomba/cadastro.html', form=form, icone="fas fa-plus", bloco1="Cadastro", bloco2="Bombas")
 
 
 @app.route('/listaTipoBombas')
@@ -56,7 +56,7 @@ def cadastroTipoBomba():
 def listaTipoBombas():
     tipoBombas = TipoBomba.query.all()
 
-    return render_template("bomba/lista.html", tipoBombas=tipoBombas)
+    return render_template("bomba/lista.html", tipoBombas=tipoBombas, icone="fas fa-list", bloco1="Lista", bloco2="Bombas")
 
 
 @app.route("/editarTipoBomba/<int:id>", methods=['GET', 'POST'])
@@ -84,7 +84,7 @@ def editarTipoBomba(id):
 
             flash('Já possui este Tipo/Modelo cadastrado!', 'error')
 
-    return render_template("bomba/editar.html", tipoBomba = tipoBomba)
+    return render_template("bomba/editar.html", tipoBomba = tipoBomba, icone="fas fa-pen", bloco1="Edição", bloco2="Bombas")
 
 
 @app.route("/excluirTipoBomba/<int:id>", methods=['GET', 'POST'])

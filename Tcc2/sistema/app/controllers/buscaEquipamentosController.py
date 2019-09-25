@@ -26,7 +26,7 @@ def equipamentos():
                 
                 return render_template('busca/equipamentos.html', form=form, pecas=pecasBombaSelecionada, tipoBombasCompativeis=tipoBombasCompativeis)
 
-    return render_template('busca/equipamentos.html', form=form)
+    return render_template('busca/equipamentos.html', form=form, icone="fas fa-search", bloco1='Busca de Bombas', bloco2='Peças Intercambiáveis')
 
 def bombasByRolamento(pecas):
     # Busca id da peça com nome Rolamento na lista de peças da bomba filtrada
