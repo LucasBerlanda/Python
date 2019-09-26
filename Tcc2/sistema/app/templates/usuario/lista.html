@@ -30,10 +30,40 @@
             {% endfor %}    
             <td class="text-center">
                 <a href="/editarUsuario/{{ usuario.id }}"><i class="far fa-edit"></i></a>
-                <a href="/excluirUsuario/{{ usuario.id }}"><i class="excluir far fa-trash-alt"></i></a>
+                <a id="idUsuario" idUser="{{ usuario.id }}" data-toggle="modal" data-target="#bannerformmodal"><i class="excluir far fa-trash-alt"></i></a>
             </td>
         </tr>
         {% endfor %}
     </table>
-</div>    
+</div>
+
+
+<div class="modal fade bannerformmodal" tabindex="-1" id="bannerformmodal" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Excluir</h4>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja excluir o usuário?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger"></a >Confirma</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<script>
+    $(document).ready(function(){
+        $('#idUsuario').change(function(){
+            var id = document.getElementsById('idUser').val();
+            console.log(id);
+        });
+    });
+</script>
 {% endblock %}

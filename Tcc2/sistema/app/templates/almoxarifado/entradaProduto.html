@@ -82,37 +82,25 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    $(function () {
-        $('#calendario').datepicker({
-        });
-    });
-</script>
+
 
 <script>
     $('#bomba').hide();
     $('#peca').hide();
-
     $(document).ready(function(){
         $('#modelo').change(function(){
             var modelo = $('#modelo option:selected');
             var modeloSelecionado = modelo.val();
             document.getElementById('estoque').value = 0
-
             if(modeloSelecionado == 1){
                $('#bomba').show();
                $('#peca').hide();
-
                $(document).ready(function(){
                     $('#eq_bomba').change(function(){
                         var quantidadeEstoque = $(this).find(':selected').attr('data-estoque');
-
                         document.getElementById('totalEstoque').value = 0
-
                         document.getElementById('entrada').value = 0
-
                         document.getElementById('estoque').value = quantidadeEstoque
-
                         $("#entrada").focusout(function(){
                             var entrada = $("#entrada").val();
                             var total = parseInt(quantidadeEstoque) + parseInt(entrada);
@@ -120,21 +108,15 @@
                         });
                     });
                 });
-
             }else if(modeloSelecionado == 2){
                 $('#peca').show();
                 $('#bomba').hide();
-
                 $(document).ready(function(){
                     $('#eq_peca').change(function(){
                         var quantidadeEstoque = $(this).find(':selected').attr('data-estoque');
-
                         document.getElementById('totalEstoque').value = 0
-
                         document.getElementById('entrada').value = 0
-
                         document.getElementById('estoque').value = quantidadeEstoque
-
                         $("#entrada").focusout(function(){
                             var entrada = $("#entrada").val();
                             var total = parseInt(quantidadeEstoque) + parseInt(entrada);
@@ -145,8 +127,5 @@
             }
         });
     });
-
-
-
 </script>
 {% endblock %}
