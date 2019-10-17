@@ -1,7 +1,8 @@
-from flask import render_template
+from flask import render_template, Response, request
 from app import app, db
 from app.models import Peca, TipoBomba, Bomba_peca, Peca
 from app.forms import BuscaBombasIntercambiaveis_byTipo
+import json
 
 
 @app.route('/equipamentos', methods=['GET', 'POST'])
@@ -94,5 +95,13 @@ def getBombasCompativeis(bombasRolamento, bombasEixo, bombasBucha, idBombaFiltra
     
     return ''
 
-    
-    
+@app.route('/autocompleteBuscaBombas', methods=['GET'])
+def autocompleteBuscaBombas():
+
+    bomba = TipoBomba.query.all()
+
+    list = []
+    for b in bomba:
+        list.append(b.tipo)
+
+    return Response(json.dumps(list), mimetype='application/json')
