@@ -8,15 +8,13 @@
     
     <table class="table table-bordered table-hover">
         <tr>
-            <td class="text-center col-xs-1">#</td>
-            <td class="col-xs-2">Setor</td>
+            <td class="col-xs-3">Setor</td>
             <td class="text-center col-xs-1">Abreviatura</td>
             <td class="col-xs-2">Descrição</td>
             <td class="text-center col-xs-1">Opções</td>
         </tr>
         {% for setor in setores %}
         <tr>
-            <td class="text-center">{{ setor.id }}</td>
             <td>{{ setor.nomeSetor }}</td>
             <td class="text-center">{{ setor.abreviatura }}</td>
             <td>{{ setor.descricao }}</td>

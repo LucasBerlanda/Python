@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
@@ -8,14 +7,12 @@
     
     <table id="id_tabela" class="table table-bordered table-hover">
         <tr>
-            <td class="text-center col-xs-1">#</td>
-            <td class="col-xs-2">Nome</td>
+            <td class="col-xs-3">Nome</td>
             <td class="col-xs-2">Descrição</td>
             <td class="text-center col-xs-1">Opções</td>
         </tr>
         {% for peca in pecas %}
         <tr>
-            <td class="text-center" >{{ peca.id }}</td>
             <td>{{ peca.nome }}</td>
             <td>{{ peca.descricao }}</td>
             <td class="text-center">
