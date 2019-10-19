@@ -15,6 +15,7 @@ def entradaEstoque():
 def entradaProduto():
 
         if request.method == 'POST':
+
                 modelo = (request.form.get('modelo'))
                 equipamentoPeca = (request.form.get('equipamentoPeca'))
                 equipamentoBomba = (request.form.get('equipamentoBomba'))
@@ -24,61 +25,56 @@ def entradaProduto():
                 data = (request.form.get('data'))
                 observacao = (request.form.get('observacao'))
 
-                print("boma", equipamentoBomba)
-                print("peca", equipamentoPeca)
+                if modelo and entrada and estoque and total and data or equipamentoPeca or equipamentoBomba:
 
-                if modelo == '1':
+                        if modelo == '1':
 
-                        bomba = TipoBomba.query.filter_by(id=equipamentoBomba).first()
+                                bomba = TipoBomba.query.filter_by(id=equipamentoBomba).first()
 
-                        print("selct:", bomba)
+                                estoque = EntradaEstoque(modelo=modelo, equipamento=bomba.tipo, estoqueAntigo=estoque,
+                                                         entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
+                                atualizaEstoqueBomba(equipamentoBomba, total)
 
-                        estoque = EntradaEstoque(modelo=modelo, equipamento=bomba.tipo, estoqueAntigo=estoque,
-                                                 entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
-                        atualizaEstoqueBomba(equipamentoBomba, total)
+                                db.session.add(estoque)
+                                db.session.commit()
 
-                        db.session.add(estoque)
-                        db.session.commit()
+                                flash('Inserido com sucesso!', 'info')
+                                return redirect(url_for('entradaEstoque'))
 
-                        flash('Inserido com sucesso!', 'info')
+                        elif modelo == '2':
 
-                elif modelo == '2':
+                                peca = Peca.query.filter_by(id=equipamentoPeca).first()
 
-                        peca = Peca.query.filter_by(id=equipamentoPeca).first()
+                                print('selct;', peca)
+                                estoque = EntradaEstoque(modelo=modelo, equipamento=peca.descricao, estoqueAntigo=estoque,
+                                                         entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
 
-                        print('selct;', peca)
-                        estoque = EntradaEstoque(modelo=modelo, equipamento=peca.descricao, estoqueAntigo=estoque,
-                                                 entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
+                                atualizaEstoquePeca(equipamentoPeca, total)
 
-                        atualizaEstoquePeca(equipamentoPeca, total)
+                                db.session.add(estoque)
+                                db.session.commit()
 
-                        db.session.add(estoque)
-                        db.session.commit()
+                                flash('Inserido com sucesso!', 'info')
+                                return redirect(url_for('entradaEstoque'))
 
-                        flash('Inserido com sucesso!', 'info')
+                        else:
+                                flash('Tipo ou modelo do equipamento não existe!', 'error')
+                                return redirect(url_for('entradaEstoque'))
 
-                else:
-                        flash('Tipo ou modelo do equipamento não existe!', 'error')
-                        return redirect(url_for('entradaEstoque'))
+                flash('Não foi possível realizar a operação', 'error')
 
-
-                return redirect(url_for('entradaEstoque'))
-
+        return redirect(url_for('entradaEstoque'))
 
 def atualizaEstoqueBomba(equipamento, total):
 
         bb = TipoBomba.query.filter_by(id=equipamento).first()
-        print(total)
         bb.qtEstoque = total
 
-
         db.session.commit()
-
 
 def atualizaEstoquePeca(equipamento, total):
 
         p = Peca.query.filter_by(id=equipamento).first()
-
         p.qtEstoque = total
 
         db.session.commit()
@@ -93,7 +89,6 @@ def autocompleteBombas():
         for b in bombas:
                 lista.append({'id': b.id, 'qtEstoque': b.qtEstoque, 'tipo': b.tipo})
 
-        print(lista)
 
         return Response(json.dumps(lista), mimetype='application/json')
 
