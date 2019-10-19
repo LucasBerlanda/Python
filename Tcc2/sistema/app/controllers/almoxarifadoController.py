@@ -1,8 +1,8 @@
-from flask import render_template, url_for, redirect, request, flash, json, jsonify
+from flask import render_template, url_for, redirect, request, flash, jsonify, Response
 from app import app, db
 from app.models import Peca, TipoBomba, Bomba_peca, Peca, EntradaEstoque
 from sqlalchemy import update
-
+import json
 @app.route('/entradaEstoque', methods=['GET', 'POST'])
 def entradaEstoque():
 
@@ -16,20 +16,26 @@ def entradaProduto():
 
         if request.method == 'POST':
                 modelo = (request.form.get('modelo'))
-                equipamento = (request.form.get('equipamento'))
+                equipamentoPeca = (request.form.get('equipamentoPeca'))
+                equipamentoBomba = (request.form.get('equipamentoBomba'))
                 estoque = (request.form.get('estoque'))
                 entrada = (request.form.get('entrada'))
                 total = (request.form.get('total'))
                 data = (request.form.get('data'))
                 observacao = (request.form.get('observacao'))
 
+                print("boma", equipamentoBomba)
+                print("peca", equipamentoPeca)
+
                 if modelo == '1':
 
-                        bomba = TipoBomba.query.filter_by(id=equipamento).first()
+                        bomba = TipoBomba.query.filter_by(id=equipamentoBomba).first()
+
+                        print("selct:", bomba)
 
                         estoque = EntradaEstoque(modelo=modelo, equipamento=bomba.tipo, estoqueAntigo=estoque,
                                                  entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
-                        atualizaEstoqueBomba(equipamento, total)
+                        atualizaEstoqueBomba(equipamentoBomba, total)
 
                         db.session.add(estoque)
                         db.session.commit()
@@ -38,12 +44,13 @@ def entradaProduto():
 
                 elif modelo == '2':
 
-                        peca = Peca.query.filter_by(id=equipamento).first()
+                        peca = Peca.query.filter_by(id=equipamentoPeca).first()
 
+                        print('selct;', peca)
                         estoque = EntradaEstoque(modelo=modelo, equipamento=peca.descricao, estoqueAntigo=estoque,
                                                  entrada=entrada, total=total, dataEntrada=data, observacao=observacao)
 
-                        atualizaEstoquePeca(equipamento, total)
+                        atualizaEstoquePeca(equipamentoPeca, total)
 
                         db.session.add(estoque)
                         db.session.commit()
@@ -61,8 +68,9 @@ def entradaProduto():
 def atualizaEstoqueBomba(equipamento, total):
 
         bb = TipoBomba.query.filter_by(id=equipamento).first()
-
+        print(total)
         bb.qtEstoque = total
+
 
         db.session.commit()
 
@@ -74,3 +82,33 @@ def atualizaEstoquePeca(equipamento, total):
         p.qtEstoque = total
 
         db.session.commit()
+
+
+@app.route('/autocompleteBombas', methods=['GET'])
+def autocompleteBombas():
+
+        bombas = TipoBomba.query.all()
+
+        lista = []
+        for b in bombas:
+                lista.append({'id': b.id, 'qtEstoque': b.qtEstoque, 'tipo': b.tipo})
+
+        print(lista)
+
+        return Response(json.dumps(lista), mimetype='application/json')
+
+@app.route('/autocompletePecas', methods=['GET'])
+def autocompletePecas():
+
+        pecas = Peca.query.all()
+
+        listapecas = []
+        for p in pecas:
+                nome = p.nome
+                tipoDescricao = p.descricao
+                descricao = nome + " - " + tipoDescricao
+                listapecas.append({'id': p.id, 'qtEstoque': p.qtEstoque, 'tipo': descricao})
+
+        lines = sorted(listapecas, key=lambda k: k['tipo'], reverse=False)
+
+        return Response(json.dumps(lines), mimetype='application/json')
