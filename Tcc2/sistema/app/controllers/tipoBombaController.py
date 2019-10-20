@@ -54,9 +54,17 @@ def cadastroTipoBomba():
 @app.route('/listaTipoBombas')
 @login_required
 def listaTipoBombas():
-    tipoBombas = TipoBomba.query.all()
 
-    return render_template("bomba/lista.html", tipoBombas=tipoBombas, icone="fas fa-list", bloco1="Lista", bloco2="Bombas")
+    page = request.args.get('page', 1, type=int)
+
+    tipoBombas = TipoBomba.query.order_by(TipoBomba.tipo).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('listaTipoBombas', page=tipoBombas.next_num) \
+        if tipoBombas.has_next else None
+    prev_url = url_for('listaTipoBombas', page=tipoBombas.prev_num) \
+        if tipoBombas.has_prev else None
+
+    return render_template("bomba/lista.html", tipoBombas=tipoBombas.items, next_url=next_url, prev_url=prev_url ,icone="fas fa-list", bloco1="Lista", bloco2="Bombas")
 
 
 @app.route("/editarTipoBomba/<int:id>", methods=['GET', 'POST'])

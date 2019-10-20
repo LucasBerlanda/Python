@@ -27,10 +27,16 @@ def cadastroSetor():
 @app.route("/listaSetores")
 @login_required
 def listaSetores():
+
+    page = request.args.get('page', 1, type=int)
+    setores = Setor.query.order_by(Setor.nomeSetor).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('listaSetores', page=setores.next_num) \
+        if setores.has_next else None
+    prev_url = url_for('listaSetores', page=setores.prev_num) \
+        if setores.has_prev else None
     
-    setores = Setor.query.all()
-    
-    return render_template("setor/lista.html", setores = setores, icone="fas fa-list", bloco1="Lista", bloco2="Setores")
+    return render_template("setor/lista.html", setores = setores.items, next_url=next_url, prev_url=prev_url ,icone="fas fa-list", bloco1="Lista", bloco2="Setores")
 
 
 @app.route("/editarSetor/<int:id>", methods=['GET', 'POST'])

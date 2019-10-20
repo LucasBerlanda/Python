@@ -9,4 +9,4 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     Degug=True
 
-    POSTS_PER_PAGE = 8
+    POSTS_PER_PAGE = 2

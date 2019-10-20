@@ -25,13 +25,20 @@ def cadastroUsuario():
 @app.route("/listaUsuarios")
 @login_required
 def listaUsuarios():
-    usuarios = Usuario.query.all()
+
     perfis = PerfilAcesso.query.all()
     setores = Setor.query.all()
-    
-    #usuarios = db.session.query(Usuario).from_statement(text("select u.id, u.nomeUsuario, u.login, setor.nome from usuario u join setor s on u.setor_id = s.id join perfilacesso p on u.perfilAcesso_id = p.id")).all()
 
-    return render_template("usuario/lista.html", usuarios = usuarios, perfis=perfis, setores=setores, icone="fas fa-list", bloco1="Lista", bloco2="Usuários")
+    page = request.args.get('page', 1, type=int)
+    usuarios = Usuario.query.order_by(Usuario.username).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('listaUsuarios', page=usuarios.next_num) \
+        if usuarios.has_next else None
+    prev_url = url_for('listaUsuarios', page=usuarios.prev_num) \
+        if usuarios.has_prev else None
+    
+
+    return render_template("usuario/lista.html", usuarios = usuarios.items,  next_url=next_url, prev_url=prev_url ,perfis=perfis, setores=setores, icone="fas fa-list", bloco1="Lista", bloco2="Usuários")
 
 @app.route("/editarUsuario/<int:id>", methods=['GET', 'POST'])
 @login_required
