@@ -7,9 +7,10 @@
     
     <table class="table table-bordered table-hover">
         <tr>
-            <td class="col-xs-3">Tipo</td>
+            <td class="col-xs-2">Tipo</td>
             <td class="text-center col-xs-1">Mca</td>
             <td class="text-center col-xs-1">Rotação</td>
+            <td class="text-center col-xs-1">Qt. Estoque</td>
             <td class="text-center col-xs-1">Opções</td>
         </tr>
         {% for tipoBomba in tipoBombas %}
@@ -17,9 +18,10 @@
             <td>{{ tipoBomba.tipo }}</td>
             <td class="text-right">{{ tipoBomba.mca }}</td>
             <td class="text-right">{{ tipoBomba.rotacao }}</td>
+            <td class="text-right">{{ tipoBomba.qtEstoque }}</td>
             <td class="text-center">
                 <a href="/editarTipoBomba/{{ tipoBomba.id }}"><i class="far fa-edit"></i></a>
-                <a href="/excluirTipoBomba/{{ tipoBomba.id }}"><em class="excluir far fa-trash-alt"></em></a>
+                <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirTipoBomba/{{ tipoBomba.id }}"><i class="excluir far fa-trash-alt"></i></a>
             </td>
         </tr>
         {% endfor %}
