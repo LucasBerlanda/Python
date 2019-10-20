@@ -8,3 +8,5 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost/tcc'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     Degug=True
+
+    POSTS_PER_PAGE = 8

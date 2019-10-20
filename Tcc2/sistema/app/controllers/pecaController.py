@@ -31,8 +31,16 @@ def cadastroPeca():
 @app.route("/listaPecas")
 @login_required
 def listaPecas():
-    pecas = Peca.query.all()
-    return render_template("peca/lista.html", pecas = pecas, icone="fas fa-list", bloco1="Lista", bloco2="Peças")
+
+    page = request.args.get('page', 1, type=int)
+    pecas = Peca.query.order_by(Peca.nome).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('listaPecas', page=pecas.next_num) \
+        if pecas.has_next else None
+    prev_url = url_for('listaPecas', page=pecas.prev_num) \
+        if pecas.has_prev else None
+
+    return render_template("peca/lista.html", pecas = pecas.items, next_url=next_url, prev_url=prev_url ,icone="fas fa-list", bloco1="Lista", bloco2="Peças")
 
 
 @app.route("/editarPeca/<int:id>", methods=['GET', 'POST'])
