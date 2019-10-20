@@ -1,0 +1,13 @@
+<div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" data-th-fragment="modal-excluir">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Excluir...</h3>
+    </div>
+    <div class="modal-body">
+        <h4>Você deseja mesmo excluir?</h4>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <a type="button" href="" class="btn btn-danger" id="delRef">Excluir</a>
+    </div>
+</div>

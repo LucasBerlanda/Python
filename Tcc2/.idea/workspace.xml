@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1968cf6d-f45b-4960-a889-19b391090336" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sistema/app/templates/modalExclusao" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/controllers/almoxarifadoController.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/controllers/almoxarifadoController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/almoxarifado/entradaProduto.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/almoxarifado/entradaProduto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistema/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistema/app/templates/setor/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/setor/lista.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,19 +17,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sistema/app/templates/almoxarifado/entradaProduto.html">
+        <entry file="file://$PROJECT_DIR$/sistema/app/templates/setor/lista.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="32" column="77" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
+            <state relative-caret-position="263">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sistema/app/controllers/almoxarifadoController.py">
+        <entry file="file://$PROJECT_DIR$/sistema/app/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="323">
+              <caret line="222" column="40" selection-start-line="222" selection-start-column="40" selection-end-line="222" selection-end-column="40" />
+              <folding>
+                <element signature="e#9463#9470#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,23 +48,15 @@
         <option value="$PROJECT_DIR$/sistema/config.py" />
         <option value="$PROJECT_DIR$/sistema/app/__init__.py" />
         <option value="$PROJECT_DIR$/sistema/app/templates/usuario/lista.html" />
-        <option value="$PROJECT_DIR$/sistema/app/templates/setor/lista.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/bomba/lista.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/peca/lista.html" />
         <option value="$PROJECT_DIR$/sistema/app/controllers/buscaEquipamentosController.py" />
         <option value="$PROJECT_DIR$/sistema/app/templates/busca/equipamentos.html" />
-        <option value="$PROJECT_DIR$/sistema/app/templates/base.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/almoxarifado/entradaProduto.html" />
         <option value="$PROJECT_DIR$/sistema/app/controllers/almoxarifadoController.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-        <option value="$PROJECT_DIR$/.idea/dictionaries/Berlanda.xml" />
+        <option value="$PROJECT_DIR$/sistema/app/templates/modalExclusao" />
+        <option value="$PROJECT_DIR$/sistema/app/templates/setor/lista.html" />
+        <option value="$PROJECT_DIR$/sistema/app/templates/base.html" />
       </list>
     </option>
   </component>
@@ -98,7 +94,7 @@
               <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
               <item name="sistema" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tcc2" type="b2602c69:ProjectViewProjectNode" />
@@ -106,6 +102,7 @@
               <item name="sistema" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="almoxarifado" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,7 +154,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15401785" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -168,7 +165,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.049099836" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33060557" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -232,13 +229,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/setor/lista.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/templates/usuario/lista.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -264,13 +254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
           <caret line="95" column="7" lean-forward="true" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1271">
-          <caret line="224" column="69" selection-start-line="224" selection-start-column="69" selection-end-line="224" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -329,17 +312,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/almoxarifado/entradaProduto.html">
+    <entry file="file://$PROJECT_DIR$/sistema/app/controllers/almoxarifadoController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="32" column="77" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
+        <state relative-caret-position="636">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/controllers/almoxarifadoController.py">
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/modalExclusao">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="187">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/almoxarifado/entradaProduto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1961">
+          <caret line="100" column="56" lean-forward="true" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/setor/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="222" column="40" selection-start-line="222" selection-start-column="40" selection-end-line="222" selection-end-column="40" />
+          <folding>
+            <element signature="e#9463#9470#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

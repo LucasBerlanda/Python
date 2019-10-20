@@ -216,11 +216,41 @@
 		{% endif %}
 	{% endwith %}
 
-
 	{% block content %}
 	<h3>{{ current_user.login }}</h3>
 	{% endblock %}
 
+<!--	MODAL DE CONFIRMAÇÃO DE EXCLUSÃO-->
+
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h3 class="modal-title" id="myModalLabel">Deletar</h3>
+		  </div>
+		  <div class="modal-body">
+			  <h4>Você relamente deseja deletar?</h4>
+			  <small>Atenção: esta ação não poderá ser revertida!</small>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+			<a type="button" href="" class="btn btn-danger" id="delRef">Excluir</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+
+	<script>
+		$('table #deleteButton').on('click', function(event){
+			event.preventDefault();
+
+			var href = $(this).attr('data-codigo');
+			console.log(href);
+			$("#deleteModal #delRef").attr('href', href);
+		 })
+	</script>
 	<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 	<script src="//code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>

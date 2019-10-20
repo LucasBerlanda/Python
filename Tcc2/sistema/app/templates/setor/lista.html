@@ -2,27 +2,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
 
 <h1 class="text-center">Lista de Setores</h1>
-    
-    <table class="table table-bordered table-hover">
-        <tr>
-            <td class="col-xs-3">Setor</td>
-            <td class="text-center col-xs-1">Abreviatura</td>
-            <td class="col-xs-2">Descrição</td>
-            <td class="text-center col-xs-1">Opções</td>
-        </tr>
-        {% for setor in setores %}
-        <tr>
-            <td>{{ setor.nomeSetor }}</td>
-            <td class="text-center">{{ setor.abreviatura }}</td>
-            <td>{{ setor.descricao }}</td>
-            <td class="text-center"><a href="/editarSetor/{{ setor.id }}"><i class="far fa-edit"></i></a>
-                <a href="/excluirSetor/{{ setor.id }}"><i class="excluir far fa-trash-alt"></i></a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-</div>    
+    <div class="table">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <td class="col-xs-3">Setor</td>
+                <td class="text-center col-xs-1">Abreviatura</td>
+                <td class="col-xs-2">Descrição</td>
+                <td class="text-center col-xs-1">Opções</td>
+            </tr>
+            {% for setor in setores %}
+            <tr>
+                <td>{{ setor.nomeSetor }}</td>
+                <td class="text-center">{{ setor.abreviatura }}</td>
+                <td>{{ setor.descricao }}</td>
+                <td class="text-center">
+                    <a href="/editarSetor/{{ setor.id }}"><i class="far fa-edit"></i></a>
+    <!--                <a class="modal-excluir" data-toggle="modal" data-target="#meuModal" id="deleteButton" href="/excluirSetor/{{ setor.id }}"><i class="excluir far fa-trash-alt"></i></a>-->
+                    <a class="" data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirSetor/{{ setor.id }}"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+
 {% endblock %}
