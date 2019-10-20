@@ -7,22 +7,30 @@
     
     <table id="id_tabela" class="table table-bordered table-hover">
         <tr>
-            <td class="col-xs-3">Nome</td>
-            <td class="col-xs-2">Descrição</td>
-            <td class="col-xs-2 ">Qt. Estoque</td>
-            <td class="text-center col-xs-1">Opções</td>
+            <td class="col-xs-3 text-center">Nome</td>
+            <td class="col-xs-2 text-center">Descrição</td>
+            <td class="col-xs-2 text-center">Qt. Estoque</td>
+            <td class="col-xs-1 text-center">Opções</td>
         </tr>
-        {% for peca in pecas %}
-        <tr>
-            <td>{{ peca.nome }}</td>
-            <td>{{ peca.descricao }}</td>
-            <td class="text-rigth">{{ peca.qtEstoque }}</td>
-            <td class="text-center">
-                <a href="/editarPeca/{{ peca.id }}"><i class="far fa-edit"></i></a>
-                <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirPeca/{{ peca.id }}"><i class="excluir far fa-trash-alt"></i></a>
+        {% if pecas %}
+        <tbody>
+            {% for peca in pecas %}
+            <tr>
+                <td>{{ peca.nome }}</td>
+                <td>{{ peca.descricao }}</td>
+                <td class="text-right">{{ peca.qtEstoque }}</td>
+                <td class="text-center">
+                    <a href="/editarPeca/{{ peca.id }}"><i class="far fa-edit"></i></a>
+                    <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirPeca/{{ peca.id }}"><i class="excluir far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% else %}
+            <td colspan="4" class="text-center">
+                Nenhum dado encontrado!
             </td>
-        </tr>
-        {% endfor %}
+        {% endif %}
     </table>
 
     <nav aria-label="...">

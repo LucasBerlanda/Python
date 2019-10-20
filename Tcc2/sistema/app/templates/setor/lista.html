@@ -14,17 +14,25 @@
                 <td class="col-xs-2">Descrição</td>
                 <td class="text-center col-xs-1">Opções</td>
             </tr>
-            {% for setor in setores %}
-            <tr>
-                <td>{{ setor.nomeSetor }}</td>
-                <td class="text-center">{{ setor.abreviatura }}</td>
-                <td>{{ setor.descricao }}</td>
-                <td class="text-center">
-                    <a href="/editarSetor/{{ setor.id }}"><i class="far fa-edit"></i></a>
-                    <a data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirSetor/{{ setor.id }}"><i class="excluir far fa-trash-alt"></i></a>
+            {% if setores %}
+            <tbody>
+                {% for setor in setores %}
+                <tr>
+                    <td>{{ setor.nomeSetor }}</td>
+                    <td class="text-center">{{ setor.abreviatura }}</td>
+                    <td>{{ setor.descricao }}</td>
+                    <td class="text-center">
+                        <a href="/editarSetor/{{ setor.id }}"><i class="far fa-edit"></i></a>
+                        <a data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirSetor/{{ setor.id }}"><i class="excluir far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% else %}
+                <td colspan="4" class="text-center">
+                    Nenhum dado encontrado!
                 </td>
-            </tr>
-            {% endfor %}
+            {% endif %}
         </table>
     </div>
     <nav aria-label="...">
