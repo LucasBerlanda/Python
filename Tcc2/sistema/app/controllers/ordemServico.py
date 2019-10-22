@@ -3,8 +3,10 @@ from app import app, db
 from app.models import OrdemServico, Usuario, TipoBomba
 from flask_login import current_user
 import datetime
+from flask_login import login_required
 
 @app.route('/ordemServicoAndamento', methods=['GET', 'POST'])
+@login_required
 def ordemServicoAndamento():
 
     usuarios = Usuario.query.all()
@@ -31,8 +33,7 @@ def novaOrdem():
         observacao = (request.form.get('observacao'))
 
         idExecutor = int(executor)
-        print(type(idExecutor))
-        print(idExecutor)
+
         if descricao and equipamento and executor:
 
             if idExecutor == current_user.id:
@@ -53,6 +54,31 @@ def novaOrdem():
     return redirect(url_for('ordemServicoAndamento'))
 
 
+@app.route("/finalizarOrdem/<int:id>", methods=['GET', 'POST'])
+@login_required
+def finalizarOrdem(id):
+
+    ordem = OrdemServico.query.filter_by(id = id).first()
+
+    if ordem and ordem.situacao is False:
+
+        executor = int(ordem.executor)
+
+        if executor == current_user.id:
+
+            ordem.situacao = True
+            ordem.dataHoraTermino = datetime.datetime.now()
+
+            db.session.commit()
+
+            flash('Finalizado com sucesso!', 'info')
+            return redirect(url_for("ordemServicoAndamento"))
+
+        flash('Você não pode finalizar ordem de outros executores!', 'error')
+        return redirect(url_for("ordemServicoAndamento"))
+
+    flash('Não foi possível finalizar!', 'error')
+    return redirect(url_for("ordemServicoAndamento"))
 
 # AO ABRIR ORDEM DE SERVIÇO
 # DESCRIÇÃO, EQUIPAMENTO, DATA/HORA DE INICIO, DATA/HORA DE TERMINO(SOMENTE AO FECHAR), SITUAÇÃO(EM ANDAMENTO), EXECUTOR, OBSERVAÇÕES

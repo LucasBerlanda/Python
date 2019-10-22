@@ -4,6 +4,7 @@ from app.models import Setor, Usuario
 from app.forms import RegistraSetorForm
 from flask_login import login_required
 
+
 @app.route('/cadastroSetor', methods=['GET', 'POST'])
 @login_required
 def cadastroSetor():

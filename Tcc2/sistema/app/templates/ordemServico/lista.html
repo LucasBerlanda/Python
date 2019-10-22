@@ -5,15 +5,17 @@
 
     <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#novaOrdem" id="ordem">Nova Ordem</button>
 
-    <h1 class="text-center">Ordem em Andamento</h1>
+    <h1 class="text-center">Ordens de serviço Abertas</h1>
     <div class="table">
         <table class="table table-bordered table-hover">
             <tr>
-                <td class="text-center col-xs-2">Descricao</td>
+                <td class="text-center col-xs-2">Descrição</td>
                 <td class="text-center col-xs-1">Equipamento</td>
                 <td class="text-center col-xs-2">Executor</td>
                 <td class="text-center col-xs-1">Situação</td>
+                <td class="text-center col-xs-1">Horário de início</td>
                 <td class="text-center col-xs-2">Observação</td>
+                <td>Finalizar</td>
             </tr>
             {% if lista %}
             <tbody>
@@ -31,7 +33,9 @@
                     {% else %}
                         <td class="col-xs-1 text-center">Finalizado</td>
                     {% endif %}
+                    <td class="text-center col-xs-1">{{ lista.dataHoraInicio.strftime('%d/%m/%Y - %H:%M:%S')}}</td>
                     <td class="text-center col-xs-2">{{ lista.observacao }}</td>
+                    <td class="text-center col-xs-1"><a href="/finalizarOrdem/{{ lista.id }}"><i class="fas fa-check"></i></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
