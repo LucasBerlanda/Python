@@ -11,7 +11,8 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 login = LoginManager(app)
+
 login.login_view = 'login'
 
 from app import models
-from app.controllers import loginController, pecaController, setorController, tipoBombaController, usuarioController, buscaEquipamentosController, almoxarifadoController
+from app.controllers import loginController, pecaController, setorController, tipoBombaController, usuarioController, buscaEquipamentosController, almoxarifadoController, ordemServico

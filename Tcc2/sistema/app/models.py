@@ -2,6 +2,7 @@ from app import db, app
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
+import datetime
 
 class TipoBomba(db.Model):
     __tablename__ = "tipoBomba"
@@ -14,7 +15,7 @@ class TipoBomba(db.Model):
     qtEstoque = db.Column(db.Integer, default=0)
 
     bomba_peca = db.relationship('Bomba_peca')
-   
+
     def __init__(self, tipo, mca, rotacao):
         
         self.tipo = tipo
@@ -96,6 +97,8 @@ class Usuario(UserMixin, db.Model):
     
     setor_id = db.Column(db.Integer, db.ForeignKey('setor.id'), nullable=False)
     perfilAcesso_id = db.Column(db.Integer, db.ForeignKey('perfilAcesso.id'), nullable=False)
+
+    ordemServico = db.relationship("OrdemServico")
     
     def __init__(self, username, password_hash, setor_id, perfilAcesso_id):
     
@@ -142,6 +145,19 @@ class EntradaEstoque(db.Model):
         self.total = total
         self.dataEntrada = dataEntrada
         self.observacao = observacao
+
+
+class OrdemServico(db.Model):
+    __tablename__ = "ordemServico"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    descricao = db.Column(db.String(150))
+    equipamento = db.Column(db.String(50), nullable=False)
+    dataHoraInicio = db.Column(db.DateTime(), default=datetime)
+    dataHoraTermino = db.Column(db.DateTime())
+    executor = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    situacao = db.Column(db.Boolean, default=False)
+    observacao = db.Column(db.String(150))
 
 db.create_all()
 
