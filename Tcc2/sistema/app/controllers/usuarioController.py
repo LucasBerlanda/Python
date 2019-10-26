@@ -13,7 +13,6 @@ def cadastroUsuario():
     form.perfilAcesso.choices = [(perfilAcesso.id, perfilAcesso.nomePerfil) for perfilAcesso in PerfilAcesso.query.all()]
     
     if form.validate_on_submit():
-        print("chegou aqui")
         user = Usuario(username=form.username.data, setor_id=form.setor.data, perfilAcesso_id=form.perfilAcesso.data, password_hash=form.password.data)
         user.set_password(form.password.data)
         db.session.add(user)
@@ -40,38 +39,38 @@ def listaUsuarios():
 
     return render_template("usuario/lista.html", usuarios = usuarios.items,  next_url=next_url, prev_url=prev_url ,perfis=perfis, setores=setores, icone="fas fa-list", bloco1="Lista", bloco2="Usuários")
 
-@app.route("/editarUsuario/<int:id>", methods=['GET', 'POST'])
-@login_required
-def editarUsuario(id):
-        usuario = Usuario.query.filter_by(id = id).first()
-        perfisAcesso = PerfilAcesso.query.all()
-        setores = Setor.query.all()
-        
-        if request.method == "POST":
-            username = (request.form.get("username"))
-            setor_id = (request.form.get("setor_id"))
-            perfilAcesso_id = (request.form.get("perfilAcesso_id"))
-
-            if username and setor_id and perfilAcesso_id:
-
-                #busca usuarios com o mesmo nome
-                user = Usuario.query.filter_by(username=username).first()
-
-                #verifica se veio usuario ou não do select
-                if not user or user is None or user.id == id:
-                    usuario.username = username
-                    usuario.setor_id = setor_id
-                    usuario.perfilAcesso_id = perfilAcesso_id
-
-                    db.session.commit()
-                    db.session.close()
-
-                    flash('Salvo com sucesso!', 'info')
-                    return redirect(url_for("listaUsuarios"))
-
-                flash('Já existe usuário com esse nome!', 'error')
-
-        return render_template("usuario/editar.html", usuario = usuario, perfisAcesso = perfisAcesso, setores = setores, icone="fas fa-pen", bloco1="Edição", bloco2="Usuário")
+# @app.route("/editarUsuario/<int:id>", methods=['GET', 'POST'])
+# @login_required
+# def editarUsuario(id):
+#         usuario = Usuario.query.filter_by(id = id).first()
+#         perfisAcesso = PerfilAcesso.query.all()
+#         setores = Setor.query.all()
+#
+#         if request.method == "POST":
+#             username = (request.form.get("username"))
+#             setor_id = (request.form.get("setor_id"))
+#             perfilAcesso_id = (request.form.get("perfilAcesso_id"))
+#
+#             if username and setor_id and perfilAcesso_id:
+#
+#                 #busca usuarios com o mesmo nome
+#                 user = Usuario.query.filter_by(username=username).first()
+#
+#                 #verifica se veio usuario ou não do select
+#                 if not user or user is None or user.id == id:
+#                     usuario.username = username
+#                     usuario.setor_id = setor_id
+#                     usuario.perfilAcesso_id = perfilAcesso_id
+#
+#                     db.session.commit()
+#                     db.session.close()
+#
+#                     flash('Salvo com sucesso!', 'info')
+#                     return redirect(url_for("listaUsuarios"))
+#
+#                 flash('Já existe usuário com esse nome!', 'error')
+#
+#         return render_template("usuario/editar.html", usuario = usuario, perfisAcesso = perfisAcesso, setores = setores, icone="fas fa-pen", bloco1="Edição", bloco2="Usuário")
 
 
 @app.route("/excluirUsuario/<int:id>", methods=['GET', 'POST'])

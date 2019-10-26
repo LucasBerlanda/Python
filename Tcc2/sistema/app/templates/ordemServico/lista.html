@@ -3,10 +3,11 @@
 {% block content %}
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
 
-    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#novaOrdem" id="ordem">Nova Ordem</button>
-
+    <div class="col-xs-12">
+        <button class="btn btn-primary pull-right" type="button" data-toggle="modal" data-target="#novaOrdem" id="ordem">Nova Ordem</button>
+    <div>
     <h1 class="text-center">Ordens de serviço Abertas</h1>
-    <div class="table">
+    <div class="table div-col-xs-12">
         <table class="table table-bordered table-hover">
             <tr>
                 <td class="text-center col-xs-2">Descrição</td>
@@ -15,14 +16,19 @@
                 <td class="text-center col-xs-1">Situação</td>
                 <td class="text-center col-xs-1">Horário de início</td>
                 <td class="text-center col-xs-2">Observação</td>
-                <td>Finalizar</td>
+                <td class="text-center">Finalizar</td>
             </tr>
             {% if lista %}
             <tbody>
                 {% for lista in lista %}
                 <tr>
                     <td class="col-xs-1">{{ lista.descricao }}</td>
-                    <td class="col-xs-1 text-center">{{ lista.equipamento }}</td>
+                    {% for equipamento in equipamentos %}
+                        {% if equipamento.id == lista.equipamento %}
+                        <td class="col-xs-1 text-center">{{ equipamento.tipo }}</td>
+                        {% endif %}
+                    {% endfor %}
+
                     {% for usuario in usuarios %}
                         {% if usuario.id == lista.executor %}
                            <td class="col-xs-2 text-center">{{ usuario.username }}</td>
@@ -40,7 +46,7 @@
                 {% endfor %}
             </tbody>
             {% else %}
-                <td colspan="5" class="text-center">
+                <td colspan="7" class="text-center">
                     Nenhum dado encontrado!
                 </td>
             {% endif %}
@@ -82,7 +88,8 @@
                         <div id="bomba" class="col-xs-12">
                             <div class="form-group">
                                 <label>Equipamento&nbsp;*</label>
-                                <input type="text" id="equipamento" name="equipamento" class="form-control" placeholder="Equipamento">
+                                <input type="hidden" name="equipamento" id="idBomba">
+                                <input type="text" id="equipamento" class="form-control" placeholder="Equipamento">
                             </div>
                         </div>
                         <div id="executor" class="col-xs-12">
@@ -113,15 +120,33 @@
 	</div>
 
 <script>
-$(function() {
-    $.ajax({
-        url: '{{ url_for("autocompleteBuscaBombas")}}'
-        }).done(function (data){
-            $('#equipamento').autocomplete({
-                source: data,
-                minLength: 1
-            });
+$("#equipamento").autocomplete({
+    source: function(request, response) {
+        $.ajax({
+            url: "{{ url_for("autocompleteBombas")}}",
+            type: "GET",
+            dataType: "json",
+            data: { Prefix: request.term },
+            success: function (data) {
+                response($.map(data, function (item) {
+                    return {
+                        label: item.tipo,
+                        value: item.tipo,
+                        idBomba: item.id
+                    };
+                }))
+            }
         });
-    });
+    },
+    minLength: 1,
+   //evento de quando você seleciona uma opção
+   select: function(event, ui) {
+     //seto a descrição para aparecer para usuario no input text
+     $("#eq_bomba").val(ui.item.label);
+     $("#eq_bomba").val(ui.item.value);
+     //seto id para o backend
+     $("#idBomba").val(ui.item.idBomba);
+   }
+});
 </script>
 {% endblock %}

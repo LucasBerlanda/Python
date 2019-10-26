@@ -3,9 +3,10 @@ from app import app, db
 from app.models import Peca, TipoBomba, Bomba_peca, Peca
 from app.forms import BuscaBombasIntercambiaveis_byTipo
 import json
-
+from flask_login import login_required
 
 @app.route('/equipamentos', methods=['GET', 'POST'])
+@login_required
 def equipamentos():
     
     form = BuscaBombasIntercambiaveis_byTipo()

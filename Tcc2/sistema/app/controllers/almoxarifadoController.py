@@ -3,7 +3,10 @@ from app import app, db
 from app.models import Peca, TipoBomba, Bomba_peca, Peca, EntradaEstoque
 from sqlalchemy import update
 import json
+from flask_login import login_required
+
 @app.route('/entradaEstoque', methods=['GET', 'POST'])
+@login_required
 def entradaEstoque():
 
         pecas = Peca.query.all()
@@ -11,7 +14,9 @@ def entradaEstoque():
 
         return render_template('almoxarifado/entradaProduto.html', icone="fas fa-warehouse", pecas=pecas, bombas=bombas, bloco1='Almoxarifado', bloco2="Entrada")
 
+
 @app.route('/entradaProduto', methods=['GET','POST'])
+@login_required
 def entradaProduto():
 
         if request.method == 'POST':

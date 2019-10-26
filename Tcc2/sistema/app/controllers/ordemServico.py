@@ -19,7 +19,8 @@ def ordemServicoAndamento():
     prev_url = url_for('ordemServicoAndamento', page=ordens.prev_num) \
         if ordens.has_prev else None
 
-    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url ,icone="fas fa-warehouse", lista = ordens.items,
+
+    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url ,icone="fas fa-file-alt", lista = ordens.items,
                            usuarios=usuarios, equipamentos=equipamentos)
 
 @app.route('/novaOrdem', methods=['GET', 'POST'])

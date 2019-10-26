@@ -19,13 +19,13 @@ def cadastroPeca():
 
         descricaoPecas = Peca.query.filter_by(descricao = descricao).first()
 
-        if not descricaoPecas or descricaoPecas is None:
-            peca = Peca(nome=nomePeca, descricao=descricao)
-            db.session.add(peca)
-            db.session.commit()
-            flash('Peça Cadastrada com sucesso!', 'info')
-            return redirect(url_for('index'))
-        flash('Já existe peça cadastrada com essa descrição!', 'error')
+        #if not descricaoPecas or descricaoPecas is None:
+        peca = Peca(nome=nomePeca, descricao=descricao)
+        db.session.add(peca)
+        db.session.commit()
+        flash('Peça Cadastrada com sucesso!', 'info')
+        return redirect(url_for('index'))
+        #flash('Já existe peça cadastrada com essa descrição!', 'error')
     return render_template('peca/cadastro.html', form=form, icone="fas fa-plus", bloco1="Cadastro", bloco2="Peça")
     
 @app.route("/listaPecas")

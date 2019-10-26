@@ -19,15 +19,46 @@
 
 </head>
 <body>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-        {% for msg in messages %}
-        <li class="col-xs-12" style="list-style-type: none;"><div class="alert alert-danger text-center" role="alert">{{ msg }}</div></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
+    {% with msgError = get_flashed_messages(category_filter=["error"]) %}
+		{% if msgError %}
+			<div class="col-sm-offset-2">
+				<ul>
+					{% for msg in msgError %}
+						<li class="col-xs-12" style="list-style-type: none;">
+							<div class="alert alert-danger text-center" role="alert">
+								<strong>{{ msg }}
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</strong>
+
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	{% endwith %}
+
+	{% with msgSuccess = get_flashed_messages(category_filter=["info"]) %}
+		{% if msgSuccess %}
+			<div class="col-sm-offset-2">
+				<ul>
+					{% for msg in msgSuccess %}
+						<li class="col-xs-12" style="list-style-type: none;">
+							<div class="alert alert-success text-center" role="alert">
+								<strong>{{ msg }}
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</strong>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	{% endwith %}
     
     <h1>{{ title }}</h1>
     <form action="" method='post' novalidate>
@@ -50,8 +81,12 @@
             <div class="form-group">    
                 <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
                 <button type="submit" class="btn btn-success">Entrar</button>
-            </div>  
+            </div>
         </div>
+        <p>
+
+        <a href="{{ url_for('reset_password_request') }}">Esqueci a senha</a>
+    </p>
     </form>
 
 	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>

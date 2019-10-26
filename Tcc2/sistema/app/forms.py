@@ -14,6 +14,7 @@ class LoginForm(FlaskForm):
 
 class RegistraUsuarioForm(FlaskForm):
     username = StringField('Usuário:', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Senha:', validators=[DataRequired()])
     password2 = PasswordField(
         'Confirmação de Senha:', validators=[DataRequired(), EqualTo('password')])
@@ -60,3 +61,12 @@ class RegistraSetorForm(FlaskForm):
 class BuscaBombasIntercambiaveis_byTipo(FlaskForm):
     buscaEquipamentos = StringField('Busca:', validators=[DataRequired()])
 
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Enviar')
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
+    password2 = PasswordField(
+        'Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Request Password Reset')

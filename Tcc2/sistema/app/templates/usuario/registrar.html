@@ -16,7 +16,16 @@
                     <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
                 </div>
-            </div> 
+            </div>
+            <div class="col-xs-10 col-sm-12">
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email(class="form-control", placeholder="Email") }}
+                    {% for erro in form.email.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
             <div class="col-xs-10 col-sm-12">
                 <div class="form-group">
                     {{ form.setor.label }}
