@@ -1,13 +1,11 @@
-
 {% extends 'base.html' %}
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 {% block content %}
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
     <div class="row">
         <form action="entradaProduto" method="post">
+            <h3 class="text-center">Entrada de estoque</h3>
+            <hr>
             <div class="col-xs-12 col-md-offset-1 col-md-10">
                 <div class="col-xs-6 col-md-4">
                     <div class="form-group">
@@ -22,21 +20,15 @@
                 <div id="peca" class="col-xs-6 col-md-4">
                     <div class="form-group">
                         <label>Descrição da peca&nbsp;*</label>
-                        <input type="hidden" name="equipamentoPeca" id="idPeca">
-                        <input type="text" id="eq_peca" class="form-control">
+                        <input type="hidden" id="idPeca">
+                        <input type="text" id="eq_peca" name="equipamentoPeca" class="form-control" placeholder="Peça">
                     </div>
                 </div>
                 <div id="bomba" class="col-xs-6 col-md-4">
                     <div class="form-group">
                         <label>Descrição da bomba&nbsp;*</label>
-                        <input type="hidden" name="equipamentoBomba" id="idBomba">
-                        <input type="text" id="eq_bomba" class="form-control">
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="form-group">
-                        <label>Estoque</label>
-                        <input id="estoque" class="form-control" readonly type="number" name="estoque" placeholder="Estoque" required>
+                        <input type="hidden" id="idBomba">
+                        <input type="text" id="eq_bomba" name="equipamentoBomba" class="form-control" placeholder="Bomba">
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-3">
@@ -45,13 +37,7 @@
                         <input id="entrada" class="form-control" type="Number" min="1" name="entrada" placeholder="Entrada" required>
                     </div>
                 </div>
-                <div class="col-xs-6 col-md-3">
-                    <div class="form-group">
-                        <label>Total</label>
-                        <input id="totalEstoque" class="form-control" readonly type="number" name="total" placeholder="Total" required>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-5">
+                <div class="col-xs-6 col-md-4">
                     <div class="form-group">
                         <label>Data de entrada&nbsp;*</label>
                         <div class='input-group date' id='calendario'>
@@ -62,10 +48,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6 col-md-11">
+                <div class="col-xs-6 col-md-7">
                     <div class="form-group">
                         <label>Observações</label>
-                        <textarea class="form-control" rows="2" name="observacao" maxlength="100" placeholder="Observações..."></textarea>
+                        <textarea class="form-control" rows="1" name="observacao" maxlength="100" placeholder="Observações..."></textarea>
                     </div>
                 </div>
                 <div class="col-xs-12">
@@ -84,24 +70,15 @@
         $('#modelo').change(function(){
             var modelo = $('#modelo option:selected');
             var modeloSelecionado = modelo.val();
-            document.getElementById('estoque').value = 0
             if(modeloSelecionado == 1){
                $('#bomba').show();
                $('#peca').hide();
                $(document).ready(function(){
                     $('#eq_bomba').change(function(){
-<!--                        document.getElementById('totalEstoque').value = 0-->
                         document.getElementById('entrada').value = 0
-<!--                        document.getElementById('estoque').value = quantidadeEstoque-->
                         var entrada = $("#entrada").val();
-                        var estoque = $("#estoque").val();
-                        var total = parseInt(estoque) + parseInt(entrada);
-                        document.getElementById('totalEstoque').value = total;
                         $("#entrada").focusout(function(){
                            entrada = $("#entrada").val();
-                           estoque = $("#estoque").val();
-                           total = parseInt(estoque) + parseInt(entrada);
-                           document.getElementById('totalEstoque').value = total;
                         });
                     });
                 });
@@ -110,17 +87,10 @@
                 $('#bomba').hide();
                 $(document).ready(function(){
                     $('#eq_peca').change(function(){
-<!--                        document.getElementById('totalEstoque').value = 0-->
                         document.getElementById('entrada').value = 0
                         var entrada = $("#entrada").val();
-                        var estoque = $("#estoque").val();
-                        var total = parseInt(estoque) + parseInt(entrada);
                         $("#entrada").focusout(function(){
                             entrada = $("#entrada").val();
-                            estoque = $("#estoque").val();
-
-                            total = parseInt(estoque) + parseInt(entrada);
-                            document.getElementById('totalEstoque').value = total;
                         });
                     });
                 });
@@ -128,75 +98,34 @@
         });
     });
 </script>
+<!--    aqui pra baixo    -->
 
 <script>
-$("#eq_bomba").autocomplete({
-    source: function(request, response) {
-        $.ajax({
-            url: "{{ url_for("autocompleteBombas")}}",
-            type: "GET",
-            dataType: "json",
-            data: { Prefix: request.term },
-            success: function (data) {
-                response($.map(data, function (item) {
-                    return {
-                        label: item.tipo,
-                        value: item.tipo,
-                        qtEstoque: item.qtEstoque,
-                        idBomba: item.id
-                    };
-                }))
-            }
+$(function() {
+    $.ajax({
+        url: '{{ url_for("autocompleteBuscaBombas")}}'
+        }).done(function (data){
+            $('#eq_bomba').autocomplete({
+                source: data,
+                minLength: 1
+            });
         });
-    },
-    minLength: 1,
-   //evento de quando você seleciona uma opção
-   select: function(event, ui) {
-     //seto a descrição para aparecer para usuario no input text
-     $("#eq_bomba").val(ui.item.label);
-     $("#eq_bomba").val(ui.item.value);
-     //seto a qt de estoque
-     $("#estoque").val(ui.item.qtEstoque);
-     //seto id para o backend
-     $("#idBomba").val(ui.item.idBomba);
-   }
-});
+    });
 </script>
-
 
 <script>
-$("#eq_peca").autocomplete({
-    source: function(request, response) {
-        $.ajax({
-            url: "{{ url_for("autocompletePecas")}}",
-            type: "GET",
-            dataType: "json",
-            data: { Prefix: request.term },
-            success: function (data) {
-                response($.map(data, function (item) {
-                    return {
-                        label: item.tipo,
-                        value: item.tipo,
-                        qtEstoque: item.qtEstoque,
-                        idPeca: item.id
-                    };
-                }))
-            }
+$(function() {
+    $.ajax({
+        url: '{{ url_for("autocompleteBuscaPecas")}}'
+        }).done(function (data){
+            $('#eq_peca').autocomplete({
+                source: data,
+                minLength: 1
+            });
         });
-    },
-    minLength: 1,
-    //evento de quando você seleciona uma opção
-    select: function(event, ui) {
-        //seto a descrição para aparecer para usuario no input text
-        $("#eq_peca").val(ui.item.label);
-        $("#eq_bomba").val(ui.item.value);
-        //seto a qt de estoque
-        $("#estoque").val(ui.item.qtEstoque);
-        //seto id para o backend
-        $("#idPeca").val(ui.item.idPeca);
-    }
-});
+    });
 </script>
+
 
 <script>
     function dataAtualFormatada(){

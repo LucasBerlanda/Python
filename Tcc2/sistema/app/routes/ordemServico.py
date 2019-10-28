@@ -2,7 +2,7 @@ from flask import render_template, url_for, redirect, request, flash, jsonify, R
 from app import app, db
 from app.models import OrdemServico, Usuario, TipoBomba
 from flask_login import current_user
-import datetime
+import datetime, json
 from flask_login import login_required
 
 @app.route('/ordemServicoAndamento', methods=['GET', 'POST'])
@@ -20,7 +20,7 @@ def ordemServicoAndamento():
         if ordens.has_prev else None
 
 
-    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url ,icone="fas fa-file-alt", lista = ordens.items,
+    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url ,icone="fas fa-file-alt", bloco1="Ordem", lista = ordens.items,
                            usuarios=usuarios, equipamentos=equipamentos)
 
 @app.route('/novaOrdem', methods=['GET', 'POST'])
@@ -81,8 +81,37 @@ def finalizarOrdem(id):
     flash('Não foi possível finalizar!', 'error')
     return redirect(url_for("ordemServicoAndamento"))
 
-# AO ABRIR ORDEM DE SERVIÇO
-# DESCRIÇÃO, EQUIPAMENTO, DATA/HORA DE INICIO, DATA/HORA DE TERMINO(SOMENTE AO FECHAR), SITUAÇÃO(EM ANDAMENTO), EXECUTOR, OBSERVAÇÕES
+@app.route('/autocompleteBombas', methods=['GET'])
+def autocompleteBombas():
 
-# AO FINALIZAR
-# PODER INSERIR OBSERVAÇÕES, INSERIR SENHA PARA FINALIZAR E SETAR HORA DE TERMINO E SITUAÇÃO(FINALIZADA)
+        bombas = TipoBomba.query.all()
+
+        lista = []
+        for b in bombas:
+                lista.append({'id': b.id, 'tipo': b.tipo})
+
+
+        return Response(json.dumps(lista), mimetype='application/json')
+
+
+
+
+@app.route('/somenteMinhasOrdensAbertas',  methods=['GET', 'POST'])
+def somenteMinhasOrdensAbertas():
+
+    usuarios = Usuario.query.all()
+    equipamentos = TipoBomba.query.all()
+    user = current_user.id
+    print("USER",user)
+    page = request.args.get('page', 1, type=int)
+    ordens = OrdemServico.query.filter(OrdemServico.executor == user, OrdemServico.situacao == False).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('somenteMinhasOrdensAbertas', page=ordens.next_num) \
+        if ordens.has_next else None
+    prev_url = url_for('somenteMinhasOrdensAbertas', page=ordens.prev_num) \
+        if ordens.has_prev else None
+
+    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url, icone="fas fa-file-alt",
+                           bloco1="Ordem", lista=ordens.items,
+                           usuarios=usuarios, equipamentos=equipamentos)
+

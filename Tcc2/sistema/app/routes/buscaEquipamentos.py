@@ -72,7 +72,7 @@ def bombasByBucha(pecas):
 def getBombasCompativeis(bombasRolamento, bombasEixo, bombasBucha, idBombaFiltrada):
     # É recebido 3 listas de com id das bombas que possui rolamento, eixo e bucha iguais da bomba filtrada
     
-    #Percorido as listas verificando se algum id da bomba é igual para as 3 listas
+    # Percorido as listas verificando se algum id da bomba é igual para as 3 listas
     # se for alguma igual nas 3 listas é por que é compatível com a bba filtrada
     idBombasCompativeis = []
     

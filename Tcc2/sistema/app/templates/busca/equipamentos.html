@@ -9,8 +9,8 @@
         {{ form.hidden_tag() }}
         <div class="col-xs-12">
             <h3 class="text-center">Busca de Peças por Bomba</h3>
+            <hr>
             <div class="form-group">
-                {{ form.buscaEquipamentos.label }}
                 {{ form.buscaEquipamentos(class=" form-control", placeholder="Buscar") }}
                 {% for erro in form.buscaEquipamentos.errors %}
                 <span style="color: red;">{{ erro }}</span>
@@ -28,8 +28,8 @@
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
-                        <th class="text-center">Peça</th>
-                        <th class="text-center">Descrição</th>
+                        <th class="">Peça</th>
+                        <th class="">Descrição</th>
                     </tr>
                 </thead>
                 {% if pecas %}

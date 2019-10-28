@@ -155,7 +155,21 @@
 					</a></li>
 				</ul>
 			</li>
-			<li><a href="{{ url_for('ordemServicoAndamento')}}"><i class="fas fa-file-alt"></i> Ordem de Serviço</a></li>
+			<li class="parent "><a data-toggle="collapse" href="#sub-item-4">
+				<em class="fas fa-file-alt">&nbsp;</em> Ordem <span data-toggle="collapse" href="#sub-item-4" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-4">
+					<li><a class="" href="{{ url_for('ordemServicoAndamento')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Abertas
+					</a></li>
+					<li><a class="" href="{{ url_for('listaPecas')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Fechadas
+					</a></li>
+					<li><a class="" href="{{ url_for('listaSetores')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Todas as Ordens
+					</a></li>
+				</ul>
+			</li>
 			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			
 			<li><a href="{{ url_for('logout')}}"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
