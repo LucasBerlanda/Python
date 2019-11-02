@@ -18,6 +18,7 @@ def entradaEstoque():
 @app.route('/entradaProduto', methods=['GET', 'POST'])
 @login_required
 def entradaProduto():
+
     if request.method == 'POST':
 
         modelo = (request.form.get('modelo'))
@@ -30,6 +31,7 @@ def entradaProduto():
         if modelo and entrada and data or equipamentoPeca or equipamentoBomba:
 
             if modelo == '1':
+
                 try:
                     bomba = TipoBomba.query.filter_by(tipo=equipamentoBomba).first()
 

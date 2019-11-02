@@ -11,10 +11,13 @@
         <div class="col-xs-12 col-sm-5">
             <div class="col-xs-10 col-sm-12">
                 <div class="form-group">
+                    <!-- Exemplo de criação de label -->
                     {{ form.username.label }}
+                    <!-- Exemplo de criação de input username-->
                     {{ form.username(class="form-control", placeholder="Usuário") }}
+                    <!-- Exemplo de retorno de erros -->
                     {% for erro in form.username.errors %}
-                    <span style="color: red;">{{ erro }}</span>
+                        <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
                 </div>
             </div>
@@ -41,7 +44,7 @@
                     {{ form.perfilAcesso.label }}
                     {{ form.perfilAcesso(class="form-control") }}
                     {% for erro in form.perfilAcesso.errors %}
-                    <span>{{ erro }}</span>
+                    <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
                 </div>
             </div> 

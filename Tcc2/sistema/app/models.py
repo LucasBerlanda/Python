@@ -3,8 +3,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
 import datetime
-from time import time
-import jwt
 
 class TipoBomba(db.Model):
     __tablename__ = "tipoBomba"
@@ -91,22 +89,20 @@ class PerfilAcesso(db.Model):
 
 
 class Usuario(UserMixin, db.Model):
-    
     __tablename__ = "usuario"
     
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(120), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True)
     password_hash = db.Column(db.String(128))
-    
     setor_id = db.Column(db.Integer, db.ForeignKey('setor.id'), nullable=False)
     perfilAcesso_id = db.Column(db.Integer, db.ForeignKey('perfilAcesso.id'), nullable=False)
 
     ordemServico = db.relationship("OrdemServico")
     
-    def __init__(self, username, password_hash, setor_id, perfilAcesso_id):
-    
+    def __init__(self, username, email ,password_hash, setor_id, perfilAcesso_id):
         self.username = username
+        self.email = email
         self.password_hash = password_hash
         self.setor_id = setor_id
         self.perfilAcesso_id = perfilAcesso_id
@@ -116,29 +112,18 @@ class Usuario(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
-    
-    def get_reset_password_token(self, expires_in=600):
-        return jwt.encode(
-            {'reset_password': self.id, 'exp': time() + expires_in},
-            app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
 
-    @staticmethod
-    def verify_reset_password_token(token):
-        try:
-            id = jwt.decode(token, app.config['SECRET_KEY'],
-                            algorithms=['HS256'])['reset_password']
-        except:
-            return
-        return Usuario.query.get(id)
+class OrdemServico(db.Model):
+    __tablename__ = "ordemServico"
 
-    @staticmethod
-    def verify_reset_password_token(token):
-        try:
-            id = jwt.decode(token, app.config['SECRET_KEY'],
-                            algorithms=['HS256'])['reset_password']
-        except:
-            return
-        return Usuario.query.get(id)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    descricao = db.Column(db.String(150))
+    equipamento = db.Column(db.Integer, db.ForeignKey('tipoBomba.id'))
+    dataHoraInicio = db.Column(db.DateTime(), default=datetime)
+    dataHoraTermino = db.Column(db.DateTime())
+    executor = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    situacao = db.Column(db.Boolean, default=False)
+    observacao = db.Column(db.String(150))
     
 class NomePecas(db.Model):
     __tablename__ = "nomePecas"
@@ -173,18 +158,6 @@ class EntradaEstoque(db.Model):
         self.dataEntrada = dataEntrada
         self.observacao = observacao
 
-
-class OrdemServico(db.Model):
-    __tablename__ = "ordemServico"
-
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    descricao = db.Column(db.String(150))
-    equipamento = db.Column(db.Integer, db.ForeignKey('tipoBomba.id'))
-    dataHoraInicio = db.Column(db.DateTime(), default=datetime)
-    dataHoraTermino = db.Column(db.DateTime())
-    executor = db.Column(db.Integer, db.ForeignKey('usuario.id'))
-    situacao = db.Column(db.Boolean, default=False)
-    observacao = db.Column(db.String(150))
 
 db.create_all()
 

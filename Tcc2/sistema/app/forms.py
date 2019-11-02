@@ -13,14 +13,19 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Lembre Me')
 
 class RegistraUsuarioForm(FlaskForm):
-    username = StringField('Usuário:', validators=[DataRequired()])
-    email = StringField('Email:', validators=[DataRequired(), Email()])
-    password = PasswordField('Senha:', validators=[DataRequired()])
+    # campo tipo texto
+    username = StringField('Usuário:', validators=[DataRequired("Por favor, preencha o campo.")])
+    # campo tipo texto com validação de Email
+    email = StringField('Email:', validators=[DataRequired("Por favor, ensira um endereço de email!"), Email("Digite um email válido!")])
+    # campo tipo Password
+    password = PasswordField('Senha:', validators=[DataRequired("Por favor, preencha o campo.")])
     password2 = PasswordField(
-        'Confirmação de Senha:', validators=[DataRequired(), EqualTo('password')])
+        'Confirmação de Senha:', validators=[DataRequired("Por favor, preencha o campo."), EqualTo('password')])
     setor = SelectField('Setor:', choices=[], coerce=int)
+    # campo tipo select, onde em seus parâmetros é passado um Choices(lista)
     perfilAcesso = SelectField('Perfil de Acesso:', choices=[], coerce=int)
 
+    # Método que verifica se username já existe e retorna a mensagem para a tela
     def validate_username(self, username):
         user = Usuario.query.filter_by(username=username.data).first()
         if user is not None:

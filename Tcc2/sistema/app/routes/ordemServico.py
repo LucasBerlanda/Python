@@ -102,7 +102,7 @@ def somenteMinhasOrdensAbertas():
     usuarios = Usuario.query.all()
     equipamentos = TipoBomba.query.all()
     user = current_user.id
-    print("USER",user)
+
     page = request.args.get('page', 1, type=int)
     ordens = OrdemServico.query.filter(OrdemServico.executor == user, OrdemServico.situacao == False).paginate(page, app.config['POSTS_PER_PAGE'], False)
 

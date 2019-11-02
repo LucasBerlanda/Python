@@ -13,7 +13,7 @@ def index():
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    if current_user.is_authenticated: #verifico se o usuario está logado ou não
+    if current_user.is_authenticated: # verifico se o usuario está logado ou não
         return redirect(url_for('index')) 
     form = LoginForm()
     if form.validate_on_submit():
@@ -23,12 +23,18 @@ def login():
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
-        if not next_page or url_parse(next_page).netloc != '': #se tiver valor que não pertença a url principal
+        if not next_page or url_parse(next_page).netloc != '': # se tiver valor que não pertença a url principal
             next_page = url_for('index')
-        return redirect(next_page) #se tiver ele direciona para onde foi solicitado
+        return redirect(next_page) # se tiver ele direciona para onde foi solicitado
     return render_template('login.html', form=form, title="Login")
+
 
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+
+
+
+
