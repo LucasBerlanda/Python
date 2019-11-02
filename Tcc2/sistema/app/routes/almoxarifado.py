@@ -11,8 +11,7 @@ def entradaEstoque():
     pecas = Peca.query.all()
     bombas = TipoBomba.query.all()
 
-    return render_template('almoxarifado/entradaProduto.html', icone="fas fa-warehouse", pecas=pecas, bombas=bombas,
-                           bloco1='Almoxarifado', bloco2="Entrada")
+    return render_template('almoxarifado/entradaProduto.html', pecas=pecas, bombas=bombas, title='Entrada de estoque')
 
 
 @app.route('/entradaProduto', methods=['GET', 'POST'])
@@ -45,6 +44,7 @@ def entradaProduto():
                     db.session.commit()
 
                     flash('Inserido com sucesso!', 'info')
+                    return redirect(url_for('entradaEstoque'))
 
                 except Exception as e:
 
@@ -66,6 +66,7 @@ def entradaProduto():
                     db.session.commit()
 
                     flash('Inserido com sucesso!', 'info')
+                    return redirect(url_for('entradaEstoque'))
 
                 except Exception as e:
 
@@ -74,7 +75,7 @@ def entradaProduto():
             else:
                 flash('Tipo ou modelo do equipamento não existe!', 'error')
 
-        flash('Não foi possível inserir!', 'error')
+    flash('Não foi possível inserir!', 'error')
     return redirect(url_for('entradaEstoque'))
 
 

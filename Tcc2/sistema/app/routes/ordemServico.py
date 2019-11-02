@@ -20,8 +20,8 @@ def ordemServicoAndamento():
         if ordens.has_prev else None
 
 
-    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url ,icone="fas fa-file-alt", bloco1="Ordem", lista = ordens.items,
-                           usuarios=usuarios, equipamentos=equipamentos)
+    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url , lista = ordens.items,
+                           usuarios=usuarios, equipamentos=equipamentos, title='Ordem de serviço')
 
 @app.route('/novaOrdem', methods=['GET', 'POST'])
 def novaOrdem():
@@ -111,7 +111,6 @@ def somenteMinhasOrdensAbertas():
     prev_url = url_for('somenteMinhasOrdensAbertas', page=ordens.prev_num) \
         if ordens.has_prev else None
 
-    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url, icone="fas fa-file-alt",
-                           bloco1="Ordem", lista=ordens.items,
-                           usuarios=usuarios, equipamentos=equipamentos)
+    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url, lista=ordens.items,
+                           usuarios=usuarios, equipamentos=equipamentos, title='Ordem de serviço')
 

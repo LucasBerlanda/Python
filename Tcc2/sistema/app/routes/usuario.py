@@ -15,24 +15,28 @@ def cadastroUsuario():
     form.perfilAcesso.choices = [(perfilAcesso.id, perfilAcesso.nomePerfil) for perfilAcesso in PerfilAcesso.query.all()]
 
     # verifica se o form submetido é válido
-    if form.validate_on_submit():
+    if request.method == "POST":
 
-        try:
+        if form.validate_on_submit():
 
-            user = Usuario(username=form.username.data, email=form.email.data, setor_id=form.setor.data, perfilAcesso_id=form.perfilAcesso.data,
-                           password_hash=form.password.data)
-            user.set_password(form.password.data)
+            try:
 
-            db.session.add(user)
-            db.session.commit()
-            flash('Parabéns, novo usuário registrado!', 'info')
-            return redirect(url_for('index'))
+                user = Usuario(username=form.username.data, email=form.email.data, setor_id=form.setor.data, perfilAcesso_id=form.perfilAcesso.data,
+                               password_hash=form.password.data)
+                user.set_password(form.password.data)
 
-        except Exception as e:
-            print(e.args)
+                db.session.add(user)
+                db.session.commit()
+                flash('Parabéns, novo usuário registrado!', 'info')
+                return redirect(url_for('index'))
 
-    flash('Não foi possível salvar!', 'error')
-    return render_template('usuario/registrar.html', title='Register', form=form, icone="fas fa-user-plus", bloco1="Cadastro", bloco2="Usuários")
+            except Exception as e:
+                print(e.args)
+
+        flash('Não foi possível salvar!', 'error')
+        return redirect(url_for('cadastroUsuario'))
+
+    return render_template('usuario/registrar.html', title='Register', form=form)
 
 @app.route("/listaUsuarios")
 @login_required
@@ -51,8 +55,7 @@ def listaUsuarios():
     
 
     return render_template("usuario/lista.html", usuarios = usuarios.items,
-                                             next_url=next_url, prev_url=prev_url ,perfis=perfis, setores=setores,
-                                                    icone="fas fa-list", bloco1="Lista", bloco2="Usuários")
+                                             next_url=next_url, prev_url=prev_url ,perfis=perfis, setores=setores, title='Lista de Usuários')
 
 @app.route("/editarUsuario/<int:id>", methods=['GET', 'POST'])
 @login_required
@@ -94,11 +97,11 @@ def editarUsuario(id):
 
                 flash('Já existe usuário com esse nome!', 'error')
                 return render_template("usuario/editar.html", usuario=usuario, perfisAcesso=perfisAcesso,
-                                       setores=setores, icone="fas fa-pen", bloco1="Edição", bloco2="Usuário")
+                                       setores=setores, title='Editar usuário')
 
             flash('Você não tem permissão de administrador!', 'error')
-        return render_template("usuario/editar.html", usuario = usuario, perfisAcesso = perfisAcesso,
-                               setores = setores, icone="fas fa-pen", bloco1="Edição", bloco2="Usuário")
+        return render_template("usuario/editar.html", usuario=usuario, perfisAcesso=perfisAcesso,
+                               setores = setores, title='Editar usuário')
 
 
 @app.route("/excluirUsuario/<int:id>", methods=['GET', 'POST'])

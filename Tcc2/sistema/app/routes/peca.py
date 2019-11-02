@@ -35,7 +35,7 @@ def cadastroPeca():
                 print(e.args)
 
         flash('Já existe peça cadastrada com essa descrição!', 'error')
-    return render_template('peca/cadastro.html', form=form, icone="fas fa-plus", bloco1="Cadastro", bloco2="Peça")
+    return render_template('peca/cadastro.html', form=form, title='Cadastro de peça')
     
 @app.route("/listaPecas")
 @login_required
@@ -49,7 +49,7 @@ def listaPecas():
     prev_url = url_for('listaPecas', page=pecas.prev_num) \
         if pecas.has_prev else None
 
-    return render_template("peca/lista.html", pecas = pecas.items, next_url=next_url, prev_url=prev_url ,icone="fas fa-list", bloco1="Lista", bloco2="Peças")
+    return render_template("peca/lista.html", pecas = pecas.items, next_url=next_url, prev_url=prev_url, title='Lista de peça')
 
 
 @app.route("/editarPeca/<int:id>", methods=['GET', 'POST'])
@@ -84,7 +84,7 @@ def editarPeca(id):
                     print(e.args)
 
         flash('Já possui peça cadastrada com essa descrição!', 'error')
-    return render_template("peca/editar.html", peca=peca, icone="fas fa-pen", bloco1="Edição", bloco2="Peça")
+    return render_template("peca/editar.html", peca=peca, title='Editar peça')
 
 @app.route("/excluirPeca/<int:id>", methods=['GET', 'POST'])
 @login_required

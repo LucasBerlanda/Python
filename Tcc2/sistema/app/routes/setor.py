@@ -28,7 +28,7 @@ def cadastroSetor():
                 print(e.args)
 
         flash('Já possui esse setor cadastrado!', 'error')
-    return render_template('setor/cadastro.html', form=form, icone="fas fa-plus", bloco1="Cadastro", bloco2="Setor")
+    return render_template('setor/cadastro.html', form=form, title='Cadastro de setor')
 
 @app.route("/listaSetores")
 @login_required
@@ -42,7 +42,7 @@ def listaSetores():
     prev_url = url_for('listaSetores', page=setores.prev_num) \
         if setores.has_prev else None
     
-    return render_template("setor/lista.html", setores=setores.items, next_url=next_url, prev_url=prev_url ,icone="fas fa-list", bloco1="Lista", bloco2="Setores")
+    return render_template("setor/lista.html", setores=setores.items, next_url=next_url, prev_url=prev_url)
 
 
 @app.route("/editarSetor/<int:id>", methods=['GET', 'POST'])
@@ -77,7 +77,7 @@ def editarSetor(id):
                     print(e.args)
 
         flash('Já possui esse setor cadastrado!', 'error')
-    return render_template("setor/editar.html", setor=setor, icone="fas fa-pen", bloco1="Edição", bloco2="Setor")
+    return render_template("setor/editar.html", setor=setor, title='Editar setor')
 
 @app.route("/excluirSetor/<int:id>", methods=['GET', 'POST'])
 @login_required

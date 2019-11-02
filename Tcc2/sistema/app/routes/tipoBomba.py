@@ -56,7 +56,7 @@ def cadastroTipoBomba():
 
         flash("Já possui este Tipo/Modelo cadastrado!", 'error')
     
-    return render_template('bomba/cadastro.html', form=form, icone="fas fa-plus", bloco1="Cadastro", bloco2="Bombas")
+    return render_template('bomba/cadastro.html', form=form, title='Cadastro de bombas')
 
 
 @app.route('/listaTipoBombas')
@@ -72,7 +72,7 @@ def listaTipoBombas():
     prev_url = url_for('listaTipoBombas', page=tipoBombas.prev_num) \
         if tipoBombas.has_prev else None
 
-    return render_template("bomba/lista.html", tipoBombas=tipoBombas.items, next_url=next_url, prev_url=prev_url ,icone="fas fa-list", bloco1="Lista", bloco2="Bombas")
+    return render_template("bomba/lista.html", tipoBombas=tipoBombas.items, next_url=next_url, prev_url=prev_url, title='Lista de bombas')
 
 
 @app.route("/editarTipoBomba/<int:id>", methods=['GET', 'POST'])
@@ -106,7 +106,7 @@ def editarTipoBomba(id):
                     print(e.args)
             flash('Já possui este Tipo/Modelo cadastrado!', 'error')
 
-    return render_template("bomba/editar.html", tipoBomba = tipoBomba, icone="fas fa-pen", bloco1="Edição", bloco2="Bombas")
+    return render_template("bomba/editar.html", tipoBomba = tipoBomba, title='Editar modelo de bomba')
 
 
 @app.route("/excluirTipoBomba/<int:id>", methods=['GET', 'POST'])

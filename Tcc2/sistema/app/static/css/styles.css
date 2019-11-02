@@ -1014,4 +1014,7 @@ p.back-link {
 table a .excluir{
     color: #EE0000;
 }
-
+.linhahr {
+      background-color: #D3D3D3;
+      height: 2px;
+}
