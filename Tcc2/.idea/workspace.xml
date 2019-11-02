@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1968cf6d-f45b-4960-a889-19b391090336" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sistema/app/routes/requisicaoPecas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/almoxarifado.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/almoxarifado.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/ordemServico.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/ordemServico.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/peca.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/peca.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/usuario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/erro/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/erro/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/peca/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/peca/editar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/peca/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/peca/lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/usuario/registrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/usuario/registrar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistema/app/routes/tipoBomba.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/tipoBomba.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistema/app/templates/bomba/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/bomba/editar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,22 +15,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sistema/app/routes/usuario.py">
+        <entry file="file://$PROJECT_DIR$/sistema/app/routes/tipoBomba.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="97" column="31" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sistema/app/routes/peca.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="100" column="35" lean-forward="true" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+            <state relative-caret-position="290">
+              <caret line="133" column="47" lean-forward="true" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -70,7 +42,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sistema/app/templates/404.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/500.html" />
         <option value="$PROJECT_DIR$/sistema/app/controllers/pecaController.py" />
         <option value="$PROJECT_DIR$/sistema/app/controllers/usuarioController.py" />
@@ -85,7 +56,6 @@
         <option value="$PROJECT_DIR$/sistema/app/controllers/buscaEquipamentosController.py" />
         <option value="$PROJECT_DIR$/sistema/app/controllers/errors.py" />
         <option value="$PROJECT_DIR$/sistema/app/templates/bomba/cadastro.html" />
-        <option value="$PROJECT_DIR$/sistema/app/templates/bomba/editar.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/peca/cadastro.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/setor/cadastro.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/setor/editar.html" />
@@ -121,6 +91,8 @@
         <option value="$PROJECT_DIR$/sistema/app/templates/base.html" />
         <option value="$PROJECT_DIR$/sistema/app/routes/peca.py" />
         <option value="$PROJECT_DIR$/sistema/app/routes/usuario.py" />
+        <option value="$PROJECT_DIR$/sistema/app/templates/bomba/editar.html" />
+        <option value="$PROJECT_DIR$/sistema/app/routes/tipoBomba.py" />
       </list>
     </option>
   </component>
@@ -168,6 +140,14 @@
               <item name="sistema" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tcc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
+              <item name="sistema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="bomba" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -254,7 +234,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4975" visible="true" weight="0.18080357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4975" visible="true" weight="0.18080357" />
       <window_info id="Structure" order="1" sideWeight="0.5025" side_tool="true" weight="0.19866072" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -265,7 +245,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.05400982" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22422259" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.47135842" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -611,23 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/routes/tipoBomba.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="50" column="79" lean-forward="true" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/bomba/editar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/routes/almoxarifado.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -644,16 +607,6 @@
           <caret line="28" column="82" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/routes/ordemServico.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="102" column="40" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,6 +638,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/routes/usuario.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1159">
+          <caret line="97" column="31" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/routes/peca.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="658">
@@ -695,10 +658,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/routes/usuario.py">
+    <entry file="file://$PROJECT_DIR$/sistema/app/routes/ordemServico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="97" column="31" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+        <state relative-caret-position="34">
+          <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/bomba/editar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="108" selection-start-line="31" selection-start-column="108" selection-end-line="31" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/routes/tipoBomba.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="133" column="47" lean-forward="true" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
