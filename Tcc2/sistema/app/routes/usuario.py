@@ -65,6 +65,7 @@ def editarUsuario(id):
         if request.method == "POST":
 
             username = (request.form.get("username"))
+            email = (request.form.get("email"))
             setor_id = (request.form.get("setor_id"))
             perfilAcesso_id = (request.form.get("perfilAcesso_id"))
 
@@ -73,10 +74,12 @@ def editarUsuario(id):
 
             if current_user.perfilAcesso_id == 1:
                 #verifica se veio usuario ou não do select
+
                 if user is None or user.id == id:
 
                     try:
                         usuario.username = username
+                        usuario.email = email
                         usuario.setor_id = setor_id
                         usuario.perfilAcesso_id = perfilAcesso_id
 

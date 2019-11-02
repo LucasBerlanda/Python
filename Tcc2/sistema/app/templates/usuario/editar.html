@@ -11,7 +11,11 @@
             <div class="col-xs-10 col-sm-6">
                 <div class="form-group">
                     <label>Usuário:</label>
-                    <input class="form-control" type="text" name="username" value="{{ usuario.username }}">
+                    <input class="form-control" type="text" name="username" value="{{ usuario.username }}" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="form-control" type="email" name="email" value="{{ usuario.email }}" required>
                 </div>
                 <div class="form-group">
                     <label>Setor:</label>

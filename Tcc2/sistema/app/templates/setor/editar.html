@@ -10,15 +10,15 @@
         <div class="col-xs-8">
             <div class=" form-group">
                 <label>Nome Setor:</label>
-                <input class="form-control" type="text" name="nomeSetor" value="{{ setor.nomeSetor }}">
+                <input class="form-control" type="text" name="nomeSetor" value="{{ setor.nomeSetor }}" required>
             </div>
             <div class=" form-group">
                 <label>Abreviatura:</label>
-                <input class="form-control" type="text" name="abreviatura" value="{{ setor.abreviatura }}">
+                <input class="form-control" type="text" name="abreviatura" value="{{ setor.abreviatura }}" required>
             </div>
             <div class=" form-group">
                 <label>Descrição:</label>
-                <input class="form-control" type="text" name="descricao" value="{{ setor.descricao }}">
+                <input class="form-control" type="text" name="descricao" value="{{ setor.descricao }}" required>
             </div>
             <input class="btn btn-success" type="submit" value="Salvar" />
             <a href="/index" class="btn btn-danger">Cancelar</a>

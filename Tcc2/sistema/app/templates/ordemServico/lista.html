@@ -87,21 +87,21 @@
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <label title="Modelo">Descrição&nbsp;*</label>
-                                <input type="text" name="descricao" class="form-control" minlength="1" maxlength="150" placeholder="Descrição">
+                                <input type="text" name="descricao" class="form-control" minlength="1" maxlength="150" placeholder="Descrição" required>
                             </div>
                         </div>
                         <div id="bomba" class="col-xs-12">
                             <div class="form-group">
                                 <label>Equipamento&nbsp;*</label>
                                 <input type="hidden" name="equipamento" id="idBomba">
-                                <input type="text" id="equipamento" class="form-control" placeholder="Equipamento">
+                                <input type="text" id="equipamento" class="form-control" placeholder="Equipamento" required>
                             </div>
                         </div>
                         <div id="executor" class="col-xs-12">
                             <div class="form-group">
                                 <label>Executor&nbsp;*</label>
                                 <input type="hidden" name="executor" value="{{ current_user.id }}">
-                                <input type="text" value="{{ current_user.username }}" class="form-control" placeholder="Executor" disabled>
+                                <input type="text" value="{{ current_user.username }}" class="form-control" placeholder="Executor" disabled required>
                             </div>
                         </div>
                         <div class="col-xs-12">

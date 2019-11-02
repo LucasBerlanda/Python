@@ -9,15 +9,15 @@
         <div class="col-xs-6">
             <div class=" form-group">
                 <label>Nome:</label>
-                <input class="form-control" type="text" name="nome" value="{{ peca.nome }}" readonly>
+                <input class="form-control" type="text" name="nome" value="{{ peca.nome }}" readonly required>
             </div>
             <div class=" form-group">
                 <label>Descrição:</label>
-                <input class="form-control" type="text" name="descricao" value="{{ peca.descricao }}">
+                <input class="form-control" type="text" name="descricao" value="{{ peca.descricao }}" required>
             </div>
              <div class=" form-group">
                 <label>Qt. Estoque:</label>
-                <input class="form-control" type="number" name="qtEstoque" value="{{ peca.qtEstoque }}">
+                <input class="form-control" type="number" name="qtEstoque" value="{{ peca.qtEstoque }}" required>
             </div>
             <input class="btn btn-success" type="submit" value="Salvar" />
             <a href="/index" class="btn btn-danger">Cancelar</a>

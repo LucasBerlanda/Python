@@ -5,42 +5,48 @@
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
 
     <h3 class="text-center">Lista de usuários</h3>
-    
-    <table class="table table-bordered table-hover">
-        <tr>
-            <td class="col-xs-3">Usuário</td>
-            <td class="text-center col-xs-1">Perfil</td>
-            <td class="col-xs-2">Setor</td>
-            <td class="text-center col-xs-1">Opções</td>
-        </tr>
-        {% if usuarios %}
-        <tbody>
-            {% for usuario in usuarios %}
+    <div class="table-responsive col-xs-12">
+        <table class="table table-bordered table-hover">
             <tr>
-                <td>{{ usuario.username }}</td>
-                {% for perfil in perfis %}
-                    {% if perfil.id == usuario.perfilAcesso_id %}
-                    <td class="text-center">{{ perfil.nomePerfil }}</td>
-                    {% endif %}
-                {% endfor %}
-                {% for setor in setores %}
-                    {% if setor.id == usuario.setor_id %}
-                    <td>{{ setor.nomeSetor }}</td>
-                    {% endif %}
-                {% endfor %}
-                <td class="text-center">
-                    <a href="/editarUsuario/{{ usuario.id }}"><i class="far fa-edit"></i></a>
-                    <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirUsuario/{{ usuario.id }}"><i class="excluir far fa-trash-alt"></i></a>
-                </td>
+                <td class="col-xs-3">Usuário</td>
+                <td class="col-xs-3">Email</td>
+                <td class="text-center col-xs-1">Perfil</td>
+                <td class="col-xs-2">Setor</td>
+                <td class="text-center col-xs-1">Opções</td>
             </tr>
-            {% endfor %}
-         </tbody>
-        {% else %}
-            <td colspan="4" class="text-center">
-                Nenhum dado encontrado!
-            </td>
-        {% endif %}
-    </table>
+            {% if usuarios %}
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.username }}</td>
+                    <td>{{ usuario.email }}</td>
+
+                    {% for perfil in perfis %}
+                        {% if perfil.id == usuario.perfilAcesso_id %}
+                        <td class="text-center">{{ perfil.nomePerfil }}</td>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for setor in setores %}
+                        {% if setor.id == usuario.setor_id %}
+                        <td>{{ setor.nomeSetor }}</td>
+                        {% endif %}
+                    {% endfor %}
+
+                    <td class="text-center">
+                        <a href="/editarUsuario/{{ usuario.id }}"><i class="far fa-edit"></i></a>
+                        <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirUsuario/{{ usuario.id }}"><i class="excluir far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+             </tbody>
+            {% else %}
+                <td colspan="4" class="text-center">
+                    Nenhum dado encontrado!
+                </td>
+            {% endif %}
+        </table>
+    </div>
     <nav aria-label="...">
       <ul class="pager">
           {% if prev_url %}
