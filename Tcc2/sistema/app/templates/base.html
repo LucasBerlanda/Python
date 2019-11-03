@@ -48,7 +48,16 @@
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name"><i class="fas fa-user"></i> {{ current_user.username }}</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-				<div><span><small><a>Editar perfil</a></small></span></div>
+				<div class="btn-group">
+  					<button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+    					Perfil <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="/editarUsuario/{{ current_user.id }}">Editar perfil</a></li>
+						<li><a href="/alterarSenha">Alterar senha</a></li>
+  					</ul>
+				</div>
 			</div>
 			<div class="clear"></div>
 		</div>

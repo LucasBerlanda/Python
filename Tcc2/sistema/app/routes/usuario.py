@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, request, flash  
 from app import app, db
 from app.models import Usuario, PerfilAcesso, Setor
-from app.forms import RegistraUsuarioForm
+from app.forms import RegistraUsuarioForm, ResetPasswordForm
 from flask_login import current_user, login_user, logout_user, login_required
 
 @app.route('/cadastroUsuario', methods=['GET', 'POST'])
@@ -123,3 +123,32 @@ def excluirUsuario(id):
 
     flash('Você não tem permissão de administrador, ou não pode excluir seu usuário!', 'error')
     return redirect(url_for('listaUsuarios'))
+
+
+@app.route("/alterarSenha", methods=['GET', 'POST'])
+@login_required
+def alterarSenha():
+
+        form = ResetPasswordForm()
+
+        usuario = Usuario.query.filter_by(id=current_user.id).first()
+
+        if request.method == "POST":
+
+            if form.validate_on_submit():
+
+                try:
+                    usuario.set_password(form.password.data)
+
+                    db.session.commit()
+
+                    flash('Salvo com sucesso!', 'info')
+                    return redirect(url_for('index'))
+
+                except Exception as e:
+                    print(e.args)
+
+            flash('Não foi possível salvar!', 'error')
+            return redirect(url_for('alterarSenha'))
+
+        return render_template("usuario/alterarSenha.html", form=form, title='Alterar senha')
