@@ -10,32 +10,29 @@ from sqlalchemy import text
 def cadastroTipoBomba():
 
     form = RegistraTipoBombaForm()
-    rol =[(0, "--Selecione--")]+ [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rolamento")]
-    ret = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Retentor")]
-    tamp =[(0, "--Selecione--")]+ [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Tampa")]
+    ret = [(0, " Selecione ")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Retentor")]
+    tamp =[(0, " Selecione ")]+ [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Tampa")]
 
-    form.rolamentoDianteiro.choices = rol
-    form.rolamentoTraseiro.choices = rol
     form.retentorDianteiro.choices = ret
     form.retentorTraseiro.choices = ret
     form.tampaDianteira.choices = tamp
     form.tampaTraseira.choices = tamp
-    form.placa.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Placa")]
-    form.eixo.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Eixo")]
-    form.rotor.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rotor")]
-    form.bucha.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Bucha")]
+    form.rolamento.choices = [(0, " Selecione ")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rolamento")]
+    form.placa.choices = [(0, " Selecione ")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Placa")]
+    form.eixo.choices = [(0, " Selecione ")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Eixo")]
+    form.rotor.choices = [(0, " Selecione ")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rotor")]
+    form.bucha.choices = [(0, " Selecione ")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Bucha")]
     
     if form.validate_on_submit():
         
-        possuiTipobomba = TipoBomba.query.filter_by(tipo= form.tipo.data).all()
+        possuiTipobomba = TipoBomba.query.filter_by(tipo=form.tipo.data).all()
         
         if not possuiTipobomba or possuiTipobomba is None:
 
             try:
-                listaPecas = [form.rolamentoDianteiro.data, form.rolamentoTraseiro.data,
-                            form.retentorDianteiro.data, form.retentorTraseiro.data,
-                            form.tampaDianteira.data, form.tampaTraseira.data,
-                            form.placa.data, form.eixo.data, form.rotor.data, form.bucha.data]
+                listaPecas = [form.rolamento.data, form.retentorDianteiro.data, form.retentorTraseiro.data,
+                              form.tampaDianteira.data, form.tampaTraseira.data, form.placa.data, form.eixo.data,
+                              form.rotor.data, form.bucha.data]
 
                 tipobomba = TipoBomba(tipo=form.tipo.data, mca=form.mca.data, rotacao=form.rotacao.data)
                 db.session.add(tipobomba)
@@ -104,6 +101,7 @@ def editarTipoBomba(id):
 
                 except Exception as e:
                     print(e.args)
+
             flash('Já possui este Tipo/Modelo cadastrado!', 'error')
 
     return render_template("bomba/editar.html", tipoBomba = tipoBomba, title='Editar modelo de bomba')

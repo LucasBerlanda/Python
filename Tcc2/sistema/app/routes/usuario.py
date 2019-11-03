@@ -11,8 +11,8 @@ def cadastroUsuario():
     form = RegistraUsuarioForm()
 
     # passo a lista para o campo de selct no formulário
-    form.setor.choices = [(0, "--Selecione--")]+[(setor.id, setor.nomeSetor) for setor in Setor.query.all()]
-    form.perfilAcesso.choices = [(0, "--Selecione--")]+[(perfilAcesso.id, perfilAcesso.nomePerfil) for perfilAcesso in PerfilAcesso.query.all()]
+    form.setor.choices = [(0, " Selecione ")]+[(setor.id, setor.nomeSetor) for setor in Setor.query.all()]
+    form.perfilAcesso.choices = [(0, " Selecione ")]+[(perfilAcesso.id, perfilAcesso.nomePerfil) for perfilAcesso in PerfilAcesso.query.all()]
 
     # verifica se o form submetido é válido
     if request.method == "POST":

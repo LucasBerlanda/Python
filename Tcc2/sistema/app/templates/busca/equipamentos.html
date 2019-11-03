@@ -16,7 +16,7 @@
                 <span style="color: red;">{{ erro }}</span>
                 {% endfor %}
             </div>
-            <button type="submit" class="btn btn-success">Buscar</button>
+            <button type="submit" class="btn btn-success"><i class="fas fa-search"></i> Buscar</button>
         </div>
     </form>
 </div>
@@ -24,7 +24,7 @@
     <div class="col-xs-12 col-sm-6 col-lg-6">
         <div class="table-responsive">
             <table class="table table-hover table-bordered table-striped">
-                <caption>Peças da bomba filtrada</caption>
+                <caption>Peças da bomba pesquisada</caption>
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
@@ -52,14 +52,14 @@
     </div>
     <div class="col-xs-12 col-sm-6 col-lg-5">
         <div class="table-responsive">
-            <table class="table table-hover table-bordered table-striped">
-                <caption>Bomba(s) Intercambiáveis</caption>
+            <table class="table table-hover table-bordered">
+                <caption>Bomba(s) substituíveis</caption>
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
-                        <th class="text-center">Tipo</th>
-                        <th class="text-center">Mca</th>
-                        <th class="text-center">Rotação</th>
+                        <th class="">Tipo</th>
+                        <th class="text-right">Mca</th>
+                        <th class="text-right">Rotação</th>
                     </tr>
                 </thead>
                 {% if tipoBombasCompativeis %}
@@ -68,8 +68,8 @@
                     <tr>
                         <td class="text-center">{{bbaComp.id}}</td>
                         <td>{{bbaComp.tipo}}</td>
-                        <td class="text-center">{{bbaComp.mca}}</td>
-                        <td class="text-center">{{bbaComp.rotacao}}</td>
+                        <td class="text-right">{{bbaComp.mca}}</td>
+                        <td class="text-right">{{bbaComp.rotacao}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

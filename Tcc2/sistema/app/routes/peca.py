@@ -9,7 +9,7 @@ from flask_login import login_required
 def cadastroPeca():
     
     form = RegistraPecaForm()
-    form.nome.choices = [(0, "--Selecione--")]+[(nomePeca.id, nomePeca.nome) for nomePeca in NomePecas.query.all()]
+    form.nome.choices = [(0, " Selecione ")]+[(nomePeca.id, nomePeca.nome) for nomePeca in NomePecas.query.all()]
 
     if form.validate_on_submit():
 
