@@ -199,7 +199,9 @@
 			console.log(href);
 			$("#deleteModal #delRef").attr('href', href);
 		 })
+
 	</script>
+
 	<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 	<script src="//code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
@@ -212,7 +214,9 @@
 	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 	<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-
+	<script>
+   		$("option[value='0']").attr("disabled", "disabled");
+	</script>
 
 </body>
 </html>

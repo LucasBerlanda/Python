@@ -10,9 +10,9 @@ from sqlalchemy import text
 def cadastroTipoBomba():
 
     form = RegistraTipoBombaForm()
-    rol = [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rolamento")]
-    ret = [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Retentor")]
-    tamp = [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Tampa")]
+    rol =[(0, "--Selecione--")]+ [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rolamento")]
+    ret = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Retentor")]
+    tamp =[(0, "--Selecione--")]+ [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Tampa")]
 
     form.rolamentoDianteiro.choices = rol
     form.rolamentoTraseiro.choices = rol
@@ -20,10 +20,10 @@ def cadastroTipoBomba():
     form.retentorTraseiro.choices = ret
     form.tampaDianteira.choices = tamp
     form.tampaTraseira.choices = tamp
-    form.placa.choices = [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Placa")]
-    form.eixo.choices = [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Eixo")]
-    form.rotor.choices = [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rotor")]
-    form.bucha.choices = [(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Bucha")]
+    form.placa.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Placa")]
+    form.eixo.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Eixo")]
+    form.rotor.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Rotor")]
+    form.bucha.choices = [(0, "--Selecione--")]+[(peca.id, peca.descricao) for peca in Peca.query.filter_by(nome="Bucha")]
     
     if form.validate_on_submit():
         
