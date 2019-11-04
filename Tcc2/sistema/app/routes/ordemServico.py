@@ -12,7 +12,7 @@ def ordemServicoAndamento():
     usuarios = Usuario.query.all()
     equipamentos = TipoBomba.query.all()
     page = request.args.get('page', 1, type=int)
-    ordens = OrdemServico.query.filter_by(situacao = False).paginate(page, app.config['POSTS_PER_PAGE'], False)
+    ordens = OrdemServico.query.filter_by(situacao=False).paginate(page, app.config['POSTS_PER_PAGE'], False)
 
     next_url = url_for('ordemServicoAndamento', page=ordens.next_num) \
         if ordens.has_next else None
@@ -94,8 +94,6 @@ def autocompleteBombas():
         return Response(json.dumps(lista), mimetype='application/json')
 
 
-
-
 @app.route('/somenteMinhasOrdensAbertas',  methods=['GET', 'POST'])
 def somenteMinhasOrdensAbertas():
 
@@ -104,7 +102,7 @@ def somenteMinhasOrdensAbertas():
     user = current_user.id
 
     page = request.args.get('page', 1, type=int)
-    ordens = OrdemServico.query.filter(OrdemServico.executor == user, OrdemServico.situacao == False).paginate(page, app.config['POSTS_PER_PAGE'], False)
+    ordens = OrdemServico.query.filter(OrdemServico.executor == user).paginate(page, app.config['POSTS_PER_PAGE'], False)
 
     next_url = url_for('somenteMinhasOrdensAbertas', page=ordens.next_num) \
         if ordens.has_next else None
@@ -114,3 +112,21 @@ def somenteMinhasOrdensAbertas():
     return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url, lista=ordens.items,
                            usuarios=usuarios, equipamentos=equipamentos, title='Ordem de serviço')
 
+
+
+@app.route('/ordensFechadas',  methods=['GET', 'POST'])
+def ordensFechadas():
+
+    usuarios = Usuario.query.all()
+    equipamentos = TipoBomba.query.all()
+
+    page = request.args.get('page', 1, type=int)
+    ordens = OrdemServico.query.filter(OrdemServico.situacao==True).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('ordensFechadas', page=ordens.next_num) \
+        if ordens.has_next else None
+    prev_url = url_for('ordensFechadas', page=ordens.prev_num) \
+        if ordens.has_prev else None
+
+    return render_template('ordemServico/lista.html', next_url=next_url, prev_url=prev_url, lista=ordens.items,
+                           usuarios=usuarios, equipamentos=equipamentos, title='Ordem de serviço')
