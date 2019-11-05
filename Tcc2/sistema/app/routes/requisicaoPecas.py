@@ -48,7 +48,7 @@ def requisicoesAbertas():
 
     users = Usuario.query.all()
     page = request.args.get('page', 1, type=int)
-    requisicoes = Requisicao.query.order_by(Requisicao.equipamento).paginate(page, app.config['POSTS_PER_PAGE'], False)
+    requisicoes = Requisicao.query.filter_by(pendente=True).order_by(Requisicao.dataHoraCriacao).paginate(page, app.config['POSTS_PER_PAGE'], False)
 
     next_url = url_for('requisicoesAbertas', page=requisicoes.next_num) \
         if requisicoes.has_next else None
