@@ -169,6 +169,7 @@ class Requisicao(db.Model):
     quantidade = db.Column(db.Integer, nullable=False)
     observacao = db.Column(db.String(100), nullable=False)
     dataHoraCriacao = db.Column(db.DateTime(), default=datetime)
+    pendente = db.Column(db.Boolean, default=1)
 
 db.create_all()
 

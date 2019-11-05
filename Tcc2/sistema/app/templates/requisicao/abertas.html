@@ -12,10 +12,12 @@
     <div class="table-responsive col-xs-12">
         <table class="table table-striped table-bordered table-hover">
             <tr>
-                <td class="col-xs-2">Requisitante</td>
-                <td class="col-xs-1">Equipamento</td>
-                <td class="text-center col-xs-2">quantidade</td>
-                <td class="text-center col-xs-1">Observacao</td>
+                <td class="col-xs-1">Requisitante</td>
+                <td class="text-center col-xs-1">Equipamento</td>
+                <td class="text-right col-xs-1">Quantidade</td>
+                <td class="text-center col-xs-1">Data/hora criação</td>
+                <td class="text-center col-xs-1">Observação</td>
+                <td class="text-center col-xs-1">Opções</td>
             </tr>
             {% if lista %}
             <tbody>
@@ -27,9 +29,11 @@
                         {% endif %}
                     {% endfor %}
 
-                    <td class="col-xs-1 text-center">{{ lista.equipamento }}</td>
-                    <td class="col-xs-1 text-center">{{ lista.quantidade }}</td>
-                    <td class="col-xs-1 text-center">{{ lista.observacao }}</td>
+                    <td class="text-center col-xs-1">{{ lista.equipamento }}</td>
+                    <td class="text-right col-xs-1">{{ lista.quantidade }}</td>
+                    <td class="text-center col-xs-1">{{ lista.dataHoraCriacao.strftime('%d/%m/%Y - %H:%M')}}</td>
+                    <td class="text-center col-xs-1">{{ lista.observacao }}</td>
+                    <td class="text-center col-xs-1">Opções</td>
                 </tr>
                 {% endfor %}
             </tbody>
