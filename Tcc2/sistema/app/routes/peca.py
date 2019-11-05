@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, request, flash 
 from app import app, db
 from app.models import Peca, TipoBomba, Bomba_peca, NomePecas
-from app.forms import RegistraPecaForm
+from app.forms import RegistraPecaForm, Pesquisa
 from flask_login import login_required
 
 @app.route('/cadastroPeca', methods=['GET', 'POST'])
@@ -49,7 +49,7 @@ def listaPecas():
     prev_url = url_for('listaPecas', page=pecas.prev_num) \
         if pecas.has_prev else None
 
-    return render_template("peca/lista.html", pecas = pecas.items, next_url=next_url, prev_url=prev_url, title='Lista de peça')
+    return render_template("peca/lista.html", pecas=pecas.items, next_url=next_url, prev_url=prev_url, title='Lista de peça')
 
 
 @app.route("/editarPeca/<int:id>", methods=['GET', 'POST'])
@@ -109,3 +109,18 @@ def excluirpeca(id):
 
     flash("Não é possível excluir pois possui vínculos com bombas!", 'error')
     return redirect(url_for('listaPecas'))
+
+
+# @app.route("/buscaPecaDescricao")
+# @login_required
+# def buscaPecaDescricao(descricao):
+#
+#     page = request.args.get('page', 1, type=int)
+#     pecas = Peca.query.filter_by(descricao=descricao).order_by(Peca.nome).paginate(page, app.config['POSTS_PER_PAGE'], False)
+#
+#     next_url = url_for('listaPecas', page=pecas.next_num) \
+#         if pecas.has_next else None
+#     prev_url = url_for('listaPecas', page=pecas.prev_num) \
+#         if pecas.has_prev else None
+#
+#     return render_template("peca/lista.html", pecas=pecas.items, next_url=next_url, prev_url=prev_url, title='Lista de peça')

@@ -14,9 +14,9 @@ def cadastroUsuario():
     form.setor.choices = [(0, " Selecione ")]+[(setor.id, setor.nomeSetor) for setor in Setor.query.all()]
     form.perfilAcesso.choices = [(0, " Selecione ")]+[(perfilAcesso.id, perfilAcesso.nomePerfil) for perfilAcesso in PerfilAcesso.query.all()]
 
-    # verifica se o form submetido é válido
+    # verifica se o form submetido é post
     if request.method == "POST":
-
+        #  verifica se o form submetido é válido
         if form.validate_on_submit():
 
             try:

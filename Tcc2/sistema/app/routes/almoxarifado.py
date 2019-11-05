@@ -8,10 +8,8 @@ from flask_login import login_required
 @app.route('/entradaEstoque', methods=['GET', 'POST'])
 @login_required
 def entradaEstoque():
-    pecas = Peca.query.all()
-    bombas = TipoBomba.query.all()
 
-    return render_template('almoxarifado/entradaProduto.html', pecas=pecas, bombas=bombas, title='Entrada de estoque')
+    return render_template('almoxarifado/entradaProduto.html', title='Entrada de estoque')
 
 
 @app.route('/entradaProduto', methods=['GET', 'POST'])

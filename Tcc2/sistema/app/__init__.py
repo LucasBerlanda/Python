@@ -56,4 +56,4 @@ if not app.debug:
 
 
 from app import models
-from app.routes import login, peca, setor, tipoBomba, usuario, buscaEquipamentos, almoxarifado, ordemServico, errors, email
+from app.routes import login, peca, setor, tipoBomba, usuario, buscaEquipamentos, almoxarifado, ordemServico, errors, email, requisicaoPecas

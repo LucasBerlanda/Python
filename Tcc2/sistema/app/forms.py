@@ -2,10 +2,9 @@ from builtins import min
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, FloatField, SelectField
-from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
+from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
+from wtforms.widgets.html5 import NumberInput
 from app.models import Usuario, TipoBomba, Peca, Setor
-from wtforms.widgets import html5
-
 
 class LoginForm(FlaskForm):
     username = StringField('Usuário', validators=[DataRequired("Por favor, preencha o campo.")])
@@ -74,3 +73,12 @@ class ResetPasswordForm(FlaskForm):
     password2 = PasswordField(
         'Confirmação de Senha:', validators=[DataRequired("Por favor, preencha o campo."), EqualTo('password')])
 
+class Pesquisa(FlaskForm):
+    pesquisa = StringField('Buscar:', validators=[DataRequired("Por favor, preencha o campo.")])
+
+class RequisicaoForm(FlaskForm):
+    tipoEquipamento = SelectField('Tipo:', validators=[DataRequired("Por favor, preencha o campo.")], choices=[(0,'Selecione'), (1,'Bomba'), (2,'Peça')], coerce=int)
+    bomba = StringField('Bomba:')
+    peca = StringField('Peça:')
+    quantidade = IntegerField('Quantidade:', validators=[DataRequired("Por favor, preencha o campo."), Length(min=1, max=100)], widget=NumberInput(), default=1)
+    observacao = StringField('Observação:', validators=[Length(max=50)])

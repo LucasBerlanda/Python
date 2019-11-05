@@ -99,6 +99,7 @@ class Usuario(UserMixin, db.Model):
     perfilAcesso_id = db.Column(db.Integer, db.ForeignKey('perfilAcesso.id'), nullable=False)
 
     ordemServico = db.relationship("OrdemServico")
+    requisicao = db.relationship("Requisicao")
     
     def __init__(self, username, email ,password_hash, setor_id, perfilAcesso_id):
         self.username = username
@@ -158,6 +159,15 @@ class EntradaEstoque(db.Model):
         self.dataEntrada = dataEntrada
         self.observacao = observacao
 
+class Requisicao(db.Model):
+    __tablename__ = "requisicao"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    requisitante = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    tipoEquipamento = db.Column(db.Boolean)
+    equipamento = db.Column(db.String(100), nullable=False)
+    quantidade = db.Column(db.Integer, nullable=False)
+    observacao = db.Column(db.String(100), nullable=False)
 
 db.create_all()
 

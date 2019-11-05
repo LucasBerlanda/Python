@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="col-xs-12">
+            <h3 class="text-center">Nova requisição</h3>
+            <hr class="linhahr">
+            <div class="col-xs-10 col-sm-4">
+                <div class="form-group">
+                    {{ form.tipoEquipamento.label }}<br>
+                    {{ form.tipoEquipamento(class="form-control") }}<br>
+                    {% for erro in form.tipoEquipamento.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="gBomba" class="col-xs-10 col-sm-4">
+                <div class="form-group">
+                    {{ form.bomba.label }}<br>
+                    {{ form.bomba(class="form-control", placeholder="Bomba") }}<br>
+                    {% for erro in form.bomba.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="gPeca" class="col-xs-10 col-sm-4">
+                <div class="form-group">
+                    {{ form.peca.label }}<br>
+                    {{ form.peca(class="form-control", placeholder="Peça") }}<br>
+                    {% for erro in form.peca.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4">
+                <div class="form-group">
+                    {{ form.quantidade.label }}<br>
+                    {{ form.quantidade(class="form-control", placeholder="Quantidade") }}<br>
+                    {% for erro in form.quantidade.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-4">
+                <div class="form-group">
+                    {{ form.observacao.label }}<br>
+                    {{ form.observacao(class="form-control", placeholder="Observação") }}<br>
+                    {% for erro in form.observacao.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <a href="/index" class="btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $('#gBomba').hide();
+    $('#gPeca').hide();
+    $(document).ready(function(){
+        $('#tipoEquipamento').change(function(){
+            document.getElementById('quantidade').value = 1
+            document.getElementById('peca').value = ''
+            document.getElementById('bomba').value = ''
+            var tipo = $('#tipoEquipamento option:selected');
+            var tipoSelecionado = tipo.val();
+
+            if(tipoSelecionado == 1){
+               $('#gBomba').show();
+               $('#gPeca').hide();
+               $("#bomba").prop('required',true);
+               $('#peca').prop('required',false);
+            }else if(tipoSelecionado == 2){
+                $('#gPeca').show();
+                $('#gBomba').hide();
+                $("#peca").prop('required',true);
+                $('#bomba').prop('required',false);
+
+
+            }
+        });
+    });
+</script>
+
+<script>
+$(function() {
+    $.ajax({
+        url: '{{ url_for("autocompleteBuscaBombas")}}'
+        }).done(function (data){
+            $('#bomba').autocomplete({
+                source: data,
+                minLength: 1
+            });
+        });
+    });
+</script>
+
+<script>
+$(function() {
+    $.ajax({
+        url: '{{ url_for("autocompleteBuscaPecas")}}'
+        }).done(function (data){
+            $('#peca').autocomplete({
+                source: data,
+                minLength: 1
+            });
+        });
+    });
+</script>
+
+{% endblock %}
