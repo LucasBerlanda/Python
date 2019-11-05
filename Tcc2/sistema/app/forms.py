@@ -80,5 +80,5 @@ class RequisicaoForm(FlaskForm):
     tipoEquipamento = SelectField('Tipo:', validators=[DataRequired("Por favor, preencha o campo.")], choices=[(0,'Selecione'), (1,'Bomba'), (2,'Peça')], coerce=int)
     bomba = StringField('Bomba:')
     peca = StringField('Peça:')
-    quantidade = IntegerField('Quantidade:', validators=[DataRequired("Por favor, preencha o campo."), Length(min=1, max=100)], widget=NumberInput(), default=1)
+    quantidade = IntegerField('Quantidade:', validators=[DataRequired("Por favor, preencha o campo."), Length(min=1, max=100)], widget=NumberInput())
     observacao = StringField('Observação:', validators=[Length(max=50)])

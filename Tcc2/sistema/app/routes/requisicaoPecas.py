@@ -3,6 +3,7 @@ from app import app, db
 from app.models import Peca, TipoBomba, Requisicao, Usuario
 from app.forms import RequisicaoForm
 from flask_login import login_required, current_user
+import datetime
 
 @app.route('/requisicao/novo', methods=['GET', 'POST'])
 @login_required
@@ -14,7 +15,7 @@ def requisicao():
         try:
             if form.tipoEquipamento.data == 1:
                 requisicao = Requisicao(requisitante=current_user.id, tipoEquipamento=True, equipamento=form.bomba.data,
-                                        quantidade=form.quantidade.data, observacao=form.observacao.data)
+                                        quantidade=form.quantidade.data, observacao=form.observacao.data, dataHoraCriacao=datetime.datetime.now())
 
                 db.session.add(requisicao)
                 db.session.commit()
@@ -24,7 +25,7 @@ def requisicao():
             if form.tipoEquipamento.data == 2:
 
                 requisicao = Requisicao(requisitante=current_user.id, tipoEquipamento=False, equipamento=form.peca.data,
-                                        quantidade=form.quantidade.data, observacao=form.observacao.data)
+                                        quantidade=form.quantidade.data, observacao=form.observacao.data, dataHoraCriacao=datetime.datetime.now())
 
                 db.session.add(requisicao)
                 db.session.commit()

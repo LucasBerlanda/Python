@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1968cf6d-f45b-4960-a889-19b391090336" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sistema/app/templates/requisicao/abertas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistema/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistema/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistema/app/routes/requisicaoPecas.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/requisicaoPecas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,43 +18,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sistema/app/routes/requisicaoPecas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state relative-caret-position="204">
+              <caret line="27" column="145" selection-start-line="27" selection-start-column="145" selection-end-line="27" selection-end-column="145" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sistema/app/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="74" column="71" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sistema/app/templates/requisicao/abertas.html">
+        <entry file="file://$PROJECT_DIR$/sistema/app/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+            <state relative-caret-position="375">
+              <caret line="82" column="148" selection-start-line="82" selection-start-column="148" selection-end-line="82" selection-end-column="148" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sistema/app/routes/peca.py">
+        <entry file="file://$PROJECT_DIR$/sistema/app/routes/ordemServico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="51" selection-end-column="125" />
+            <state relative-caret-position="629">
+              <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
               <folding>
-                <element signature="e#0#68#0" expanded="true" />
+                <element signature="e#0#87#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sistema/app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="170" column="19" selection-start-line="170" selection-start-column="19" selection-end-line="170" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,14 +127,14 @@
         <option value="$PROJECT_DIR$/sistema/app/routes/almoxarifado.py" />
         <option value="$PROJECT_DIR$/sistema/app/__init__.py" />
         <option value="$PROJECT_DIR$/sistema/app/routes/usuario.py" />
-        <option value="$PROJECT_DIR$/sistema/app/models.py" />
-        <option value="$PROJECT_DIR$/sistema/app/forms.py" />
         <option value="$PROJECT_DIR$/sistema/app/templates/requisicao/novo.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/ordemServico/lista.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/busca/equipamentos.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/base.html" />
-        <option value="$PROJECT_DIR$/sistema/app/routes/requisicaoPecas.py" />
         <option value="$PROJECT_DIR$/sistema/app/templates/requisicao/abertas.html" />
+        <option value="$PROJECT_DIR$/sistema/app/models.py" />
+        <option value="$PROJECT_DIR$/sistema/app/routes/requisicaoPecas.py" />
+        <option value="$PROJECT_DIR$/sistema/app/forms.py" />
       </list>
     </option>
   </component>
@@ -179,22 +181,6 @@
               <item name="sistema" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
-              <item name="sistema" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ordemServico" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tcc2" type="462c0819:PsiDirectoryNode" />
-              <item name="sistema" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="requisicao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,7 +268,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4975" visible="true" weight="0.19494048" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4975" visible="true" weight="0.19494048" />
       <window_info id="Structure" order="1" sideWeight="0.5025" side_tool="true" weight="0.19866072" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -293,7 +279,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30932897" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.20458265" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.47135842" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -609,16 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/routes/ordemServico.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="122" column="48" lean-forward="true" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/templates/peca/editar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -684,26 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="83" column="56" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="168" column="54" lean-forward="true" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/templates/requisicao/novo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -740,6 +696,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/requisicao/abertas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -750,20 +713,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="170" column="19" selection-start-line="170" selection-start-column="19" selection-end-line="170" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/routes/ordemServico.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/routes/requisicaoPecas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        <state relative-caret-position="204">
+          <caret line="27" column="145" selection-start-line="27" selection-start-column="145" selection-end-line="27" selection-end-column="145" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/requisicao/abertas.html">
+    <entry file="file://$PROJECT_DIR$/sistema/app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        <state relative-caret-position="375">
+          <caret line="82" column="148" selection-start-line="82" selection-start-column="148" selection-end-line="82" selection-end-column="148" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
