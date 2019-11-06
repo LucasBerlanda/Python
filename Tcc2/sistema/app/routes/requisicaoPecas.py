@@ -57,3 +57,115 @@ def requisicoesAbertas():
 
     return render_template("requisicao/abertas.html", lista=requisicoes.items, next_url=next_url, prev_url=prev_url,
                            title='Requisições abertas', users=users)
+
+
+@app.route("/baixarEstoque/<int:id>", methods=['GET', 'POST'])
+@login_required
+def baixarEstoque(id):
+    requisicao = Requisicao.query.filter_by(id=id).first()
+
+    if requisicao and requisicao.pendente is True:
+
+        tipoequipamento = requisicao.tipoEquipamento
+        equipamento = requisicao.equipamento
+        quantidade = requisicao.quantidade
+
+        if tipoequipamento == 1:
+            try:
+                # metodo que verifica e atualiza o estoque se possível
+                atBomba = atualizaEstoqueBomba(equipamento, quantidade)
+
+                if atBomba is True:
+                    requisicao.pendente=False
+                    db.session.commit()
+
+                    flash('Dado baixa com sucesso!', 'info')
+                    return redirect(url_for("requisicoesAbertas"))
+
+            except Exception as e:
+                print(e)
+                flash('Não foi possível efetuar a baixa!', 'error')
+
+        if tipoequipamento == 0:
+
+            try:
+
+                # metodo que verifica e atualiza o estoque se possível
+                atPeca = atualizaEstoquePeca(equipamento, quantidade)
+
+                if atPeca is True:
+
+                    requisicao.pendente=False
+                    db.session.commit()
+
+                    flash('Dado baixa com sucesso!', 'info')
+                    return redirect(url_for("requisicoesAbertas"))
+
+            except Exception as e:
+                print(e)
+                flash('Não foi possível efetuar a baixa!', 'error')
+
+    return redirect(url_for("requisicoesAbertas"))
+
+
+@app.route("/excluirRequisicao/<int:id>", methods=['GET', 'POST'])
+@login_required
+def excluirRequisicao(id):
+
+    requisicao = Requisicao.query.filter_by(id=id).first()
+
+    if requisicao:
+
+        db.session.delete(requisicao)
+        db.session.commit()
+        flash("Requisição removida com sucesso!", 'info')
+        return redirect(url_for("requisicoesAbertas"))
+
+    flash("Não é possível remove-la!", 'error')
+    return redirect(url_for('listaPecas'))
+
+
+# metodo atualiza estoque bomba
+def atualizaEstoqueBomba(equipamento, quantidade):
+
+    b = TipoBomba.query.filter_by(tipo=equipamento).first()
+
+    qtEstoque = b.qtEstoque
+
+    if quantidade <= qtEstoque:
+
+        try:
+            b.qtEstoque = qtEstoque - quantidade
+            db.session.commit()
+            return True
+
+        except Exception as e:
+            print(e)
+            flash('Ocorreu um problema!', 'error')
+            return False
+    else:
+        flash('Quantidade em estoque insuficiente!', 'error')
+        return False
+
+# metodo atualiza estoque peca
+def atualizaEstoquePeca(equipamento, quantidade):
+
+    p = Peca.query.filter_by(descricao=equipamento).first()
+    qtEstoque = p.qtEstoque
+
+    if quantidade <= qtEstoque:
+
+        try:
+            p.qtEstoque = qtEstoque - quantidade
+            db.session.commit()
+            return True
+
+        except Exception as e:
+
+            print(e)
+            flash('Ocorreu um problema!', 'error')
+            return False
+    else:
+        flash('Quantidade em estoque insuficiente!', 'error')
+        return False
+

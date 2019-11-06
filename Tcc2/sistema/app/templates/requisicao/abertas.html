@@ -28,15 +28,14 @@
                         <td class="col-xs-1">{{ user.username }}</td>
                         {% endif %}
                     {% endfor %}
-
                     <td class="text-center col-xs-1">{{ lista.equipamento }}</td>
                     <td class="text-right col-xs-1">{{ lista.quantidade }}</td>
                     <td class="text-center col-xs-1">{{ lista.dataHoraCriacao.strftime('%d/%m/%Y - %H:%M')}}</td>
                     <td class="text-center col-xs-1">{{ lista.observacao }}</td>
                     <td class="text-center col-xs-1">
-                        <a href="/editarPeca/{{ lista.id }}"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                        <a href="/baixarEstoque/{{ lista.id }}"><i class="fas fa-arrow-alt-circle-down"></i></a>
                         <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton"
-                           data-codigo="/excluirPeca/{{ lista.id }}"><i class="excluir far fa-trash-alt"></i></a>
+                           data-codigo="/excluirRequisicao/{{ lista.id }}"><i class="excluir far fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 {% endfor %}
