@@ -19,7 +19,7 @@ class RegistraUsuarioForm(FlaskForm):
     # campo tipo Password
     password = PasswordField('Senha:', validators=[DataRequired("Por favor, preencha o campo.")])
     password2 = PasswordField(
-        'Confirmação de Senha:', validators=[DataRequired("Por favor, preencha o campo."), EqualTo('password')])
+        'Confirmação de Senha:', validators=[DataRequired("Por favor, preencha o campo."), EqualTo('password', message='O campo deve ser igual a senha.')])
     setor = SelectField('Setor:', choices=[], coerce=int)
     # campo tipo select, onde em seus parâmetros é passado um Choices(lista)
     perfilAcesso = SelectField('Perfil de Acesso:', choices=[], coerce=int)
@@ -62,16 +62,16 @@ class RegistraSetorForm(FlaskForm):
             return False
     
 class BuscaBombasIntercambiaveis_byTipo(FlaskForm):
-    buscaEquipamentos = StringField('Busca:', validators=[DataRequired("Por favor, preencha o campo.")])
+    buscaEquipamentos = StringField('Tipo/Modelo:', validators=[DataRequired("Por favor, preencha o campo.")])
 
 class ResetPasswordRequestForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired("Por favor, preencha o campo."), Email("Digite um email válido!")])
     submit = SubmitField('Enviar')
 
 class ResetPasswordForm(FlaskForm):
-    password = PasswordField('Senha:', validators=[DataRequired("Por favor, preencha o campo.")])
+    password = PasswordField('Nova senha:', validators=[DataRequired("Por favor, preencha o campo.")])
     password2 = PasswordField(
-        'Confirmação de Senha:', validators=[DataRequired("Por favor, preencha o campo."), EqualTo('password')])
+        'Confirmação de senha:', validators=[DataRequired("Por favor, preencha o campo."), EqualTo('password', message='O campo deve ser igual a senha.')])
 
 class Pesquisa(FlaskForm):
     pesquisa = StringField('Buscar:', validators=[DataRequired("Por favor, preencha o campo.")])

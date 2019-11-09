@@ -14,7 +14,7 @@
                     {{ form.password.label }}
                     {{ form.password(class="form-control", placeholder="Senha") }}
                     {% for erro in form.password.errors %}
-                    <span style="color: red;">{{ erro }}</span>
+                        <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     {{ form.password2.label }}
                     {{ form.password2(class="form-control", placeholder="Confirmação de senha") }}
                     {% for erro in form.password2.errors %}
-                    <span style="color: red;">{{ erro }}</span>
+                        <span style="color: red;">{{ erro }}</span>
                     {% endfor %}
                 </div>
             </div>

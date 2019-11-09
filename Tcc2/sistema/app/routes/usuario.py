@@ -33,8 +33,6 @@ def cadastroUsuario():
             except Exception as e:
                 print(e.args)
 
-        flash('Não foi possível salvar!', 'error')
-        return redirect(url_for('cadastroUsuario'))
 
     return render_template('usuario/registrar.html', title='Register', form=form)
 
@@ -147,8 +145,7 @@ def alterarSenha():
 
                 except Exception as e:
                     print(e.args)
+                    flash('Não foi possível salvar!', 'error')
 
-            flash('Não foi possível salvar!', 'error')
-            return redirect(url_for('alterarSenha'))
 
         return render_template("usuario/alterarSenha.html", form=form, title='Alterar senha')

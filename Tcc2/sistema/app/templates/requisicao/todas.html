@@ -4,7 +4,7 @@
 <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
 
     <div class="col-xs-12">
-         <h3 class="text-center">Requisições abertas</h3>
+         <h3 class="text-center">Todas as requisições</h3>
     </div>
     <div class="col-xs-12">
         <hr class="linhahr">
@@ -20,7 +20,6 @@
                 <td class="text-right col-xs-1">Quantidade</td>
                 <td class="text-center col-xs-1">Data/hora criação</td>
                 <td class="text-center col-xs-1">Observação</td>
-                <td class="text-center col-xs-1">Opções</td>
             </tr>
             {% if lista %}
             <tbody>
@@ -35,11 +34,6 @@
                     <td class="text-right col-xs-1">{{ lista.quantidade }}</td>
                     <td class="text-center col-xs-1">{{ lista.dataHoraCriacao.strftime('%d/%m/%Y - %H:%M')}}</td>
                     <td class="text-center col-xs-1">{{ lista.observacao }}</td>
-                    <td class="text-center col-xs-1">
-                        <a href="/baixarEstoque/{{ lista.id }}"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                        <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton"
-                           data-codigo="/excluirRequisicao/{{ lista.id }}"><i class="excluir far fa-trash-alt"></i></a>
-                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

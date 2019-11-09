@@ -54,8 +54,8 @@
     					Perfil <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="/editarUsuario/{{ current_user.id }}">Editar perfil</a></li>
-						<li><a href="/alterarSenha">Alterar senha</a></li>
+						<li><a href="/editarUsuario/{{ current_user.id }}"><i class="fas fa-user-edit"></i> Editar perfil</a></li>
+						<li><a href="/alterarSenha"><i class="fas fa-user-lock"></i> Alterar senha</a></li>
   					</ul>
 				</div>
 			</div>
@@ -87,9 +87,9 @@
 					<li><a class="" href="{{ url_for('cadastroPeca')}}">
 						<span class="fa fa-arrow-right">&nbsp;</span> Peças
 					</a></li>
-					<li><a class="" href="{{ url_for('cadastroSetor')}}">
-						<span class="fa fa-arrow-right">&nbsp;</span> Setores
-					</a></li>
+<!--					<li><a class="" href="{{ url_for('cadastroSetor')}}">-->
+<!--						<span class="fa fa-arrow-right">&nbsp;</span> Setores-->
+<!--					</a></li>-->
 					<li><a class="" href="{{ url_for('cadastroUsuario')}}">
 						<span class="fa fa-arrow-right">&nbsp;</span> Usuários
 					</a></li>

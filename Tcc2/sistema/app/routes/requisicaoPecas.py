@@ -169,3 +169,36 @@ def atualizaEstoquePeca(equipamento, quantidade):
         flash('Quantidade em estoque insuficiente!', 'error')
         return False
 
+
+@app.route('/requisicoes/baixadas', methods=['GET', 'POST'])
+@login_required
+def requisicoesBaixadas():
+
+    users = Usuario.query.all()
+    page = request.args.get('page', 1, type=int)
+    requisicoes = Requisicao.query.filter_by(pendente=False).order_by(Requisicao.dataHoraCriacao).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('requisicoesBaixadas', page=requisicoes.next_num) \
+        if requisicoes.has_next else None
+    prev_url = url_for('requisicoeBaixadas', page=requisicoes.prev_num) \
+        if requisicoes.has_prev else None
+
+    return render_template("requisicao/baixadas.html", lista=requisicoes.items, next_url=next_url, prev_url=prev_url,
+                           title='Requisições baixadas', users=users)
+
+
+@app.route('/requisicoes/todas', methods=['GET', 'POST'])
+@login_required
+def requisicoesTodas():
+
+    users = Usuario.query.all()
+    page = request.args.get('page', 1, type=int)
+    requisicoes = Requisicao.query.order_by(Requisicao.dataHoraCriacao).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    next_url = url_for('requisicoesTodas', page=requisicoes.next_num) \
+        if requisicoes.has_next else None
+    prev_url = url_for('requisicoesTodas', page=requisicoes.prev_num) \
+        if requisicoes.has_prev else None
+
+    return render_template("requisicao/Todas.html", lista=requisicoes.items, next_url=next_url, prev_url=prev_url,
+                           title='Todas as requisições', users=users)

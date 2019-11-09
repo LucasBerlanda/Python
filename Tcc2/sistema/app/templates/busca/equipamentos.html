@@ -11,12 +11,18 @@
             <h3 class="text-center">Busca de peças por bomba</h3>
             <hr class="linhahr">
             <div class="form-group">
-                {{ form.buscaEquipamentos(class=" form-control", placeholder="Buscar") }}
-                {% for erro in form.buscaEquipamentos.errors %}
-                <span style="color: red;">{{ erro }}</span>
-                {% endfor %}
+                <div class="col-xs-12">
+                    {{ form.buscaEquipamentos.label }}
+                </div>
+                <div class="col-xs-12">
+                    {{ form.buscaEquipamentos(class=" form-control", placeholder="Buscar") }}
+                    {% for erro in form.buscaEquipamentos.errors %}
+                    <span style="color: red;">{{ erro }}</span>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-success"><i class="fas fa-search"></i> Buscar</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-success"><i class="fas fa-search"></i> Buscar</button>
+
         </div>
     </form>
 </div>

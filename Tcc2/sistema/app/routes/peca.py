@@ -56,15 +56,14 @@ def listaPecas():
 @login_required
 def editarPeca(id):
 
-    peca = Peca.query.filter_by(id = id).first()
+    peca = Peca.query.filter_by(id=id).first()
     
     if request.method == "POST":
 
         nome = (request.form.get("nome"))
         descricao = (request.form.get("descricao"))
-        qtEstoque = (request.form.get("qtEstoque"))
 
-        if nome and descricao and qtEstoque:
+        if nome and descricao:
 
             descricaoPeca = Peca.query.filter_by(descricao=descricao).first()
 
@@ -72,7 +71,6 @@ def editarPeca(id):
                 try:
                     peca.nomePeca = nome
                     peca.descricao = descricao
-                    peca.qtEstoque = qtEstoque
 
                     db.session.commit()
 
