@@ -81,8 +81,7 @@ def editarTipoBomba(id):
         tipo = (request.form.get("tipo"))
         mca = (request.form.get("mca"))
         rotacao = (request.form.get("rotacao"))
-        # qtEstoque = (request.form.get("qtEstoque"))
-        
+
         if tipo and mca and rotacao:
             bomba = TipoBomba.query.filter_by(tipo=tipo).first()
 
@@ -92,7 +91,6 @@ def editarTipoBomba(id):
                     tipoBomba.tipo = tipo
                     tipoBomba.mca = mca
                     tipoBomba.rotacao = rotacao
-                    # tipoBomba.qtEstoque = qtEstoque
 
                     db.session.commit()
 

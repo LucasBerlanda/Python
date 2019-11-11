@@ -4,6 +4,7 @@ from app.forms import ResetPasswordRequestForm, ResetPasswordForm
 from app.models import Usuario
 from flask import render_template, redirect, url_for, flash
 from flask_login import current_user
+from random import randrange
 
 @app.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
@@ -21,16 +22,27 @@ def reset_password_request():
 
 
 def send_email(subject, sender, recipients, html_body):
-
     msg = Message(subject, sender=sender, recipients=recipients)
     msg.html = html_body
     mail.send(msg)
 
 
 def send_password_reset_email(user):
-    senha = '1234'
+    senha = geradorSenha()
+    print("senha: ", senha)
     send_email('Nova senha',
                sender=app.config['ADMINS'][0],
                recipients=[user.email],
                html_body=render_template('email/alteraSenha.html',
                                          user=user, senha=senha))
+
+
+def geradorSenha():
+    novaSenha = []
+    for n in range(0, 6):
+        randrange(0, 9)
+        novaSenha.append(randrange(0, 9))
+
+    return novaSenha
+
+

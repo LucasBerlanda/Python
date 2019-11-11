@@ -2,14 +2,19 @@ from flask import render_template, url_for, redirect, request, flash
 from app import app, db
 from app.forms import LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import Usuario
+from app.models import Usuario, TipoBomba, Peca, Requisicao
 from werkzeug.urls import url_parse
 
 
 @app.route("/index")
 @login_required
 def index():
-    return render_template("index.html", title='Dashboard')
+    bombas = TipoBomba.query.count()
+    pecas = Peca.query.count()
+    usuarios = Usuario.query.count()
+    requisicao = Requisicao.query.filter_by(pendente = True).count()
+    print(bombas)
+    return render_template("index.html", title='Dashboard', bombas=bombas, pecas=pecas, usuarios=usuarios, requisicao=requisicao)
 
 @app.route('/', methods=['GET', 'POST'])
 def login():

@@ -149,3 +149,46 @@ def alterarSenha():
 
 
         return render_template("usuario/alterarSenha.html", form=form, title='Alterar senha')
+
+
+@app.route("/editarPerfil/<int:id>", methods=['GET', 'POST'])
+@login_required
+def editarPerfil(id):
+
+        usuario = Usuario.query.filter_by(id=id).first()
+        perfisAcesso = PerfilAcesso.query.all()
+        setores = Setor.query.all()
+
+        if request.method == "POST":
+
+            username = (request.form.get("username"))
+            email = (request.form.get("email"))
+            setor_id = (request.form.get("setor_id"))
+            perfilAcesso_id = (request.form.get("perfilAcesso_id"))
+
+
+            user = Usuario.query.filter_by(username=username).first()
+
+            if user is None or user.id == id:
+
+                try:
+                    usuario.username = username
+                    usuario.email = email
+                    usuario.setor_id = setor_id
+
+                    db.session.commit()
+                    db.session.close()
+
+                    flash('Salvo com sucesso!', 'info')
+                    return redirect(url_for("listaUsuarios"))
+
+                except Exception as e:
+                    print(e.args)
+
+            flash('Já existe usuário com esse nome!', 'error')
+            return render_template("usuario/editar.html", usuario=usuario, perfisAcesso=perfisAcesso,
+                                       setores=setores, title='Editar usuário')
+
+
+        return render_template("usuario/editar.html", usuario=usuario, perfisAcesso=perfisAcesso,
+                               setores = setores, title='Editar usuário')
