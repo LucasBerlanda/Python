@@ -3,17 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1968cf6d-f45b-4960-a889-19b391090336" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/email.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/email.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistema/app/routes/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/tipoBomba.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/tipoBomba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/routes/usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/routes/usuario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/bomba/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/bomba/editar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/erro/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/erro/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/erro/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/erro/500.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistema/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistema/app/templates/usuario/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sistema/app/templates/usuario/editar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sistema/app/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+            <state relative-caret-position="543">
+              <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -35,23 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sistema/app/routes/usuario.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sistema/app/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="94" selection-start-line="15" selection-start-column="84" selection-end-line="15" selection-end-column="94" />
+            <state relative-caret-position="306">
+              <caret line="64" column="60" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
               <folding>
                 <element signature="e#479#485#1" expanded="true" />
               </folding>
@@ -60,10 +39,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sistema/app/templates/bomba/lista.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sistema/app/routes/login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="16" column="64" lean-forward="true" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+            <state relative-caret-position="204">
+              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -107,7 +95,6 @@
         <option value="$PROJECT_DIR$/sistema/app/routes/buscaEquipamentos.py" />
         <option value="$PROJECT_DIR$/sistema/app/static/css/styles.css" />
         <option value="$PROJECT_DIR$/sistema/app/templates/almoxarifado/entradaProduto.html" />
-        <option value="$PROJECT_DIR$/sistema/app/templates/bomba/lista.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/peca/cadastro.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/setor/editar.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/setor/lista.html" />
@@ -136,13 +123,14 @@
         <option value="$PROJECT_DIR$/sistema/app/templates/bomba/editar.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/usuario/editar.html" />
         <option value="$PROJECT_DIR$/sistema/app/models.py" />
-        <option value="$PROJECT_DIR$/sistema/app/routes/login.py" />
-        <option value="$PROJECT_DIR$/sistema/app/templates/index.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/erro/404.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/erro/500.html" />
         <option value="$PROJECT_DIR$/sistema/app/templates/base.html" />
         <option value="$PROJECT_DIR$/sistema/app/routes/usuario.py" />
         <option value="$PROJECT_DIR$/sistema/app/routes/email.py" />
+        <option value="$PROJECT_DIR$/sistema/app/templates/bomba/lista.html" />
+        <option value="$PROJECT_DIR$/sistema/app/routes/login.py" />
+        <option value="$PROJECT_DIR$/sistema/app/templates/index.html" />
       </list>
     </option>
   </component>
@@ -197,7 +185,7 @@
               <item name="sistema" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="erro" type="462c0819:PsiDirectoryNode" />
+              <item name="peca" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -283,6 +271,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4975" visible="true" weight="0.19494048" />
       <window_info id="Structure" order="1" sideWeight="0.5025" side_tool="true" weight="0.19866072" />
@@ -458,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/bomba/lista.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/routes/setor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
@@ -617,27 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/peca/lista.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/routes/tipoBomba.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="925">
           <caret line="82" column="47" lean-forward="true" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/routes/peca.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
@@ -702,32 +667,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="94" selection-start-line="15" selection-start-column="84" selection-end-line="15" selection-end-column="94" />
-          <folding>
-            <element signature="e#479#485#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="171" column="47" selection-start-line="171" selection-start-column="47" selection-end-line="171" selection-end-column="47" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sistema/app/routes/login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" column="64" lean-forward="true" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -754,10 +699,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sistema/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+        <state relative-caret-position="543">
+          <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/peca/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/bomba/lista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/routes/peca.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/routes/login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistema/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="64" column="60" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
+          <folding>
+            <element signature="e#479#485#1" expanded="true" />
           </folding>
         </state>
       </provider>

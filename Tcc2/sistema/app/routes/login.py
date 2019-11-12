@@ -5,16 +5,17 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import Usuario, TipoBomba, Peca, Requisicao
 from werkzeug.urls import url_parse
 
-
 @app.route("/index")
 @login_required
 def index():
     bombas = TipoBomba.query.count()
     pecas = Peca.query.count()
     usuarios = Usuario.query.count()
-    requisicao = Requisicao.query.filter_by(pendente = True).count()
-    print(bombas)
-    return render_template("index.html", title='Dashboard', bombas=bombas, pecas=pecas, usuarios=usuarios, requisicao=requisicao)
+    requisicao = Requisicao.query.filter_by(pendente=True).count()
+    listaBombas = TipoBomba.query.order_by(TipoBomba.tipo).all()
+    listaPecas = Peca.query.order_by(Peca.nome).all()
+
+    return render_template("index.html", title='Dashboard', bombas=bombas, pecas=pecas, usuarios=usuarios, requisicao=requisicao, listaBombas=listaBombas, listaPecas=listaPecas)
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
