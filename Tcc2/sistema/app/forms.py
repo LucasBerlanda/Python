@@ -62,7 +62,7 @@ class RegistraSetorForm(FlaskForm):
             return False
     
 class BuscaBombasIntercambiaveis_byTipo(FlaskForm):
-    buscaEquipamentos = StringField('Tipo/Modelo:', validators=[DataRequired("Por favor, preencha o campo.")])
+    buscaEquipamentos = StringField('Tipo:', validators=[DataRequired("Por favor, preencha o campo.")])
 
 class ResetPasswordRequestForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired("Por favor, preencha o campo."), Email("Digite um email válido!")])

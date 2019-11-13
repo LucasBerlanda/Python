@@ -49,33 +49,37 @@
 			<div class="row">
 				<div class="col-xs-12 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
-						 <div class="table-responsive col-xs-12">
-							 <h4>Bombas</h4>
-							<table class="table table-bordered table-hover">
-								<tr>
-									<td class="text-left col-xs-2">Tipo</td>
-									<td class="text-right col-xs-1">Mca</td>
-									<td class="text-right col-xs-1">Rotação</td>
-									<td class="text-right col-xs-1">Qt. Estoque</td>
-								</tr>
-								{% if listaBombas %}
-								<tbody>
-									{% for tipoBomba in listaBombas %}
+						 <div class="text-muted">
+								<h4>Bombas cadastradas no sistema</h4>
+						 </div>
+						 <div class="col-xs-12">
+							 <div class="table-responsive col-xs-12">
+								 <table class="table table-condensed table-bordered table-striped">
 									<tr>
-										<td class="text-left">{{ tipoBomba.tipo }}</td>
-										<td class="text-right">{{ tipoBomba.mca }}</td>
-										<td class="text-right">{{ tipoBomba.rotacao }}</td>
-										<td class="text-right">{{ tipoBomba.qtEstoque }}</td>
+										<td class="text-left col-xs-2">Tipo</td>
+										<td class="text-right col-xs-1">Mca</td>
+										<td class="text-right col-xs-1">Rotação</td>
+										<td class="text-right col-xs-1">Qt. Estoque</td>
 									</tr>
-									{% endfor %}
-								</tbody>
-								{% else %}
-									<td colspan="5" class="text-center">
-										Nenhum dado encontrado!
-									</td>
-								{% endif %}
-							</table>
-						</div>
+									{% if listaBombas %}
+									<tbody>
+										{% for tipoBomba in listaBombas %}
+										<tr>
+											<td class="text-left">{{ tipoBomba.tipo }}</td>
+											<td class="text-right">{{ tipoBomba.mca }}</td>
+											<td class="text-right">{{ tipoBomba.rotacao }}</td>
+											<td class="text-right">{{ tipoBomba.qtEstoque }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+									{% else %}
+										<td colspan="5" class="text-center">
+											Nenhum dado encontrado!
+										</td>
+									{% endif %}
+								  </table>
+							 </div>
+						 </div>
 					</div>
 				</div>
 			</div>
