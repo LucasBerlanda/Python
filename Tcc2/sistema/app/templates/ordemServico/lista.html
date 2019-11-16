@@ -39,7 +39,10 @@
                     {% for usuario in usuarios %}
                         {% if usuario.id == lista.executor %}
                            <td class="col-xs-2 text-center">{{ usuario.username }}</td>
+                        {% else %}
+                            <td class="col-xs-2 text-center"></td>
                         {% endif %}
+
                     {% endfor %}
 
                     {% if lista.situacao == False %}

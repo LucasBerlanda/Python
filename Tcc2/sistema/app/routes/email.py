@@ -28,6 +28,7 @@ def send_email(subject, sender, recipients, html_body):
 
 
 def send_password_reset_email(user):
+
     senha = geradorSenha()
     print("senha: ", senha)
     send_email('Nova senha',

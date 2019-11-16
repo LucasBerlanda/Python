@@ -1,0 +1,22 @@
+div .login{
+    margin-top: 120px;
+    box-shadow: 0px 8px 20px 13px rgba(0,0,0,0.75);
+}
+.black{
+    color: #000000;
+}
+.black:hover {
+    color: #000000;
+}
+.body{
+    background-image: url(loginImage.jpg);
+}
+.itens-login{
+     width: 400px;
+}
+.icone{
+    color:#091284;
+}
+.btn-login{
+    width: 110px;
+}
