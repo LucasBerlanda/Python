@@ -39,10 +39,7 @@
                     {% for usuario in usuarios %}
                         {% if usuario.id == lista.executor %}
                            <td class="col-xs-2 text-center">{{ usuario.username }}</td>
-                        {% else %}
-                            <td class="col-xs-2 text-center"></td>
                         {% endif %}
-
                     {% endfor %}
 
                     {% if lista.situacao == False %}
@@ -50,6 +47,7 @@
                     {% else %}
                         <td class="col-xs-1 text-center" style="color: green;">Finalizado</td>
                     {% endif %}
+
                     <td class="text-center col-xs-1">{{ lista.dataHoraInicio.strftime('%d/%m/%Y - %H:%M:%S')}}</td>
 
                     <td class="col-xs-2">{{ lista.observacao }}</td>
