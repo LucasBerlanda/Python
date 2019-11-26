@@ -22,8 +22,8 @@
                     <td class="text-center">{{ setor.abreviatura }}</td>
                     <td>{{ setor.descricao }}</td>
                     <td class="text-center">
-                        <a href="/editarSetor/{{ setor.id }}"><i class="far fa-edit"></i></a>
-                        <a data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirSetor/{{ setor.id }}"><i class="excluir far fa-trash-alt"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" title="Editar" href="/editarSetor/{{ setor.id }}"><i class="far fa-edit"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" title="Excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton" data-codigo="/excluirSetor/{{ setor.id }}"><i class="excluir far fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 {% endfor %}

@@ -20,23 +20,19 @@ def reset_password_request():
     return render_template('novaSenha.html',
                            title='Reset Password', form=form)
 
-
-def send_email(subject, sender, recipients, html_body):
-    msg = Message(subject, sender=sender, recipients=recipients)
-    msg.html = html_body
-    mail.send(msg)
-
-
 def send_password_reset_email(user):
-
     senha = geradorSenha()
-    print("senha: ", senha)
     send_email('Nova senha',
                sender=app.config['ADMINS'][0],
                recipients=[user.email],
                html_body=render_template('email/alteraSenha.html',
                                          user=user, senha=senha))
 
+
+def send_email(subject, sender, recipients, html_body):
+    msg = Message(subject, sender=sender, recipients=recipients)
+    msg.html = html_body
+    mail.send(msg)
 
 def geradorSenha():
     novaSenha = []

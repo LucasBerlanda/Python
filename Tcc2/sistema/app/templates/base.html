@@ -87,9 +87,9 @@
 					<li><a class="" href="{{ url_for('cadastroPeca')}}">
 						<span class="fa fa-arrow-right">&nbsp;</span> Peças
 					</a></li>
-<!--					<li><a class="" href="{{ url_for('cadastroSetor')}}">-->
-<!--						<span class="fa fa-arrow-right">&nbsp;</span> Setores-->
-<!--					</a></li>-->
+					<li><a class="" href="{{ url_for('cadastroSetor')}}">
+						<span class="fa fa-arrow-right">&nbsp;</span> Setores
+					</a></li>
 					<li><a class="" href="{{ url_for('cadastroUsuario')}}">
 						<span class="fa fa-arrow-right">&nbsp;</span> Usuários
 					</a></li>
@@ -216,6 +216,11 @@
 	<script>
    		$("option[value='0']").attr("disabled", "disabled");
 	</script>
+	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
 
+	</script>
 </body>
 </html>

@@ -36,8 +36,8 @@
                     <td class="text-center col-xs-1">{{ lista.dataHoraCriacao.strftime('%d/%m/%Y - %H:%M')}}</td>
                     <td class="text-center col-xs-1">{{ lista.observacao }}</td>
                     <td class="text-center col-xs-1">
-                        <a href="/baixarEstoque/{{ lista.id }}"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                        <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton"
+                        <a data-toggle="tooltip" data-placement="top" title="Baixar estoque" href="/baixarEstoque/{{ lista.id }}"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" title="Excluir" class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton"
                            data-codigo="/excluirRequisicao/{{ lista.id }}"><i class="excluir far fa-trash-alt"></i></a>
                     </td>
                 </tr>

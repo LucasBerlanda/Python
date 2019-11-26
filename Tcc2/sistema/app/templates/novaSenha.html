@@ -1,13 +1,53 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+		<title>{{ title }}</title>
+	{% else %}
+		<title>Sistema</title>
+	{% endif %}
 
-{% block content %}
-<div class="col-xs-offset-3">
+	<link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/datepicker3.css') }}" rel="stylesheet">
+	<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</head>
+<body class="body">
 <div class="col-xs-12">
-    <form action="" method="post">
+	{% with msgError = get_flashed_messages(category_filter=["error"]) %}
+		{% if msgError %}
+			<div class="col-xs-offset-3 col-xs-6 text-center">
+				<ul>
+					{% for msg in msgError %}
+						<li style="list-style-type: none;">
+							<div class="alert alert-danger" role="alert">
+								<strong>{{ msg }}
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</strong>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	{% endwith %}
+</div>
+<div class="col-sm-offset-4 col-md-offset-4 ">
+	<form action="" method="post">
         {{ form.hidden_tag() }}
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-sm-8 login_senha">
             <div class="col-xs-12">
-                <h3>Solicitar nova senha</h3>
+                <h3><b>Solicitar nova senha</b></h3>
                 <div class="form-group">
                     {{ form.email.label }}<br>
                     {{ form.email(size=64, class="form-control", placeholder="Email") }}<br>
@@ -17,9 +57,20 @@
                 </div>
                 <div class="form-group">
 					<button type="submit" class="btn btn-success">Enviar</button>
+                    <a href="{{ url_for('login') }}"><button type="button" class="btn btn-default">Voltar</button></a>
 				</div>
             </div>
         </div>
     </form>
 </div>
-{% endblock %}
+	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/chart.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/chart-data.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/easypiechart.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/easypiechart-data.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap-datepicker.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+</html>

@@ -21,8 +21,8 @@
                     <td>{{ peca.descricao }}</td>
                     <td class="text-right">{{ peca.qtEstoque }}</td>
                     <td class="text-center">
-                        <a href="/editarPeca/{{ peca.id }}"><i class="far fa-edit"></i></a>
-                        <a class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton"
+                        <a data-toggle="tooltip" data-placement="top" title="Editar" href="/editarPeca/{{ peca.id }}"><i class="far fa-edit"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" title="Excluir" class="excluir" data-toggle="modal" data-target="#deleteModal" id="deleteButton"
                            data-codigo="/excluirPeca/{{ peca.id }}"><i class="excluir far fa-trash-alt"></i></a>
                     </td>
                 </tr>

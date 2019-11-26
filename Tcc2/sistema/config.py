@@ -13,7 +13,7 @@ class Config(object):
     DEBUG = True
 
     # configuração de linhas por páginas nas listas
-    POSTS_PER_PAGE = 2
+    POSTS_PER_PAGE = 4
 
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 587)

@@ -13,8 +13,10 @@ from logging.handlers import SMTPHandler
 # instancio os objetos
 # crio o objeto flask
 app = Flask(__name__)
+
 # Aqui adiciono as configurações passadas por parametro
 app.config.from_object(Config)
+
 # instancia do BD
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
